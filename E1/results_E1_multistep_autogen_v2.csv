@@ -1,0 +1,1841 @@
+experiment,question_id,question,ground_truth,prediction,correct,answer_extraction,parse_error,json_valid,evidence,operation,reasoning_summary,unit_declared,raw_response,prompt_tokens,completion_tokens,total_tokens,latency_seconds,llm_calls,is_percent_question,correct_escala_pct
+E1_multistep,0,"what was the total balance of letters of credit outstanding for the years of 2006 and 2007, combined?",93.4,93.4,True,json_texto_limpo,False,True,"[""page 59 of 94 notes to consolidated financial statements ball corporation and subsidiaries 13 . debt and interest costs ( continued )"", ""letters of credit outstanding at december 31 , 2007 and 2006 , were $ 41 million and $ 52.4 million , respectively""]",addition,"The question is asking for the total balance of letters of credit outstanding for the years 2006 and 2007, combined. The relevant values are the letters of credit outstanding at December 31, 2007 and 2006, which are $41 million and $52.4 million, respectively. The required calculation is the addition of these two values.",million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    ""page 59 of 94 notes to consolidated financial statements ball corporation and subsidiaries 13 . debt and interest costs ( continued )"",
+    ""letters of credit outstanding at december 31 , 2007 and 2006 , were $ 41 million and $ 52.4 million , respectively""
+  ],
+  ""operation"": ""addition"",
+  ""reasoning_summary"": ""The question is asking for the total balance of letters of credit outstanding for the years 2006 and 2007, combined. The relevant values are the letters of credit outstanding at December 31, 2007 and 2006, which are $41 million and $52.4 million, respectively. The required calculation is the addition of these two values."",
+  ""answer"": ""$93.4 million"",
+  ""unit"": ""million""
+}
+
+Note: The answer is calculated by adding the letters of credit outstanding at December 31, 2007 ($41 million) and 2006 ($52.4 million), which results in a total balance of $93.4 million.",1179,237,1416,12.751159699997515,1,False,True
+E1_multistep,1,what was the state street corporation value in 2013?,198.0,198,True,json,False,True,"[{""value"": 198, ""year"": 2013, ""company"": ""State Street Corporation""}]",answer,"The question is asking for the value of State Street Corporation in 2013, which can be found in the table provided.",$,"{
+  ""evidence"": [
+    {
+      ""value"": 198,
+      ""year"": 2013,
+      ""company"": ""State Street Corporation""
+    }
+  ],
+  ""operation"": ""answer"",
+  ""reasoning_summary"": ""The question is asking for the value of State Street Corporation in 2013, which can be found in the table provided."",
+  ""answer"": 198,
+  ""unit"": ""$""
+}",666,91,757,4.8100826000008965,1,False,True
+E1_multistep,2,what were the total number of shares purchased?,4823020.0,4823020.0,True,json,False,True,"[""4823020""]",total number of shares purchased,"The question is asking for the total number of shares purchased, which is the sum of the shares purchased in each month. This information can be found in the table provided.",shares,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    ""4823020""
+  ],
+  ""operation"": ""total number of shares purchased"",
+  ""reasoning_summary"": ""The question is asking for the total number of shares purchased, which is the sum of the shares purchased in each month. This information can be found in the table provided."",
+  ""answer"": ""4823020"",
+  ""unit"": ""shares""
+}
+
+To answer the question, I identified the relevant values as the total number of shares purchased in each month, which are 2099169, 1454402, and 1269449. I then added these values together to get the total number of shares purchased, which is 4823020.",954,154,1108,6.383665200002724,1,False,True
+E1_multistep,3,"for 2012, what was the percentage of the adjustments related to aoci for afs securities and defined benefit pension and opeb plans as part of the tier 1 common under basel i rules?",0.02905,2.9,False,fallback_percentual,False,False,,,,,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    {
+      ""value"": 4077,
+      ""description"": ""Adjustments related to AOCI for AFS securities and defined benefit pension and OPEB plans""
+    },
+    {
+      ""value"": 140342,
+      ""description"": ""Tier 1 common under Basel I rules""
+    },
+    {
+      ""value"": 143966,
+      ""description"": ""Estimated tier 1 common under Basel III rules""
+    }
+  ],
+  ""operation"": ""Percentage calculation"",
+  ""reasoning_summary"": ""To calculate the percentage of adjustments related to AOCI for AFS securities and defined benefit pension and OPEB plans as part of the Tier 1 common under Basel I rules, we need to divide the value of the adjustments by the value of the Tier 1 common under Basel I rules and multiply by 100."",
+  ""answer"": 2.9%,
+  ""unit"": ""%""
+}
+
+Note: The calculation is (4077 / 140342) * 100 = 2.9%.",1915,229,2144,8.893759099999443,1,True,True
+E1_multistep,4,"considering the amount of those 2003 earnings, what can be concluded to have been those operating earnings in 2002?",20452.85,1.23,False,json,False,True,[],percentage calculation,"To find the operating earnings in 2002, we need to calculate the percentage decrease in operating earnings from 2002 to 2003, and then apply that percentage to the 2003 operating earnings.",%,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage calculation"",
+  ""reasoning_summary"": ""To find the operating earnings in 2002, we need to calculate the percentage decrease in operating earnings from 2002 to 2003, and then apply that percentage to the 2003 operating earnings."",
+  ""answer"": 1.23,
+  ""unit"": ""%""
+}
+
+To calculate the operating earnings in 2002, we need to find the percentage decrease in operating earnings from 2002 to 2003, which is 80%. Then, we apply that percentage to the 2003 operating earnings, which is $205 million.
+
+$205 million * 0.80 = $163.2 million
+
+So, the operating earnings in 2002 were $163.2 million.",1816,177,1993,7.601480500001344,1,False,False
+E1_multistep,5,"and what is the weighted-average period over which this cost will be recognized, in years?",2.1,2.2,False,json,False,True,[],,,years,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 2.2,
+  ""unit"": ""years""
+}
+
+Here's the step-by-step process to arrive at the answer:
+
+1. Identify the relevant values: The relevant value is the weighted-average period over which the remaining unrecognized compensation expense for outstanding restricted stock and restricted stock units will be recognized, which is mentioned as 2.2 years.
+
+2. Identify what the question is asking: The question is asking for the weighted-average period over which this cost will be recognized, in years.
+
+3. Determine the required calculation: No calculation is required as the answer is already provided in the text.
+
+4. Compute the result: The result is the weighted-average period over which the remaining unrecognized compensation expense for outstanding restricted stock and restricted stock units will be recognized, which is 2.2 years.
+
+5. Return the final answer: The final answer is 2.2 years.",1339,209,1548,8.154143100007786,1,False,False
+E1_multistep,6,what is the value of operating leases over the total minimum payments?,0.68368,0.0995,False,json,False,True,[],division,"To find the value of operating leases over the total minimum payments, we need to divide the value of operating leases by the total minimum lease payments.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""division"",
+  ""reasoning_summary"": ""To find the value of operating leases over the total minimum payments, we need to divide the value of operating leases by the total minimum lease payments."",
+  ""answer"": 0.0995,
+  ""unit"": ""%""
+}
+
+Calculation:
+
+1. Identify the relevant values:
+	* Value of operating leases: $3430.0
+	* Total minimum lease payments: $5017.0
+2. Identify what the question is asking:
+	* What is the value of operating leases over the total minimum payments?
+3. Determine the required calculation:
+	* Divide the value of operating leases by the total minimum lease payments
+4. Compute the result:
+	* $3430.0 ÷ $5017.0 = 0.0995
+5. Return the final answer:
+	* The value of operating leases over the total minimum payments is 9.95%.",1284,210,1494,8.102917700001854,1,False,False
+E1_multistep,7,what was the value of pension plans for 2017?,3856.0,3856.0,True,json,False,True,[],,,thousands,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": ""3856"",
+  ""unit"": ""thousands""
+}
+
+The question is asking for the value of pension plans for 2017.
+
+1. Relevant values: The relevant value is the ""pension plan"" value in the table provided in the TEXT block.
+
+2. What the question is asking: The question is asking for the value of pension plans for 2017.
+
+3. Required calculation: No calculation is required as the value is already provided in the table.
+
+4. Compute the result: The result is the value of pension plans for 2017, which is $3856 (in thousands).
+
+Note: The answer is in thousands, as indicated by the unit ""thousands"" in the JSON response.",1526,177,1703,7.365793000004487,1,False,True
+E1_multistep,8,what was the balance of total pci consumer loans in 2010?,19097.0,25544.0,False,json,False,True,"[{""value"": ""25544"", ""description"": ""Balance January 1, 2010""}]",Identify the relevant value,"The question is asking for the balance of total PCI consumer loans in 2010. The relevant value is the 'Balance January 1, 2010' which is $25544.",Millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {""value"": ""25544"", ""description"": ""Balance January 1, 2010""}
+  ],
+  ""operation"": ""Identify the relevant value"",
+  ""reasoning_summary"": ""The question is asking for the balance of total PCI consumer loans in 2010. The relevant value is the 'Balance January 1, 2010' which is $25544."",
+  ""answer"": ""$25544"",
+  ""unit"": ""Millions""
+}
+
+Note: The question is asking for the balance of total PCI consumer loans in 2010, which is the 'Balance January 1, 2010' value in the table.",948,149,1097,6.292042600005516,1,False,False
+E1_multistep,9,what percentage change does this represent?,1.78431,78.43,False,json,False,True,[],percentage change,Calculate the percentage change in total operating expenses from 2008 to 2009.,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage change"",
+  ""reasoning_summary"": ""Calculate the percentage change in total operating expenses from 2008 to 2009."",
+  ""answer"": 78.43,
+  ""unit"": ""%""
+}
+
+To calculate the percentage change, we need to find the difference between the total operating expenses in 2009 and 2008, and then divide that by the total operating expenses in 2008, and finally multiply by 100.
+
+The calculation is:
+
+((2009 total operating expenses - 2008 total operating expenses) / 2008 total operating expenses) * 100
+= ((1420 - 510) / 510) * 100
+= (910 / 510) * 100
+= 78.43%
+
+So, the total operating expenses increased by 78.43% from 2008 to 2009.",1209,196,1405,7.652680200000759,1,True,False
+E1_multistep,10,"and what was that percentage representation in the previous year, in 2011?",0.52288,40,False,json,False,True,[],,,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 40,
+  ""unit"": ""%""
+}
+
+To answer the question, we need to find the percentage of total net revenues due to equity securities (excluding icbc) revenues in 2011.
+
+From the text, we can find the total net revenues in 2011 as $5.89 billion.
+
+From the table, we can find the equity securities (excluding icbc) revenues in 2011 as $1,120 million.
+
+To calculate the percentage, we can use the following formula:
+
+Percentage = (Equity Securities Revenues / Total Net Revenues) * 100
+
+Plugging in the values, we get:
+
+Percentage = ($1,120 million / $5,891 million) * 100 = 40%
+
+Therefore, the answer is 40%.",1424,189,1613,7.696730399999069,1,True,False
+E1_multistep,11,what is the value of the investment in 2014?,144.0,215.0,False,json,False,True,"[""The table provided shows the cumulative total shareholder return assuming the investment of $ 100, on December 31, 2012, and the reinvestment of dividends thereafter, if any, in the company's common stock versus the S&P 500 retail index and the S&P 500 index.""]",Find the value of the investment in 2014,"The question is asking for the value of the investment in 2014, which can be found in the table provided.",USD,"Here is the answer to the question:
+
+{
+  ""evidence"": [""The table provided shows the cumulative total shareholder return assuming the investment of $ 100, on December 31, 2012, and the reinvestment of dividends thereafter, if any, in the company's common stock versus the S&P 500 retail index and the S&P 500 index.""],
+  ""operation"": ""Find the value of the investment in 2014"",
+  ""reasoning_summary"": ""The question is asking for the value of the investment in 2014, which can be found in the table provided."",
+  ""answer"": ""$215"",
+  ""unit"": ""USD""
+}
+
+I identified the relevant values as the values in the table for December 31, 2014, which is $215. The question is asking for the value of the investment in 2014, which can be found in the table provided. The required calculation is simply looking up the value in the table for the specified date. The result is $215.",601,210,811,7.5081120999966515,1,False,False
+E1_multistep,12,what was the portion of non-cash items out of the total cash from operations in 2018?,0.12176,12.1,False,json,False,True,[],calculation,"To find the portion of non-cash items out of the total cash from operations in 2018, we need to divide the non-cash items by the total cash from operations and multiply by 100.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""calculation"",
+  ""reasoning_summary"": ""To find the portion of non-cash items out of the total cash from operations in 2018, we need to divide the non-cash items by the total cash from operations and multiply by 100."",
+  ""answer"": 12.1,
+  ""unit"": ""%""
+}
+
+Calculation:
+
+1. Identify the relevant values:
+	* Cash from operations in 2018: $2357 million
+	* Non-cash items in 2018: $287 million
+2. Identify what the question is asking:
+	* What is the percentage of non-cash items out of the total cash from operations in 2018?
+3. Determine the required calculation:
+	* ($287 million / $2357 million) * 100
+4. Compute the result:
+	* ($287 million / $2357 million) = 0.1215
+	* 0.1215 * 100 = 12.1%
+
+Therefore, the portion of non-cash items out of the total cash from operations in 2018 is 12.1%.",1269,249,1518,8.934031600001617,1,True,True
+E1_multistep,13,what about the ending accrued warranty and related costs	in 2007?,230.0,230,True,json,False,True,[],,,Millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 230,
+  ""unit"": ""Millions""
+}
+
+To answer the question, I followed the stages:
+
+1. Identify the relevant values:
+	* The relevant values are the ending accrued warranty and related costs in 2007, which is $230 million.
+2. Identify what the question is asking:
+	* The question is asking about the ending accrued warranty and related costs in 2007.
+3. Determine the required calculation:
+	* No calculation is required, as the answer is directly provided in the text.
+4. Compute the result:
+	* The result is $230 million, which is the ending accrued warranty and related costs in 2007.
+5. Return the final answer:
+	* The final answer is $230 million, with the unit being millions.",1156,189,1345,7.412832300004084,1,False,True
+E1_multistep,14,what is the difference between 100% and that increase?,99.77,0.23,False,json,False,True,[],,,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 0.23,
+  ""unit"": ""%""
+}
+
+Explanation:
+
+To find the difference between 100% and the increase, we need to find the increase in operating earnings from 2002 to 2003. According to the text, the operating earnings in 2003 were $205 million, which is a 23% increase compared to 2002.
+
+So, the difference between 100% and the increase is:
+
+100% - 23% = 77%
+
+Therefore, the answer is 77%.",1774,137,1911,6.611791799994535,1,True,False
+E1_multistep,15,and the specific value for 2008 again?,36836.0,36836.0,True,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 36836.0,
+  ""unit"": """"
+}
+
+To answer the question, I identified the relevant values from the provided text:
+
+* The specific value for 2008 is mentioned as 36836.
+
+I then determined the required calculation, which is simply to return the value mentioned in the text.
+
+Finally, I computed the result, which is the value 36836.0.
+
+Note that the question is asking for the specific value for 2008, which is already provided in the text.",1543,133,1676,6.4182365000015125,1,False,True
+E1_multistep,16,"what percentage, then, of the liquidity did that amount represent?",0.36931,36.93,False,json,False,True,[],,,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": null,
+  ""unit"": """"
+}
+
+QUESTION:
+what percentage, then, of the liquidity did that amount represent?
+
+The relevant values are:
+
+* Total liquidity resources: $10831
+* Credit facility: $4000
+
+The question is asking what percentage of the total liquidity resources the credit facility represents.
+
+The required calculation is:
+
+Percentage = (Credit facility / Total liquidity resources) * 100
+
+Computing the result:
+
+Percentage = ($4000 / $10831) * 100 = 36.93%
+
+So, the answer is:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 36.93,
+  ""unit"": ""%""
+}",1766,177,1943,7.604919999997946,1,True,True
+E1_multistep,17,what was the 2008 value?,1.74,1.74,True,json,False,True,[],,,,"Here is the answer to the question ""what was the 2008 value?"" in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 1.74,
+  ""unit"": """"
+}
+
+To arrive at this answer, I followed the standard stages:
+
+1. Identify the relevant values: The relevant value is the ""per diluted share as adjusted"" value for the year 2008, which is mentioned in the table on page 26.
+
+2. Identify what the question is asking: The question is asking for the value of ""per diluted share as adjusted"" in 2008.
+
+3. Determine the required calculation: No calculation is required, as the value is directly provided in the table.
+
+4. Compute the result: The result is the value mentioned in the table for 2008, which is 1.74.
+
+5. Return the final answer: The final answer is 1.74.",1543,199,1742,7.900029000011273,1,False,True
+E1_multistep,18,what was the value at the start of the year?,395.0,395.0,True,json,False,True,[],,,mmboe,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 395.0,
+  ""unit"": ""mmboe""
+}
+
+To answer the question, I identified the relevant values from the table:
+
+* The value at the start of the year is listed in row 1 of the table: 395 mmboe.
+
+I then determined the required calculation: none, as the value is already provided.
+
+I computed the result: 395.0 mmboe.
+
+Finally, I returned the final answer: 395.0.",1391,128,1519,6.135001200003899,1,False,True
+E1_multistep,19,"and what was the total of benefits obligations in 2018, also in millions?",31.0,25.0,False,json,False,True,[],,,millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 25.0,
+  ""unit"": ""millions""
+}
+
+To answer the question, we need to identify the relevant values. The question asks for the total of benefits obligations in 2018, in millions.
+
+From the provided text, we can find the value of benefits obligations in 2018:
+
+* In the table, the value of benefits obligations in 2018 is $25 million.
+
+Therefore, the answer is $25 million.",1329,122,1451,5.988050900006783,1,False,False
+E1_multistep,20,"how much, then, does that change represent in relation to this 2005 rental income, in percentage?",0.40678,40.68,False,json,False,True,"[""2005 rental income"", ""2006 rental income"", ""change in rental income""]",percentage,"To find the percentage change in rental income from 2005 to 2006, we need to calculate the percentage change from the 2005 rental income to the 2006 rental income.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [""2005 rental income"", ""2006 rental income"", ""change in rental income""],
+  ""operation"": ""percentage"",
+  ""reasoning_summary"": ""To find the percentage change in rental income from 2005 to 2006, we need to calculate the percentage change from the 2005 rental income to the 2006 rental income."",
+  ""answer"": 40.68,
+  ""unit"": ""%""
+}
+
+Calculation:
+
+1. Identify the relevant values:
+	* 2005 rental income: $59.0
+	* 2006 rental income: $83.0
+	* Change in rental income: $24.0
+2. Identify what the question is asking:
+	* What is the percentage change in rental income from 2005 to 2006?
+3. Determine the required calculation:
+	* (Change in rental income / 2005 rental income) * 100
+4. Compute the result:
+	* ($24.0 / $59.0) * 100 = 40.68%
+
+Note: The answer is rounded to two decimal places.",1210,241,1451,8.712056100004702,1,True,True
+E1_multistep,21,"and what is, in millions, the average tax benefit between those three years?",26.0,24.0,False,json,False,True,[],,,millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 24.0,
+  ""unit"": ""millions""
+}
+
+To calculate the average tax benefit between 2012, 2013, and 2014, we need to add up the tax benefits for each year and then divide by 3.
+
+The tax benefits for each year are:
+- 2012: 14.0 million
+- 2013: 31.0 million
+- 2014: 33.0 million
+
+The total tax benefit is: 14.0 + 31.0 + 33.0 = 78.0 million
+
+The average tax benefit is: 78.0 / 3 = 26.0 million
+
+However, the question asks for the average tax benefit in millions, which is already the unit of measurement. Therefore, the answer is 26.0.",1547,203,1750,8.046128400004818,1,False,False
+E1_multistep,22,"what was the change in r&d expenses from the year of 2016 to 2017, in millions?",12.0,12,True,json_texto_limpo,False,True,"[""2016: $189 million"", ""2017: $201 million""]",Subtraction,"To find the change in R&D expenses from 2016 to 2017, we need to subtract the 2016 value from the 2017 value.",Millions,"{
+  ""evidence"": [
+    ""2016: $189 million"",
+    ""2017: $201 million""
+  ],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the change in R&D expenses from 2016 to 2017, we need to subtract the 2016 value from the 2017 value."",
+  ""answer"": ""12 million"",
+  ""unit"": ""Millions""
+}
+
+Note: The change in R&D expenses is calculated by subtracting the 2016 value ($189 million) from the 2017 value ($201 million), which gives us $12 million.",1228,132,1360,6.194730000002892,1,False,True
+E1_multistep,23,what was the net change in revenues from 2003 to 2004?,-20.3,20.3,False,json,False,True,[],Subtraction,"The question asks for the net change in revenues from 2003 to 2004. The relevant values are the net revenues for 2003 and 2004, which are $998.7 and $978.4, respectively. The required calculation is the difference between the two values.",Millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question asks for the net change in revenues from 2003 to 2004. The relevant values are the net revenues for 2003 and 2004, which are $998.7 and $978.4, respectively. The required calculation is the difference between the two values."",
+  ""answer"": 20.3,
+  ""unit"": ""Millions""
+}
+
+Calculation:
+
+2004 net revenue - 2003 net revenue = $978.4 - $998.7 = -$20.3 million
+
+The net change in revenues from 2003 to 2004 is a decrease of $20.3 million.",847,161,1008,6.576632100011921,1,False,False
+E1_multistep,24,and the percentage change of this value?,0.97734,-34.5,False,fallback_apos_answer,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [""Table 2"", ""2002"", ""2001""],
+  ""operation"": ""difference"",
+  ""reasoning_summary"": ""The question is asking for the difference in the fair value of the securities held in decommissioning trust funds and the amounts deposited plus the earnings on the deposits from 2001 to 2002 for Entergy Arkansas."",
+  ""answer"": 35.3 - 69.8 = -34.5,
+  ""unit"": ""Millions""
+}
+
+Note: The question is asking for the difference in the fair value of the securities held in decommissioning trust funds and the amounts deposited plus the earnings on the deposits from 2001 to 2002 for Entergy Arkansas. The answer is -34.5, which is the difference between the two values.",1069,177,1246,7.1007955000095535,1,True,False
+E1_multistep,25,what was the ccg operating income in 2016?,10646.0,10646,True,json,False,True,"[{""value"": 10646, ""description"": ""2016 CCG operating income""}]",return the value,"The question asks for the CCG operating income in 2016, which is provided in the table.",in millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {""value"": 10646, ""description"": ""2016 CCG operating income""}
+  ],
+  ""operation"": ""return the value"",
+  ""reasoning_summary"": ""The question asks for the CCG operating income in 2016, which is provided in the table."",
+  ""answer"": 10646,
+  ""unit"": ""in millions""
+}
+
+Note: The answer is simply the value provided in the table for 2016 CCG operating income, which is $10,646 million.",1101,120,1221,5.870672299992293,1,False,True
+E1_multistep,26,and what was the change in value of that stock considering the original amount invested in it in 2008?,227.11,None,False,json_sem_answer,True,True,"[{""value"": 78.53, ""label"": ""discb"", ""year"": ""2008""}, {""value"": 327.11, ""label"": ""discb"", ""year"": ""2012""}]",calculate the percentage change,"The question is asking for the change in value of the stock considering the original amount invested in 2008. To calculate this, we need to find the percentage change from 2008 to 2012.",percentage,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {
+      ""value"": 78.53,
+      ""label"": ""discb"",
+      ""year"": ""2008""
+    },
+    {
+      ""value"": 327.11,
+      ""label"": ""discb"",
+      ""year"": ""2012""
+    }
+  ],
+  ""operation"": ""calculate the percentage change"",
+  ""reasoning_summary"": ""The question is asking for the change in value of the stock considering the original amount invested in 2008. To calculate this, we need to find the percentage change from 2008 to 2012."",
+  ""answer"": null,
+  ""unit"": ""percentage""
+}
+
+To calculate the answer, we need to find the percentage change from 2008 to 2012:
+
+1. Identify the relevant values:
+	* Original amount invested in 2008: $78.53
+	* Value of discb in 2012: $327.11
+2. Identify what the question is asking:
+	* Calculate the percentage change from 2008 to 2012
+3. Determine the required calculation:
+	* ((327.11 - 78.53) / 78.53) * 100
+4. Compute the result:
+	* ((248.58 / 78.53) * 100) = 316.67%
+5. Return the final answer:
+	* The value of discb increased by 316.67% from 2008 to 2012.",904,319,1223,10.277149799992912,1,False,False
+E1_multistep,27,what is the change in value of this investment?,67.45,67.45,True,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 205.2 - 137.75,
+  ""unit"": """"
+}
+
+To answer the question, I identified the relevant values as the investment values for 2005 and 2004. The question is asking for the change in value of the investment.
+
+I determined the required calculation as the difference between the investment value in 2005 and the investment value in 2004.
+
+I computed the result by subtracting the investment value in 2004 (137.75) from the investment value in 2005 (205.2), which gives 205.2 - 137.75 = 67.45.
+
+Therefore, the change in value of the investment is 67.45.",851,173,1024,6.841701099998318,1,False,True
+E1_multistep,28,what was the value of e*trade financial corp for year ended 12/07?,73.05,73.05,True,json,False,True,"[""TABLE""]",lookup,"The question is asking for the value of e*trade financial corp for the year ended 12/07. The relevant value can be found in the table provided, which shows the cumulative total return of e*trade financial corporation from December 31, 2002 to December 31, 2007.",total return,"Here is the answer to the question:
+
+{
+  ""evidence"": [""TABLE""],
+  ""operation"": ""lookup"",
+  ""reasoning_summary"": ""The question is asking for the value of e*trade financial corp for the year ended 12/07. The relevant value can be found in the table provided, which shows the cumulative total return of e*trade financial corporation from December 31, 2002 to December 31, 2007."",
+  ""answer"": 73.05,
+  ""unit"": ""total return""
+}
+
+The relevant value is the total return of e*trade financial corporation for the year ended 12/07, which is 73.05.",775,141,916,5.976179500008584,1,False,True
+E1_multistep,29,what was the difference in accrued trade and consumer promotion liability as of 5/28/06 and 5/29/05?,56.0,56,True,fallback_apos_answer,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 56 million,
+  ""unit"": ""million""
+}
+
+To answer the question, we need to identify the relevant values, which are the accrued trade and consumer promotion liability as of 5/28/06 and 5/29/05.
+
+The relevant values are:
+
+* As of 5/28/06: $339 million
+* As of 5/29/05: $283 million
+
+The question is asking for the difference between these two values.
+
+The required calculation is:
+
+$339 million (as of 5/28/06) - $283 million (as of 5/29/05) = 56 million
+
+Therefore, the answer is 56 million.",1593,173,1766,7.316347600004519,1,False,True
+E1_multistep,30,"what was the tax benefit realized from option exercises under all incentive plans in 2014, in millions?",33.0,33,True,json,False,True,[],,,million,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 33,
+  ""unit"": ""million""
+}
+
+To answer the question, I identified the relevant values as follows:
+
+* The tax benefit realized from option exercises under all incentive plans for 2014 was approximately $33 million.
+
+I then determined that the question is asking for the tax benefit realized from option exercises under all incentive plans in 2014, in millions.
+
+The required calculation is simply to extract the value of the tax benefit realized from option exercises under all incentive plans for 2014, which is $33 million.
+
+Finally, I computed the result as follows:
+
+* The answer is $33 million.
+* The unit is millions.",1409,161,1570,6.949822099995799,1,False,True
+E1_multistep,31,what is the percent change?,0.00689,0.6915,False,json,False,True,[],percent change,Calculate the percent change in operating lease value from 2020 to 2021,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percent change"",
+  ""reasoning_summary"": ""Calculate the percent change in operating lease value from 2020 to 2021"",
+  ""answer"": 0.6915,
+  ""unit"": ""%""
+}
+
+To calculate the percent change, I will use the values provided:
+
+2020: $1888
+2021: $1901
+
+Percent change = ((2021 value - 2020 value) / 2020 value) * 100
+= ((1901 - 1888) / 1888) * 100
+= 13 / 1888 * 100
+= 0.6915%
+
+So, the operating lease value for 2021 is 0.6915% higher than the value for 2020.",1221,177,1398,7.167667600006098,1,True,True
+E1_multistep,32,and how much does that change represent in relation to this total?,0.13874,101.0,False,json,False,True,[],,,mmboe,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 101.0,
+  ""unit"": ""mmboe""
+}
+
+The question is asking how much the change in total undeveloped reserves represents in relation to the total. The total undeveloped reserves at the end of 2014 is 728 mmboe, and the change throughout the year is 101 mmboe. Therefore, the change represents 101 mmboe out of a total of 728 mmboe, or approximately 14% of the total.",1545,131,1676,6.290219200003776,1,True,False
+E1_multistep,33,and what was it in 2009?,526.0,526,True,json,False,True,"[""as of december 31 2009""]",Retrieve value from table,The question is asking for the total number of asbestos cases in 2009.,Number of cases,"Here is the answer to the question:
+
+{
+  ""evidence"": [""as of december 31 2009""],
+  ""operation"": ""Retrieve value from table"",
+  ""reasoning_summary"": ""The question is asking for the total number of asbestos cases in 2009."",
+  ""answer"": 526,
+  ""unit"": ""Number of cases""
+}
+
+Note: The answer is based on the value provided in the table, which is 526 as of December 31, 2009.",1189,103,1292,5.436795600006008,1,False,True
+E1_multistep,34,and what was that dividend yield in 2017?,3.573,3.573,True,fallback_apos_answer,False,False,,,,,"Here is the answer to the question:
+
+QUESTION: and what was that dividend yield in 2017?
+
+EVIDENCE: []
+
+OPERATION: Get the dividend yield from the table
+
+REASONING SUMMARY: The dividend yield is mentioned in the table as a key assumption used in the valuation calculations for market-based awards. We need to find the dividend yield for 2017.
+
+CALCULATION:
+
+1. Identify the relevant values: Look for the dividend yield value in the table for 2017.
+2. Identify what the question is asking: We need to find the dividend yield for 2017.
+3. Determine the required calculation: None needed, just find the value.
+4. Compute the result: The dividend yield for 2017 is 3.573% (according to the table).
+
+ANSWER: 3.573%
+
+UNIT: %",1534,174,1708,7.309761600001366,1,False,True
+E1_multistep,35,what is long term debt in 2012?,29.0,29.0,True,json,False,True,[],,,million,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 29.0,
+  ""unit"": ""million""
+}
+
+The question is asking what the long-term debt is in 2012. The relevant value is the ""2012"" column in the table, which is $29 million.",1469,80,1549,5.073912800013204,1,False,True
+E1_multistep,36,"in that same period, what was the change in the total of current liabilities?",-42.8,117.0,False,json,False,True,[],,,million,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 117.0,
+  ""unit"": ""million""
+}
+
+To answer the question, I followed the stages:
+
+1. Identify the relevant values: The relevant values are the total current liabilities for 2006 and 2007, which are $682.0 million and $639.2 million, respectively.
+
+2. Identify what the question is asking: The question is asking for the change in the total of current liabilities from 2006 to 2007.
+
+3. Determine the required calculation: The required calculation is the difference between the total current liabilities for 2007 and 2006.
+
+4. Compute the result: The result is the change in the total of current liabilities, which is $42.8 million ($639.2 million - $682.0 million).
+
+5. Return the final answer: The final answer is $42.8 million, which is the change in the total of current liabilities from 2006 to 2007.",1410,226,1636,8.510790200001793,1,False,False
+E1_multistep,37,how many years are between 2023 and 2008?,15.0,15,True,json,False,True,[],Subtraction,"The question is asking how many years are between 2023 and 2008. The relevant value is the year 2023, which is mentioned in the text as the year in which an intangible asset will be amortized.",years,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking how many years are between 2023 and 2008. The relevant value is the year 2023, which is mentioned in the text as the year in which an intangible asset will be amortized."",
+  ""answer"": 15,
+  ""unit"": ""years""
+}
+
+Calculation:
+
+2023 - 2008 = 15 years",1306,106,1412,5.652926499999012,1,False,True
+E1_multistep,38,what is the sum of cash provided by operating activities and used by investing activities in 2008?,1184.0,1378,False,json,False,True,"[""operating activities"", ""investing activities""]",sum,The question is asking for the sum of cash provided by operating activities and used by investing activities in 2008.,million,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    ""operating activities"",
+    ""investing activities""
+  ],
+  ""operation"": ""sum"",
+  ""reasoning_summary"": ""The question is asking for the sum of cash provided by operating activities and used by investing activities in 2008."",
+  ""answer"": 1378,
+  ""unit"": ""million""
+}
+
+To arrive at the answer, I identified the relevant values from the table in the text:
+
+* Cash provided by operating activities in 2008: $1762 million
+* Cash used by investing activities in 2008: $578 million
+
+I then performed the required calculation, which is the sum of these two values:
+
+$1762 million + ($578 million) = $1378 million",1177,162,1339,6.798286799996276,1,False,False
+E1_multistep,39,what was the variation in the value of the fidelity national information services inc . from 2007 to 2012?,57.38,87.3,False,json,False,True,"[{""value"": 100.0, ""year"": 2007}, {""value"": 70.08, ""year"": 2008}, {""value"": 101.93, ""year"": 2009}, {""value"": 120.01, ""year"": 2010}, {""value"": 117.34, ""year"": 2011}, {""value"": 157.38, ""year"": 2012}]",calculate variation,Calculate the variation in the value of Fidelity National Information Services Inc. from 2007 to 2012 by subtracting the 2007 value from each subsequent year's value.,,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {""value"": 100.00, ""year"": 2007},
+    {""value"": 70.08, ""year"": 2008},
+    {""value"": 101.93, ""year"": 2009},
+    {""value"": 120.01, ""year"": 2010},
+    {""value"": 117.34, ""year"": 2011},
+    {""value"": 157.38, ""year"": 2012}
+  ],
+  ""operation"": ""calculate variation"",
+  ""reasoning_summary"": ""Calculate the variation in the value of Fidelity National Information Services Inc. from 2007 to 2012 by subtracting the 2007 value from each subsequent year's value."",
+  ""answer"": 87.30,
+  ""unit"": """"
+}
+
+To calculate the variation, subtract the 2007 value (100.00) from each subsequent year's value:
+
+* 2008: 70.08 - 100.00 = -29.92
+* 2009: 101.93 - 100.00 = 1.93
+* 2010: 120.01 - 100.00 = 20.01
+* 2011: 117.34 - 100.00 = 17.34
+* 2012: 157.38 - 100.00 = 57.38
+
+The variation in the value of Fidelity National Information Services Inc. from 2007 to 2012 is the sum of these differences: -29.92 + 1.93 + 20.01 + 17.34 + 57.38 = 87.30.",717,362,1079,11.10851299999922,1,False,False
+E1_multistep,40,what is the total value of proceeds from the issuance of employee options during february 2004?,11556103.23,1032717,False,json,False,True,[],,,options,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 1032717,
+  ""unit"": ""options""
+}
+
+To answer the question, I identified the relevant values:
+
+* The question asks for the total value of proceeds from the issuance of employee options during February 2004.
+* The relevant value is the number of options issued during February 2004, which is 1032717.
+
+I then identified what the question is asking:
+
+* The question is asking for the total value of proceeds from the issuance of employee options during February 2004.
+
+I determined the required calculation:
+
+* Since the question is asking for the total value of proceeds, and the only relevant value provided is the number of options issued, the calculation is simply the number of options issued.
+
+I computed the result:
+
+* The result is 1032717 options.
+
+Finally, I returned the final answer:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 1032717,
+  ""unit"": ""options""
+}",1532,234,1766,8.768399599997792,1,False,False
+E1_multistep,41,what was the difference in the price of apple inc. between 9/30/12 and 9/30/07?,337.0,337,True,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking for the difference in the price of Apple Inc. between 9/30/12 and 9/30/07. To find this difference, we need to subtract the price on 9/30/07 from the price on 9/30/12."",
+  ""answer"": $437 - $100 = $337,
+  ""unit"": ""USD""
+}
+
+Note: The answer is calculated by subtracting the price on 9/30/07 ($100) from the price on 9/30/12 ($437), which gives us the difference of $337.",827,153,980,6.327579600008903,1,False,True
+E1_multistep,42,"what is the balance in the warranty reserves as of december 31, 2009?",604.0,604.0,True,json,False,True,"[""Table: Changes in the warranty reserve""]",Retrieve the value from the table,"The question is asking for the balance in the warranty reserves as of December 31, 2009. The answer can be found in the table provided.",thousands,"Here is the answer to the question:
+
+{
+  ""evidence"": [""Table: Changes in the warranty reserve""],
+  ""operation"": ""Retrieve the value from the table"",
+  ""reasoning_summary"": ""The question is asking for the balance in the warranty reserves as of December 31, 2009. The answer can be found in the table provided."",
+  ""answer"": ""$604"",
+  ""unit"": ""thousands""
+}
+
+The answer can be found in the table, specifically in the row labeled ""7. Balance as of December 31, 2009"", which shows a balance of $604 in the warranty reserve as of December 31, 2009.",1074,139,1213,6.200627400001395,1,False,True
+E1_multistep,43,"what is the ratio of the value of freight revenue from the automotive group, 2012 to 2011?",1.19669,1.1967,True,json,False,True,[],division,"To find the ratio of the value of freight revenue from the automotive group in 2012 to 2011, we need to divide the value of freight revenue from the automotive group in 2012 by the value of freight revenue from the automotive group in 2011.",,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""division"",
+  ""reasoning_summary"": ""To find the ratio of the value of freight revenue from the automotive group in 2012 to 2011, we need to divide the value of freight revenue from the automotive group in 2012 by the value of freight revenue from the automotive group in 2011."",
+  ""answer"": 1.1967,
+  ""unit"": """"
+}
+
+Here's the step-by-step calculation:
+
+1. Identify the relevant values:
+	* Freight revenue from the automotive group in 2012: $1807 million
+	* Freight revenue from the automotive group in 2011: $1510 million
+2. Identify what the question is asking:
+	* What is the ratio of the value of freight revenue from the automotive group in 2012 to 2011?
+3. Determine the required calculation:
+	* Divide the value of freight revenue from the automotive group in 2012 by the value of freight revenue from the automotive group in 2011
+4. Compute the result:
+	* $1807 million (2012) ÷ $1510 million (2011) = 1.1967
+5. Return the final answer:
+	* The ratio of the value of freight revenue from the automotive group in 2012 to 2011 is 1.1967.",1321,293,1614,9.975563700005296,1,True,True
+E1_multistep,44,what was the change in net revenue from 2006 to 2007?,20.8,20.8,True,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the change in net revenue from 2006 to 2007, we need to subtract the 2006 net revenue from the 2007 net revenue."",
+  ""answer"": 486.9 - 466.1 = 20.8,
+  ""unit"": ""Millions""
+}
+
+The change in net revenue from 2006 to 2007 is $20.8 million.",948,113,1061,5.614865199997439,1,False,True
+E1_multistep,45,what is the percent of shares not related to post-merger services?,0.15116,None,False,json_sem_answer,True,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": null,
+  ""unit"": """"
+}
+
+QUESTION:
+what is the percent of shares not related to post-merger services?
+
+TEXT:
+during the year ended december 31 , 2011 , we granted 354660 performance share units having a fair value based on our grant date closing stock price of $ 28.79 . these units are payable in stock and are subject to certain financial performance criteria . the fair value of these performance share unit awards is based on the grant date closing stock price of each respective award grant and will apply to the number of units ultimately awarded . the number of shares ultimately issued for each award will be based on our financial performance as compared to peer group companies over the performance period and can range from zero to 200% ( 200 % ) . as of december 31 , 2011 , estimated share payouts for outstanding non-vested performance share unit awards ranged from 150% ( 150 % ) to 195% ( 195 % ) . for the legacy frontier performance share units assumed at july 1 , 2011 , performance is based on market performance criteria , which is calculated as the total shareholder return achieved by hollyfrontier stockholders compared with the average shareholder return achieved by an equally-weighted peer group of independent refining companies over a three-year period . these share unit awards are payable in stock based on share price performance relative to the defined peer group and can range from zero to 125% ( 125 % ) of the initial target award . these performance share units were valued at july 1 , 2011 using a monte carlo valuation model , which simulates future stock price movements using key inputs including grant date and measurement date stock prices , expected stock price performance , expected rate of return and volatility of our stock price relative to the peer group over the three-year performance period . the fair value of these performance share units at july 1 , 2011 was $ 8.6 million . of this amount , $ 7.3 million relates to post-merger services and will be recognized ratably over the remaining service period through 2013 . a summary of performance share unit activity and changes during the year ended december 31 , 2011 is presented below: . <table class='wikitable'><tr><td>1</td><td>performance share units</td><td>grants</td></tr><tr><td>2</td><td>outstanding at january 1 2011 ( non-vested )</td><td>556186</td></tr><tr><td>3</td><td>granted ( 1 )</td><td>354660</td></tr><tr><td>4</td><td>vesting and transfer of ownership to recipients</td><td>-136058 ( 136058 )</td></tr><tr><td>5</td><td>outstanding at december 31 2011 ( non-vested )</td><td>774788</td></tr></table> ( 1 ) includes 225116 non-vested performance share grants under the legacy frontier plan that were outstanding and retained by hollyfrontier at july 1 , 2011 . for the year ended december 31 , 2011 we issued 178148 shares of our common stock having a fair value of $ 2.6 million related to vested performance share units . based on the weighted average grant date fair value of $ 20.71 there was $ 11.7 million of total unrecognized compensation cost related to non-vested performance share units . that cost is expected to be recognized over a weighted-average period of 1.1 years . note 7 : cash and cash equivalents and investments in marketable securities our investment portfolio at december 31 , 2011 consisted of cash , cash equivalents and investments in debt securities primarily issued by government and municipal entities . we also hold 1000000 shares of connacher oil and gas limited common stock that was received as partial consideration upon the sale of our montana refinery in we invest in highly-rated marketable debt securities , primarily issued by government and municipal entities that have maturities at the date of purchase of greater than three months . we also invest in other marketable debt securities with the maximum maturity or put date of any individual issue generally not greater than two years from the date of purchase . all of these instruments , including investments in equity securities , are classified as available- for-sale . as a result , they are reported at fair value using quoted market prices . interest income is recorded as earned . unrealized gains and losses , net of related income taxes , are reported as a component of accumulated other comprehensive income . upon sale , realized gains and losses on the sale of marketable securities are computed based on the specific identification of the underlying cost of the securities sold and the unrealized gains and losses previously reported in other comprehensive income are reclassified to current earnings. .
+
+TABLE:
+(not provided separately -- any table is included in the TEXT block)
+
+HISTORY:
+Question: what was the difference in the value of performance shares less shares not related to post merger services?
+Answer: 1.3",1202,1098,2300,29.251201399994898,1,True,False
+E1_multistep,46,so what was the percentage change during this time?,1.78431,90.1,False,json,False,True,[],percentage change,"To find the percentage change, we need to calculate the difference between the two years and then divide by the original value, multiplying by 100.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage change"",
+  ""reasoning_summary"": ""To find the percentage change, we need to calculate the difference between the two years and then divide by the original value, multiplying by 100."",
+  ""answer"": 90.1,
+  ""unit"": ""%""
+}
+
+Here's the step-by-step calculation:
+
+1. Identify the relevant values: Total operating expenses for 2008 and 2009 are $510 million and $1420 million, respectively.
+2. Identify what the question is asking: The question is asking for the percentage change in total operating expenses between 2008 and 2009.
+3. Determine the required calculation: To find the percentage change, we need to calculate the difference between the two years and then divide by the original value, multiplying by 100.
+4. Compute the result: The difference between the two years is $910 million ($1420 - $510). To find the percentage change, we divide this difference by the original value ($510) and multiply by 100: ($910 / $510) * 100 = 90.1%.
+5. Return the final answer: The percentage change in total operating expenses between 2008 and 2009 is 90.1%.",1186,269,1455,9.4868240999931,1,True,False
+E1_multistep,47,what is that value less 1?,0.044,1127587.0,False,json,False,True,[],Subtraction,"The question is asking for the value less 1, which is equivalent to subtracting 1 from the given value.",,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking for the value less 1, which is equivalent to subtracting 1 from the given value."",
+  ""answer"": null,
+  ""unit"": """"
+}
+
+To answer the question, I will identify the relevant values, determine what the question is asking, and perform the required calculation.
+
+1. Identify the relevant values: The relevant value is the value mentioned in the question, which is not specified. However, based on the provided context, I will assume that the value is the balance as of December 31, 2011, which is $1127588.
+
+2. Identify what the question is asking: The question is asking for the value less 1, which is equivalent to subtracting 1 from the given value.
+
+3. Determine the required calculation: The required calculation is subtraction.
+
+4. Compute the result: The result of subtracting 1 from the given value is:
+
+$1127588 - 1 = $1127587
+
+5. Return the final answer:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking for the value less 1, which is equivalent to subtracting 1 from the given value."",
+  ""answer"": 1127587.0,
+  ""unit"": """"
+}",1052,297,1349,9.97790639998857,1,False,False
+E1_multistep,48,and what was that for the decrease in interest rates?,82.5,-91.3,False,json,False,True,"[""item 7a . quantitative and qualitative disclosures about market risk ( amounts in millions )""]",Identify the relevant values.,The question is asking about the impact of a 10% ( 10 % ) increase in interest rates on the fair market value.,millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [""item 7a . quantitative and qualitative disclosures about market risk ( amounts in millions )""],
+  ""operation"": ""Identify the relevant values."",
+  ""reasoning_summary"": ""The question is asking about the impact of a 10% ( 10 % ) increase in interest rates on the fair market value."",
+  ""answer"": -91.3,
+  ""unit"": ""millions""
+}
+
+The relevant values are the numbers provided in the table:
+
+| As of December 31, | Increase/ (Decrease) in Fair Market Value | 10% Increase in Interest Rates | 10% Decrease in Interest Rates |
+| --- | --- | --- | --- |
+| 2018 | -91.3 | 82.5 |  |
+| 2017 | -20.2 | 20.6 |  |
+
+The question is asking about the impact of a 10% ( 10 % ) increase in interest rates on the fair market value. The required calculation is to identify the value corresponding to the 10% increase in interest rates in the 2018 row. The answer is -91.3.",1230,247,1477,8.8496337000106,1,False,False
+E1_multistep,49,and what was it in 2007?,28.37,28.37,True,json,False,True,[],,,billion,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 28.37,
+  ""unit"": ""billion""
+}
+
+To answer the question, I identified the relevant values from the provided text:
+
+* The total conduit assets in 2007 are mentioned as $28.37 billion.
+
+I then determined the required calculation, which is simply to retrieve the value mentioned in the text.
+
+Finally, I computed the result, which is the total conduit assets in 2007, which is $28.37 billion.",1535,124,1659,6.234415099999751,1,False,True
+E1_multistep,50,what was the difference in operating profit between 2011 and 2012?,92.0,92,True,json,False,True,[],Subtraction,Calculate the difference in operating profit between 2011 and 2012 by subtracting the operating profit in 2011 from the operating profit in 2012.,Million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""Calculate the difference in operating profit between 2011 and 2012 by subtracting the operating profit in 2011 from the operating profit in 2012."",
+  ""answer"": 92,
+  ""unit"": ""Million""
+}
+
+To calculate the answer, I identified the relevant values: operating profit in 2011 ($645 million) and operating profit in 2012 ($737 million). The question is asking for the difference between these two values, which is calculated by subtracting the 2011 value from the 2012 value.
+
+The required calculation is a simple subtraction:
+
+$737 million (2012) - $645 million (2011) = $92 million
+
+The final answer is $92 million.",1359,181,1540,7.436255599997821,1,False,True
+E1_multistep,51,what was the change in value of the wti crude oil benchmark from 2009 to 2011?,33.02,33.02,True,json,False,True,"[{""value"": 95.11, ""year"": 2011, ""benchmark"": ""WTI crude oil""}, {""value"": 62.09, ""year"": 2009, ""benchmark"": ""WTI crude oil""}]",Subtraction,"The question is asking for the change in value of the WTI crude oil benchmark from 2009 to 2011. To calculate this, we need to subtract the 2009 value from the 2011 value.",USD per bbl,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    {
+      ""value"": 95.11,
+      ""year"": 2011,
+      ""benchmark"": ""WTI crude oil""
+    },
+    {
+      ""value"": 62.09,
+      ""year"": 2009,
+      ""benchmark"": ""WTI crude oil""
+    }
+  ],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking for the change in value of the WTI crude oil benchmark from 2009 to 2011. To calculate this, we need to subtract the 2009 value from the 2011 value."",
+  ""answer"": 33.02,
+  ""unit"": ""USD per bbl""
+}
+
+Calculation:
+
+2011 WTI crude oil price - 2009 WTI crude oil price = 33.02
+
+Note: The calculation is based on the values provided in the table, which shows the annual averages for WTI crude oil prices in 2011, 2010, and 2009.",1421,227,1648,8.622384400005103,1,False,True
+E1_multistep,52,what about the total including 2007?,102964.0,26996,False,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [""Note 13""],
+  ""operation"": ""Find the total contribution expense related to all of its defined contribution plans in 2007""],
+  ""reasoning_summary"": ""The question asks for the total contribution expense related to all of its defined contribution plans in 2007. This information can be found in Note 13."",
+  ""answer"": 26996,
+  ""unit"": ""thousands""
+}
+
+The relevant value is the total contribution expense related to all of its defined contribution plans in 2007, which is $26996.",819,125,944,5.731070000008913,1,False,False
+E1_multistep,53,what is the total of letters of credit outstanding for 2006 and 2007?,93.4,93.4,True,json,False,True,"[""page 59 of 94 notes to consolidated financial statements ball corporation and subsidiaries 13 . debt and interest costs ( continued )""]",computation,"The question asks for the total of letters of credit outstanding for 2006 and 2007. The relevant values are the letters of credit outstanding at December 31, 2007 and 2006, which are $41 million and $52.4 million, respectively.",million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [""page 59 of 94 notes to consolidated financial statements ball corporation and subsidiaries 13 . debt and interest costs ( continued )""],
+  ""operation"": ""computation"",
+  ""reasoning_summary"": ""The question asks for the total of letters of credit outstanding for 2006 and 2007. The relevant values are the letters of credit outstanding at December 31, 2007 and 2006, which are $41 million and $52.4 million, respectively."",
+  ""answer"": 93.4,
+  ""unit"": ""million""
+}
+
+Note: The answer is the sum of the letters of credit outstanding for 2006 and 2007, which is $41 million + $52.4 million = $93.4 million.",1213,173,1386,7.1322435999900335,1,False,True
+E1_multistep,54,what is the change in value of intrinsic value from 2016 to 2018?,-9.0,-9,True,json,False,True,"[{""year"": 2016, ""intrinsic_value"": 18}, {""year"": 2017, ""intrinsic_value"": 10}, {""year"": 2018, ""intrinsic_value"": 9}]",Subtraction,"To find the change in value of intrinsic value from 2016 to 2018, we need to subtract the intrinsic value in 2018 from the intrinsic value in 2016.",USD,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {""year"": 2016, ""intrinsic_value"": 18},
+    {""year"": 2017, ""intrinsic_value"": 10},
+    {""year"": 2018, ""intrinsic_value"": 9}
+  ],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the change in value of intrinsic value from 2016 to 2018, we need to subtract the intrinsic value in 2018 from the intrinsic value in 2016."",
+  ""answer"": -9,
+  ""unit"": ""USD""
+}
+
+The calculation is:
+
+2016 intrinsic value - 2018 intrinsic value = -9
+
+The change in value of intrinsic value from 2016 to 2018 is a decrease of $9.",448,174,622,6.638894500007154,1,False,True
+E1_multistep,55,what is the average balance for these years?,8.5,7.0,False,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 7.0,
+  ""unit"": """"
+}
+
+To calculate the average balance for these years, we need to find the average of the net total long-term debt for 2013 and 2014.
+
+From the text, we can find the net total long-term debt for 2013 and 2014:
+
+2013: $6152
+2014: $6169
+
+To find the average, we add the two values and divide by 2:
+
+($6152 + $6169) / 2 = $6160.5
+
+So, the average balance for these years is $6160.5.",1466,159,1625,6.9704146000003675,1,False,False
+E1_multistep,56,what was the net change in value?,-963.0,-962.0,True,json,False,True,[],net change,Calculate the difference between the value of nonvested RSUs at the end of 2013 and the value at the start.,thousands,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""net change"",
+  ""reasoning_summary"": ""Calculate the difference between the value of nonvested RSUs at the end of 2013 and the value at the start."",
+  ""answer"": -962.0,
+  ""unit"": ""thousands""
+}
+
+Calculation:
+
+-962.0 = 3859.0 - 4822.0",1436,94,1530,5.338530400011223,1,False,True
+E1_multistep,57,what return rate does this represent?,1.8581,85.81,False,json,False,True,[],return rate calculation,"The return rate is calculated by dividing the increase in value of the investment by the initial investment, and then multiplying by 100.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""return rate calculation"",
+  ""reasoning_summary"": ""The return rate is calculated by dividing the increase in value of the investment by the initial investment, and then multiplying by 100."",
+  ""answer"": 85.81,
+  ""unit"": ""%""
+}
+
+Here's the step-by-step calculation:
+
+1. Identify the relevant values:
+	* Initial investment: $100
+	* Increase in value from 2011 to 2013: $285.81 - $100.00 = $185.81
+2. Identify what the question is asking:
+	* What is the return rate represented by the increase in value from 2011 to 2013?
+3. Determine the required calculation:
+	* Return rate = (Increase in value / Initial investment) * 100
+4. Compute the result:
+	* Return rate = ($185.81 / $100) * 100 = 85.81%
+5. Return the final answer:
+	* The return rate represented by the increase in value from 2011 to 2013 is 85.81%.",918,241,1159,8.486944999996922,1,True,False
+E1_multistep,58,"and only from 2011 to 2012, what was the change in the company 2019s cash, cash equivalents and marketable securities held by foreign subsidiaries?",28.3,39581,False,json,False,True,"[{""value"": 121251, ""year"": 2012, ""type"": ""cash cash equivalents and marketable securities""}, {""value"": 81570, ""year"": 2011, ""type"": ""cash cash equivalents and marketable securities""}]",difference,"Calculate the difference in cash, cash equivalents and marketable securities held by foreign subsidiaries between 2011 and 2012.",million,"Here is the answer to the question:
+
+{
+  ""evidence"": [
+    {
+      ""value"": 121251,
+      ""year"": 2012,
+      ""type"": ""cash cash equivalents and marketable securities""
+    },
+    {
+      ""value"": 81570,
+      ""year"": 2011,
+      ""type"": ""cash cash equivalents and marketable securities""
+    }
+  ],
+  ""operation"": ""difference"",
+  ""reasoning_summary"": ""Calculate the difference in cash, cash equivalents and marketable securities held by foreign subsidiaries between 2011 and 2012."",
+  ""answer"": 39581,
+  ""unit"": ""million""
+}
+
+Explanation:
+
+1. Identify the relevant values: The relevant values are the cash, cash equivalents and marketable securities held by foreign subsidiaries in 2011 and 2012.
+2. Identify what the question is asking: The question is asking for the change in the company's cash, cash equivalents and marketable securities held by foreign subsidiaries between 2011 and 2012.
+3. Determine the required calculation: The required calculation is to subtract the 2011 value from the 2012 value.
+4. Compute the result: The result is the difference between the 2012 value ($121251) and the 2011 value ($81570), which is $39581.
+
+Note: The answer is in millions, as indicated by the unit ""million"".",1309,293,1602,10.075241800004733,1,False,False
+E1_multistep,59,how many shares were repurchased during 2017?,3.4,1.8,False,fallback_apos_answer,False,False,,,,,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    ""Note 20. Stockholders 2019 Equity Capitalization""
+  ],
+  ""operation"": ""Retrieve the number of shares repurchased in 2017"",
+  ""reasoning_summary"": ""The question is asking for the number of shares repurchased during 2017. The relevant information can be found in Note 20. Stockholders 2019 Equity Capitalization."",
+  ""answer"": 1.8 million,
+  ""unit"": ""shares""
+}
+
+The answer is 1.8 million shares, which is the number of shares repurchased by the company in fiscal 2017, as stated in Note 20.",2292,148,2440,7.327057700007572,1,False,False
+E1_multistep,60,what is the percent change times 100?,1.47092,1.47,True,json,False,True,[],percent change times 100,"Calculate the percent change in the CMG balance from 2007 to 2009, then multiply by 100.",%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percent change times 100"",
+  ""reasoning_summary"": ""Calculate the percent change in the CMG balance from 2007 to 2009, then multiply by 100."",
+  ""answer"": 1.47,
+  ""unit"": ""%""
+}
+
+To calculate the percent change, first find the change in the CMG balance:
+
+2009 CMG balance: 435.4
+2007 CMG balance: 441.9
+
+Change: 435.4 - 441.9 = -6.5 (note: this is a negative change, indicating a decrease)
+
+Next, calculate the percent change:
+
+Percent change = (change / 2007 CMG balance) * 100
+= (-6.5 / 441.9) * 100
+= -1.47%
+
+Finally, multiply the percent change by 100:
+
+1.47% * 100 = 1.47",1378,208,1586,8.125791099999333,1,True,True
+E1_multistep,61,and what is this representation as a portion of the 2009 total?,0.97656,1.5625,False,json,False,True,[],portion,"The question is asking what the 2010 total represents as a portion of the 2009 total. To calculate this, we need to find the 2009 total and then divide the 2010 total by the 2009 total.",,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""portion"",
+  ""reasoning_summary"": ""The question is asking what the 2010 total represents as a portion of the 2009 total. To calculate this, we need to find the 2009 total and then divide the 2010 total by the 2009 total."",
+  ""answer"": 1.5625,
+  ""unit"": """"
+}
+
+Here's the step-by-step calculation:
+
+1. Identify the relevant values:
+	* 2010 total: $2.5 billion
+	* 2009 total: $1.6 billion
+2. Identify what the question is asking:
+	* What is the 2010 total as a portion of the 2009 total?
+3. Determine the required calculation:
+	* Divide the 2010 total by the 2009 total
+4. Compute the result:
+	* $2.5 billion (2010 total) ÷ $1.6 billion (2009 total) = 1.5625
+5. Return the final answer:
+	* The 2010 total represents 1.5625 times the 2009 total.",1129,250,1379,8.84757919999538,1,True,False
+E1_multistep,62,"and as of the last year of this period, what percentage of the aggregate borrowing capacity was set to expire in 2019?",0.32,0.0,False,json,False,True,[],,,%,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 0.0,
+  ""unit"": ""%""
+}
+
+To answer the question, we need to identify the relevant values, which are the aggregate borrowing capacity and the amount set to expire in 2019.
+
+From the text, we can see that Entergy Arkansas has a credit facility in the amount of $150 million scheduled to expire in August 2022. However, we are asked to find the percentage of the aggregate borrowing capacity that was set to expire in 2019.
+
+The text does not provide the aggregate borrowing capacity, but it does mention that Entergy Arkansas has a credit facility in the amount of $80 million scheduled to expire in May 2019, which is part of the nuclear fuel company variable interest entity credit facility.
+
+Since we do not have the aggregate borrowing capacity, we cannot calculate the percentage of the aggregate borrowing capacity that was set to expire in 2019. Therefore, the answer is 0.0.",1401,224,1625,8.48459439999715,1,True,True
+E1_multistep,63,what was the 2006 value?,100.0,241.0,False,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 241.0,
+  ""unit"": """"
+}
+
+Here's the step-by-step analysis:
+
+1. Identify the relevant values: The relevant values are the values in the table for Apple Inc. in the 2006 column, which is the first column.
+
+2. Identify what the question is asking: The question is asking for the value of Apple Inc. in 2006.
+
+3. Determine the required calculation: No calculation is required, as the question is asking for a specific value.
+
+4. Compute the result: The value of Apple Inc. in 2006 is $100, which is the value listed in the table for that year.
+
+Note: The answer is not explicitly stated in the table, but it can be inferred by looking at the first column, which corresponds to the year 2006.",837,196,1033,7.454782500004512,1,False,False
+E1_multistep,64,and how much was the total number of customers as a percentage of this total amount?,0.27052,None,False,json_sem_answer,True,True,[],percentage calculation,Calculates the percentage of the total estimated population served by the total number of customers.,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage calculation"",
+  ""reasoning_summary"": ""Calculates the percentage of the total estimated population served by the total number of customers."",
+  ""answer"": null,
+  ""unit"": ""%""
+}
+
+To answer the question, we need to identify the relevant values from the text. The relevant values are:
+
+* Total estimated population served: 11.9 million (as mentioned in the table)
+* Total number of customers: 3219192 (as mentioned in the table)
+
+Now, we can calculate the percentage:
+
+Percentage = (Total number of customers / Total estimated population served) * 100
+= (3219192 / 11900000) * 100
+= 27.0%
+
+So, the total number of customers as a percentage of the total estimated population served is 27.0%.",1698,185,1883,7.7370422999956645,1,True,False
+E1_multistep,65,so what was the percentage change during this time?,0.21795,8.0,False,json,False,True,[],,,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 8.0,
+  ""unit"": ""%""
+}
+
+To answer the question, I first identified the relevant values: the fee revenue in 2000 and 2001.
+
+Next, I identified what the question is asking: the percentage change in fee revenue between 2000 and 2001.
+
+Then, I determined the required calculation: (2001 fee revenue - 2000 fee revenue) / 2000 fee revenue * 100.
+
+Finally, I computed the result: (2832 - 2665) / 2665 * 100 = 8.0%.
+
+So, the answer is 8.0%.",1255,161,1416,6.8955582000053255,1,True,False
+E1_multistep,66,what is the net change?,95.6,95.6,True,json,False,True,[],,,,"Here is the answer to the question ""what is the net change?"" in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 95.6,
+  ""unit"": """"
+}
+
+To calculate the net change, we need to find the difference between the balance of goodwill for integrated agency networks at the end of 2009 and the balance at the end of 2008.
+
+The balance at the end of 2009 is $2885.6 (as calculated in the previous question).
+The balance at the end of 2008 is $2790.0 (as calculated in the previous question).
+
+The net change is the difference between these two values:
+
+$2885.6 - $2790.0 = 95.6
+
+Therefore, the net change is $95.6.",1364,177,1541,7.347547900004429,1,False,True
+E1_multistep,67,so what was the percentage change during this time?,0.28148,22.2,False,json,False,True,[],percentage change,Calculate the percentage change in inventory value from 2006 to 2007,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage change"",
+  ""reasoning_summary"": ""Calculate the percentage change in inventory value from 2006 to 2007"",
+  ""answer"": ""22.2%"",
+  ""unit"": ""%""
+}
+
+To calculate the percentage change, we need to identify the relevant values:
+
+* Inventory value as of 9/30/06: $270.0
+* Inventory value as of 9/29/07: $346.0
+
+The required calculation is:
+
+((346.0 - 270.0) / 270.0) * 100%
+
+Computing the result:
+
+((76.0 / 270.0) * 100%) = 22.2%
+
+So, the percentage change in inventory value from 2006 to 2007 is 22.2%.",1291,183,1474,7.468839500012109,1,True,False
+E1_multistep,68,what was the balance in 2005?,46.0,46.0,True,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 46.0,
+  ""unit"": """"
+}
+
+To answer the question, I followed the stages:
+
+1. Identify the relevant values:
+The relevant values are the beginning allowance balance for 2005, which is $47 million.
+
+2. Identify what the question is asking:
+The question is asking for the balance in the allowance for doubtful accounts in 2005.
+
+3. Determine the required calculation:
+No calculation is required, as the value is already provided in the table.
+
+4. Compute the result:
+The result is the beginning allowance balance for 2005, which is $47 million.
+
+5. Return the final answer:
+The final answer is $46.0.",826,168,994,6.6775091999879805,1,False,True
+E1_multistep,69,"in the year of 2018, what was the total net cash used?",2054.0,-2515.2,False,json,False,True,[],Subtraction,"To find the total net cash used in 2018, we need to subtract the net cash provided by operating activities from the total net cash used for financing activities.",Millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the total net cash used in 2018, we need to subtract the net cash provided by operating activities from the total net cash used for financing activities."",
+  ""answer"": ""-2515.2"",
+  ""unit"": ""Millions""
+}
+
+Calculation:
+
+1. Identify the relevant values:
+	* Net cash provided by operating activities: $2420.9 million
+	* Net cash used for financing activities: $755.1 million
+2. Identify what the question is asking:
+	* What was the total net cash used in 2018?
+3. Determine the required calculation:
+	* Subtract the net cash provided by operating activities from the total net cash used for financing activities
+4. Compute the result:
+	* $755.1 million (net cash used for financing activities) - $2420.9 million (net cash provided by operating activities) = -$2515.2 million
+5. Return the final answer:
+	* The total net cash used in 2018 was -$2515.2 million.",1404,244,1648,8.921442999999272,1,False,False
+E1_multistep,70,what was the value in 2013?,5.27,5.27,True,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 5.27,
+  ""unit"": """"
+}
+
+The question is asking for the value in 2013. The relevant value is the weighted-average estimated fair value of stock options granted during the year ended December 31, 2013, which is $5.27 per option.",1263,90,1353,5.270442500011995,1,False,True
+E1_multistep,71,and the percentage of the maturities that are part of the total maturities in 2008?,0.05768,0.0573,True,json,False,True,[],percentage,Calculate the percentage of total maturities that are part of the senior notes payable and other debt in 2008.,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percentage"",
+  ""reasoning_summary"": ""Calculate the percentage of total maturities that are part of the senior notes payable and other debt in 2008."",
+  ""answer"": 0.0573,
+  ""unit"": ""%""
+}
+
+Here's the step-by-step calculation:
+
+1. Identify the relevant values:
+	* Total maturities in 2008: $193,101 (from the table)
+	* Total senior notes payable and other debt: $336,0499 (from the table)
+2. Identify what the question is asking:
+	* Calculate the percentage of total maturities that are part of the senior notes payable and other debt in 2008
+3. Determine the required calculation:
+	* Percentage = (Senior notes payable and other debt in 2008 / Total maturities in 2008) * 100
+4. Compute the result:
+	* Percentage = ($193,101 / $336,0499) * 100 = 0.0573 * 100 = 5.73%
+5. Return the final answer:
+	* The percentage of total maturities that are part of the senior notes payable and other debt in 2008 is 5.73%.",1318,273,1591,9.482842400000663,1,True,True
+E1_multistep,72,"what was, then, the change over the year?",-1.9,7.4,False,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [""amortization expense from continuing operations, related to intangibles was $ 7.4 million, $ 9.3 million and $ 9.2 million in fiscal 2009, 2008 and 2007, respectively.""],
+  ""operation"": ""calculate the change over the year"",
+  ""reasoning_summary"": ""The question is asking for the change in amortization expense over the year. We can calculate this by subtracting the amortization expense in 2007 from the amortization expense in 2009."",
+  ""answer"": 1.9 million ($9.3 million - $7.4 million),
+  ""unit"": ""million""
+}
+
+Note: The calculation is based on the provided amortization expenses for 2009, 2008, and 2007. The change over the year is calculated by subtracting the amortization expense in 2007 from the amortization expense in 2009.",1055,209,1264,7.869462599992403,1,False,False
+E1_multistep,73,what is the sum of the total minimum lease payments for both operating and capital leases?,7807.0,7807,True,json,False,True,[],sum,"The question is asking for the sum of the total minimum lease payments for both operating and capital leases. The relevant values are the total minimum lease payments for operating leases ($5909) and capital leases ($1898) as of December 31, 2008. The required calculation is to add these two values together.",millions of dollars,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""sum"",
+  ""reasoning_summary"": ""The question is asking for the sum of the total minimum lease payments for both operating and capital leases. The relevant values are the total minimum lease payments for operating leases ($5909) and capital leases ($1898) as of December 31, 2008. The required calculation is to add these two values together."",
+  ""answer"": 7807,
+  ""unit"": ""millions of dollars""
+}
+
+The sum of the total minimum lease payments for both operating and capital leases is $7807 million.",1112,133,1245,6.16361250000773,1,False,True
+E1_multistep,74,what was the value of the dow jones u.s. technology supersector index in 2011?,100.0,130.0,False,json,False,True,"[""The Dow Jones U.S. Technology Supersector Index table in the provided text""]",Find the value of the Dow Jones U.S. Technology Supersector Index in 2011,"The table shows the cumulative total shareholder return for the Dow Jones U.S. Technology Supersector Index for the five years ended September 24, 2016. We need to find the value of the index in 2011.",,"Here is the answer to the question:
+
+{
+  ""evidence"": [""The Dow Jones U.S. Technology Supersector Index table in the provided text""],
+  ""operation"": ""Find the value of the Dow Jones U.S. Technology Supersector Index in 2011"",
+  ""reasoning_summary"": ""The table shows the cumulative total shareholder return for the Dow Jones U.S. Technology Supersector Index for the five years ended September 24, 2016. We need to find the value of the index in 2011."",
+  ""answer"": 130.0,
+  ""unit"": """"
+}
+
+To answer the question, we need to find the value of the Dow Jones U.S. Technology Supersector Index in 2011. According to the table, the value of the index in 2011 was $130.",800,169,969,6.802861699994537,1,False,False
+E1_multistep,75,what is the amount lost from the bond authorization to the withdrawn for brentwood tennessee store support center?,2.7,2.7,True,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the amount lost from the bond authorization to the withdrawn for Brentwood Tennessee store support center, we need to subtract the amount drawn from the amount authorized."",
+  ""answer"": $2.7 million,
+  ""unit"": ""Millions""
+}
+
+Calculation:
+
+1. Identify the relevant values:
+	* Amount authorized: $78.0 million
+	* Amount drawn: $75.3 million
+2. Identify what the question is asking:
+	* What is the amount lost from the bond authorization to the withdrawn for Brentwood Tennessee store support center?
+3. Determine the required calculation:
+	* Subtract the amount drawn from the amount authorized
+4. Compute the result:
+	* $78.0 million (authorized) - $75.3 million (drawn) = $2.7 million
+
+Note: The answer is the difference between the amount authorized and the amount drawn, which represents the amount lost.",1174,218,1392,8.176938299991889,1,False,True
+E1_multistep,76,what about percentage change?,28.57143,28.571,True,json,False,True,[],,,%,"Here is the answer to the question ""what about percentage change?"" in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": ""28.571%"",
+  ""unit"": ""%""
+}
+
+To calculate the percentage change, we need to find the difference in pretax pension expense from 2014 to 2015, which is $2 million ($9 million in 2015 - $7 million in 2014). Then, we can calculate the percentage change as follows:
+
+Percentage change = (Difference in pretax pension expense / Pretax pension expense in 2014) * 100
+= ($2 million / $7 million) * 100
+= 28.571%
+
+Therefore, the pretax pension expense increased by 28.571% from 2014 to 2015.",1487,178,1665,7.403185499992105,1,True,True
+E1_multistep,77,what was the value of outstanding commercial papers in 2007?,2.36,0.23,False,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 0.23,
+  ""unit"": """"
+}
+
+Here's the reasoning:
+
+1. Identify the relevant values:
+The relevant values are the outstanding commercial papers in 2007 and 2008, which are $2.36 billion and $2.59 billion, respectively.
+
+2. Identify what the question is asking:
+The question is asking for the change in value of commercial papers outstanding from 2007 to 2008.
+
+3. Determine the required calculation:
+The required calculation is the difference between the outstanding commercial papers in 2008 and 2007.
+
+4. Compute the result:
+The result is the difference between $2.59 billion and $2.36 billion, which is $0.23 billion.
+
+5. Return the final answer:
+The final answer is $0.23 billion.",1160,195,1355,7.632896199997049,1,False,False
+E1_multistep,78,and what was it in 2007?,40.0,40.0,True,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 40.0,
+  ""unit"": """"
+}
+
+To answer the question, I identified the relevant values from the provided text:
+
+* The table shows the reclassification of non-controlling interests for 2007 as $40 million.
+
+I then identified what the question is asking:
+
+* What was the reclassification of non-controlling interests in 2007?
+
+I determined the required calculation:
+
+* None, as the answer is simply the value provided in the table.
+
+I computed the result:
+
+* The reclassification of non-controlling interests in 2007 was $40 million.
+
+I returned the final answer:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 40.0,
+  ""unit"": """"
+}",1039,188,1227,7.445091000001412,1,False,True
+E1_multistep,79,what is the net change in operating leases from 2019 to 2020?,-190.0,190,False,json,False,True,"[{""value"": 2078, ""year"": 2019, ""type"": ""operating leases""}, {""value"": 1888, ""year"": 2020, ""type"": ""operating leases""}]",net change,Calculate the difference between the operating leases in 2020 and 2019.,thousands,"{
+  ""evidence"": [
+    {""value"": 2078, ""year"": 2019, ""type"": ""operating leases""},
+    {""value"": 1888, ""year"": 2020, ""type"": ""operating leases""}
+  ],
+  ""operation"": ""net change"",
+  ""reasoning_summary"": ""Calculate the difference between the operating leases in 2020 and 2019."",
+  ""answer"": 190,
+  ""unit"": ""thousands""
+}
+
+Explanation:
+1. Identify the relevant values: The relevant values are the operating leases for 2019 and 2020, which are $2078 and $1888, respectively.
+2. Identify what the question is asking: The question is asking for the net change in operating leases from 2019 to 2020.
+3. Determine the required calculation: The required calculation is to subtract the operating leases in 2019 from the operating leases in 2020.
+4. Compute the result: The result is $190, which is the difference between the operating leases in 2020 and 2019.
+5. Return the final answer: The final answer is $190,000.",1160,243,1403,8.666802600011579,1,False,False
+E1_multistep,80,and what is the percentage this change represents of those losses in 2005?,0.70705,133.9,False,json,False,True,[],,,%,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 133.9,
+  ""unit"": ""%""
+}
+
+To answer the question, we need to identify the relevant values. The question is asking for the percentage change in accumulated other comprehensive earnings (loss) from 2005 to 2006.
+
+The relevant values are:
+
+* The accumulated other comprehensive earnings (loss) in 2005: -133.9 million
+* The accumulated other comprehensive earnings (loss) in 2006: 119.1 million
+
+The question is asking for the percentage change in accumulated other comprehensive earnings (loss) from 2005 to 2006, so we need to calculate the percentage change.
+
+The calculation is:
+
+((119.1 - (-133.9)) / (-133.9)) * 100%
+
+This simplifies to:
+
+252.4%
+
+So the answer is 252.4%.",1475,203,1678,8.036020699990331,1,True,False
+E1_multistep,81,"combined, what was the total net operating loss that must be utilized before expiration between 2017 and 2033?",32.2,32.2,True,json_texto_limpo,False,True,"[""Net operating loss carryforwards of foreign subsidiaries totaling $ 12.4 million and u.s. net operating loss carryforwards previously acquired totaling $ 19.8 million at may 31, 2015 will expire between may 31, 2017 and may 31, 2033 if not utilized.""]",Addition,The question is asking for the total net operating loss that must be utilized before expiration between 2017 and 2033. The relevant values are the net operating loss carryforwards of foreign subsidiaries and u.s. net operating loss carryforwards. The required calculation is the addition of these two values. The result is the total net operating loss that must be utilized before expiration between 2017 and 2033.,Million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [""Net operating loss carryforwards of foreign subsidiaries totaling $ 12.4 million and u.s. net operating loss carryforwards previously acquired totaling $ 19.8 million at may 31, 2015 will expire between may 31, 2017 and may 31, 2033 if not utilized.""],
+  ""operation"": ""Addition"",
+  ""reasoning_summary"": ""The question is asking for the total net operating loss that must be utilized before expiration between 2017 and 2033. The relevant values are the net operating loss carryforwards of foreign subsidiaries and u.s. net operating loss carryforwards. The required calculation is the addition of these two values. The result is the total net operating loss that must be utilized before expiration between 2017 and 2033."",
+  ""answer"": ""$32.2 million"",
+  ""unit"": ""Million""
+}
+
+Note: The calculation is the addition of the net operating loss carryforwards of foreign subsidiaries ($12.4 million) and u.s. net operating loss carryforwards previously acquired ($19.8 million), which equals $32.2 million.",1154,253,1407,8.901998600005754,1,False,True
+E1_multistep,82,what was the change in net revenue between the two years?,-31.9,32.1,False,json,False,True,"[""2008 net revenue"", ""2007 net revenue""]",Subtraction,Calculate the change in net revenue by subtracting the 2007 net revenue from the 2008 net revenue.,Millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [""2008 net revenue"", ""2007 net revenue""],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""Calculate the change in net revenue by subtracting the 2007 net revenue from the 2008 net revenue."",
+  ""answer"": 32.1,
+  ""unit"": ""Millions""
+}
+
+Calculation:
+2008 net revenue - 2007 net revenue = 959.2 - 991.1 = 32.1",845,111,956,5.428779899986694,1,False,False
+E1_multistep,83,what would be the change in the profit of marketable securities if they were sold at fair value?,3.2,3.2,True,json_texto_limpo,False,True,"[{""table"": ""marketable securities"", ""values"": [""available for sale fair value"", ""$ 28.9""]}]",difference,"The question asks for the change in profit of marketable securities if they were sold at fair value. The available for sale fair value of marketable securities is $28.9 million. Since the available for sale cost is the same as the available for sale fair value for under 1 year and equity securities, the change in profit would be the difference between the available for sale fair value and the available for sale cost.",million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    {""table"": ""marketable securities"", ""values"": [""available for sale fair value"", ""$ 28.9""]}
+  ],
+  ""operation"": ""difference"",
+  ""reasoning_summary"": ""The question asks for the change in profit of marketable securities if they were sold at fair value. The available for sale fair value of marketable securities is $28.9 million. Since the available for sale cost is the same as the available for sale fair value for under 1 year and equity securities, the change in profit would be the difference between the available for sale fair value and the available for sale cost."",
+  ""answer"": ""$ 3.2 million"",
+  ""unit"": ""million""
+}
+
+Calculation:
+
+1. Identify the relevant values: available for sale fair value = $28.9 million, available for sale cost = $25.7 million
+2. Identify what the question is asking: what would be the change in the profit of marketable securities if they were sold at fair value?
+3. Determine the required calculation: difference between available for sale fair value and available for sale cost
+4. Compute the result: $28.9 million - $25.7 million = $3.2 million
+5. Return the final answer: The change in profit would be $3.2 million.",902,288,1190,9.520536700001685,1,False,True
+E1_multistep,84,what was the balance of unpaid losses in the beginning of 2008?,7603.0,37.2,False,json_texto_limpo,False,True,"[""At December 31, 2008, our gross unpaid loss and loss expense reserves were $37.2 billion and our net unpaid loss and loss expense reserves were $24.2 billion.""]",Identify the relevant values,"The question is asking for the balance of unpaid losses in the beginning of 2008. The relevant value is the gross unpaid loss and loss expense reserves at December 31, 2008, which is $37.2 billion.",U.S. dollars,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    ""At December 31, 2008, our gross unpaid loss and loss expense reserves were $37.2 billion and our net unpaid loss and loss expense reserves were $24.2 billion.""
+  ],
+  ""operation"": ""Identify the relevant values"",
+  ""reasoning_summary"": ""The question is asking for the balance of unpaid losses in the beginning of 2008. The relevant value is the gross unpaid loss and loss expense reserves at December 31, 2008, which is $37.2 billion."",
+  ""answer"": ""$37.2 billion"",
+  ""unit"": ""U.S. dollars""
+}
+
+Note: The question is asking for the balance of unpaid losses in the beginning of 2008, which is equivalent to the gross unpaid loss and loss expense reserves at December 31, 2008.",1403,189,1592,7.573002599994652,1,False,False
+E1_multistep,85,so by how much did this value change over these years?,20.8,20.8,True,json,False,True,[],difference,Calculate the difference between 2007 and 2006 net revenue values.,million,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""difference"",
+  ""reasoning_summary"": ""Calculate the difference between 2007 and 2006 net revenue values."",
+  ""answer"": 20.8,
+  ""unit"": ""million""
+}
+
+Explanation:
+
+1. Identify the relevant values: The relevant values are the net revenue values for 2007 and 2006, which are $486.9 million and $466.1 million, respectively.
+2. Identify what the question is asking: The question is asking by how much the value changed over the years, i.e., the difference between the 2007 and 2006 net revenue values.
+3. Determine the required calculation: The required calculation is the difference between the 2007 and 2006 net revenue values.
+4. Compute the result: The difference between the 2007 and 2006 net revenue values is $486.9 million - $466.1 million = $20.8 million.
+5. Return the final answer: The final answer is $20.8 million.",977,227,1204,8.171073999998043,1,False,True
+E1_multistep,86,"as of april 3, 2010, what was the amount of doors in the wholesale segment in the europe geography?",4421.0,4421,True,json,False,True,"[""Table of Contents""]",Retrieve value from table,"The question asks for the number of doors in the wholesale segment in the Europe geography as of April 3, 2010. The relevant value can be found in the table provided.",number of doors,"Here is the answer to the question:
+
+{
+  ""evidence"": [""Table of Contents""],
+  ""operation"": ""Retrieve value from table"",
+  ""reasoning_summary"": ""The question asks for the number of doors in the wholesale segment in the Europe geography as of April 3, 2010. The relevant value can be found in the table provided."",
+  ""answer"": 4421,
+  ""unit"": ""number of doors""
+}
+
+The answer is 4421, which is the number of doors in the wholesale segment in the Europe geography as of April 3, 2010.",922,123,1045,5.671723199993721,1,False,True
+E1_multistep,87,"and throughout the precedent year, what was the decline in containerboard sales volume to external domestic and export customers, in tons?",32000.0,32000,True,json_texto_limpo,False,True,[],Subtraction,"The question is asking for the decline in containerboard sales volume to external domestic and export customers, in tons. The relevant value is the containerboard sales volume to external domestic and export customers, which decreased from 477000 tons in 2002 to 445000 tons in 2003. The decline is calculated by subtracting the 2003 value from the 2002 value.",tons,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""The question is asking for the decline in containerboard sales volume to external domestic and export customers, in tons. The relevant value is the containerboard sales volume to external domestic and export customers, which decreased from 477000 tons in 2002 to 445000 tons in 2003. The decline is calculated by subtracting the 2003 value from the 2002 value."",
+  ""answer"": ""32000 tons"",
+  ""unit"": ""tons""
+}
+
+Note: The calculation is 477000 tons (2002) - 445000 tons (2003) = 32000 tons.",1453,154,1607,6.831224299996393,1,False,True
+E1_multistep,88,what is the net change in the total consolidated revenues from 2011 to 2012?,182.0,169.6,False,json,False,True,"[{""value"": 2246.4, ""year"": 2012}, {""value"": 2076.8, ""year"": 2011}]",net change,Calculate the difference between the total consolidated revenues in 2012 and 2011.,millions,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    {""value"": 2246.4, ""year"": 2012},
+    {""value"": 2076.8, ""year"": 2011}
+  ],
+  ""operation"": ""net change"",
+  ""reasoning_summary"": ""Calculate the difference between the total consolidated revenues in 2012 and 2011."",
+  ""answer"": 169.6,
+  ""unit"": ""millions""
+}
+
+Calculation:
+
+1. Identify the relevant values: The relevant values are the total consolidated revenues for 2012 and 2011, which are $5807.6 million and $5625.6 million, respectively.
+2. Identify what the question is asking: The question is asking for the net change in the total consolidated revenues from 2011 to 2012.
+3. Determine the required calculation: The required calculation is to subtract the total consolidated revenues in 2011 from the total consolidated revenues in 2012.
+4. Compute the result: The result is $5807.6 million - $5625.6 million = 169.6 million.
+5. Return the final answer: The final answer is 169.6 million, which is the net change in the total consolidated revenues from 2011 to 2012.",1072,277,1349,9.37992540000414,1,False,False
+E1_multistep,89,what was the total interest income in 2012?,29.5,29.5,True,json,False,True,[],,,millions,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 29.5,
+  ""unit"": ""millions""
+}
+
+To answer the question, I simply looked up the interest income in 2012 from the provided text: ""during 2013 and 2012, we had interest income of $ 24.7 and $ 29.5, respectively.""",1236,96,1332,5.382645499994396,1,False,True
+E1_multistep,90,what was the net change in value?,93245.0,93625,True,fallback_ultimo_numero_nao_ano,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [""Note 8"", ""Note 9""],
+  ""operation"": ""Calculate the net change in value"",
+  ""reasoning_summary"": ""The net change in value is the difference between the goodwill balance at the end of 2017 and the goodwill balance at the end of 2016."",
+  ""answer"": 666009.0 - 572764.0 = 93625.0,
+  ""unit"": ""thousands""
+}
+
+Note: The net change in value is the difference between the goodwill balance at the end of 2017 ($666,009) and the goodwill balance at the end of 2016 ($572,764), which is $93,625.",1069,155,1224,6.621086099999957,1,False,True
+E1_multistep,91,"what was the total amount of resale agreements in 2008, in millions?",20800.0,200.265,False,json,False,True,[],calculation,"The question asks for the total amount of resale agreements in 2008, in millions. The relevant value is the 'securities purchased under resale agreements' (a) in the table, which is $200265 million.",million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": ""calculation"",
+  ""reasoning_summary"": ""The question asks for the total amount of resale agreements in 2008, in millions. The relevant value is the 'securities purchased under resale agreements' (a) in the table, which is $200265 million."",
+  ""answer"": 200.265,
+  ""unit"": ""million""
+}
+
+Note: The answer is the value of 'securities purchased under resale agreements' (a) in the table, which is $200265 million.",1712,126,1838,6.3145972000056645,1,False,False
+E1_multistep,92,and what was it in 2016?,26.4,42.0,False,json,False,True,"[""other long term debt in december 2012"", ""as of december 31, 2017 and 2016, the outstanding balance on the loan was $ 40.0 million and $ 42.0 million, respectively""]",identify the outstanding balance on the loan in 2016,"The question is asking for the outstanding balance on the loan in 2016, which is mentioned in the provided text as $ 42.0 million.",million,"Here is the answer to the question:
+
+{
+  ""evidence"": [""other long term debt in december 2012"", ""as of december 31, 2017 and 2016, the outstanding balance on the loan was $ 40.0 million and $ 42.0 million, respectively""],
+  ""operation"": ""identify the outstanding balance on the loan in 2016"",
+  ""reasoning_summary"": ""The question is asking for the outstanding balance on the loan in 2016, which is mentioned in the provided text as $ 42.0 million."",
+  ""answer"": 42.0,
+  ""unit"": ""million""
+}
+
+Note: The answer is based on the provided text, which mentions the outstanding balance on the loan as $ 42.0 million as of December 31, 2016.",1011,172,1183,6.9268298000097275,1,False,False
+E1_multistep,93,"combined, what was the value of tax benefits realized from option exercises under all incentive plans for 2014 and 2013?",64.0,64,True,json_texto_limpo,False,True,"[""The tax benefit realized from option exercises under all incentive plans for 2014, 2013, and 2012 was approximately $33 million, $31 million, and $14 million, respectively.""]",Combination,The question is asking for the combined value of tax benefits realized from option exercises under all incentive plans for 2014 and 2013.,Million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    ""The tax benefit realized from option exercises under all incentive plans for 2014, 2013, and 2012 was approximately $33 million, $31 million, and $14 million, respectively.""
+  ],
+  ""operation"": ""Combination"",
+  ""reasoning_summary"": ""The question is asking for the combined value of tax benefits realized from option exercises under all incentive plans for 2014 and 2013."",
+  ""answer"": ""$64 million"",
+  ""unit"": ""Million""
+}
+
+To arrive at the answer, I identified the relevant values as the tax benefits realized from option exercises under all incentive plans for 2014 and 2013, which are $33 million and $31 million, respectively. Then, I combined these values to get the total tax benefits realized, which is $64 million.",1414,188,1602,7.64078359999985,1,False,True
+E1_multistep,94,what was the value of the disca in 2016?,133.81,133.81,True,json,False,True,[],,,USD,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 133.81,
+  ""unit"": ""USD""
+}
+
+To answer the question, I identified the relevant values from the provided text, which is the table showing the DISCA values for each year from 2011 to 2016. The question is asking for the value of DISCA in 2016.
+
+I determined the required calculation, which is simply looking up the value of DISCA in the table for the year 2016.
+
+I computed the result, which is the value of DISCA in 2016, which is $133.81.
+
+The final answer is $133.81, with the unit being USD.",1569,161,1730,7.024398499997915,1,False,True
+E1_multistep,95,what was the amount in received cash dividends in the year of 2010?,71.0,71.0,True,json,False,True,[],,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 71.0,
+  ""unit"": """"
+}
+
+The question is asking for the amount of cash dividends received in the year 2010.",1364,61,1425,4.643506699998397,1,False,True
+E1_multistep,96,what was the change in value of cds that were excluded between 2013 and 2014?,4.37,11.26,False,json_texto_limpo,False,True,"[{""table"": ""Table 33: Client Deposits Average Balance"", ""value"": ""Client Deposits (1) $ 195276 $ 182268 $ 167470 $ 143043""}]",Subtraction,"To find the change in value of CDS that were excluded between 2013 and 2014, we need to subtract the excluded CDS value for 2013 from the excluded CDS value for 2014.",Billions,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [
+    {""table"": ""Table 33: Client Deposits Average Balance"", ""value"": ""Client Deposits (1) $ 195276 $ 182268 $ 167470 $ 143043""}
+  ],
+  ""operation"": ""Subtraction"",
+  ""reasoning_summary"": ""To find the change in value of CDS that were excluded between 2013 and 2014, we need to subtract the excluded CDS value for 2013 from the excluded CDS value for 2014."",
+  ""answer"": ""$ 13.76 billion - $ 2.50 billion = $ 11.26 billion"",
+  ""unit"": ""Billions""
+}
+
+Note: The answer is the change in value of CDS that were excluded between 2013 and 2014, which is $11.26 billion.",1329,189,1518,7.542703800005256,1,False,False
+E1_multistep,97,what was the amount in received cash dividends in the year of 2011?,78.0,78,True,fallback_apos_answer,False,False,,,,,"Here is the answer to the question:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": 78 million,
+  ""unit"": ""USD""
+}
+
+To answer the question, I identified the relevant values from the text:
+
+* The question is asking for the amount of cash dividends received in 2011.
+* The required calculation is to find the value mentioned in the text as the cash dividend received in 2011.
+* The computation is simply to extract the value from the text: ""in 2011, we received cash dividends of $ 78 million, respectively.""
+
+The answer is $78 million, which is the amount of cash dividends received in 2011.",1305,149,1454,6.597018100001151,1,False,True
+E1_multistep,98,what is the percent change?,-0.17266,13.4,False,json,False,True,[],percent change,Calculate the percentage change in the level 3 balance from the start of 2018 to the end of 2018.,%,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": ""percent change"",
+  ""reasoning_summary"": ""Calculate the percentage change in the level 3 balance from the start of 2018 to the end of 2018."",
+  ""answer"": 13.4,
+  ""unit"": ""%""
+}
+
+To calculate the answer, I identified the relevant values:
+
+* Level 3 balance at the start of 2018: $278.0
+* Level 3 balance at the end of 2018: $230.0
+
+I then identified what the question is asking: the percent change in the level 3 balance from the start of 2018 to the end of 2018.
+
+Next, I determined the required calculation: ((end of 2018 balance - start of 2018 balance) / start of 2018 balance) * 100
+
+Finally, I computed the result:
+
+((230.0 - 278.0) / 278.0) * 100 = 13.4%
+
+So, the level 3 balance decreased by 13.4% from the start of 2018 to the end of 2018.",914,251,1165,8.658745900000213,1,True,False
+E1_multistep,99,what was the balance of total ishares in 2013?,914372.0,914372.0,True,json,False,True,[],,,million,"Here is the answer to the question in JSON format:
+
+{
+  ""evidence"": [],
+  ""operation"": """",
+  ""reasoning_summary"": """",
+  ""answer"": ""$ 914372"",
+  ""unit"": ""million""
+}
+
+To arrive at this answer, I followed the stages:
+
+1. Identify the relevant values: The relevant value is the total AUM (Assets Under Management) of iShares at the end of 2013, which is mentioned in the text as $914.4 billion.
+
+2. Identify what the question is asking: The question is asking for the balance of total iShares in 2013.
+
+3. Determine the required calculation: Since the question is asking for the balance, no calculation is required.
+
+4. Compute the result: The result is the total AUM of iShares at the end of 2013, which is $914.4 billion.
+
+5. Return the final answer: The final answer is $914372, with the unit being million.",1703,202,1905,8.170860699989134,1,False,True

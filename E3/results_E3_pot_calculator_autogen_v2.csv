@@ -1,0 +1,2413 @@
+experiment,question_id,question,ground_truth,prediction,correct,answer_source,parse_error,error_category,plan_source,plan_json_valid,plan,plan_unit,plan_n_steps,calc_status,plan_correct,planner_raw,prompt_tokens,completion_tokens,total_tokens,latency_seconds,llm_calls,is_percent_question,correct_escala_pct
+E3_pot_calculator,0,"what was the total balance of letters of credit outstanding for the years of 2006 and 2007, combined?",93.4,0.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""letters_of_credit_2006"": 52.4, ""letters_of_credit_2007"": 41, ""total_balance"": 0}, ""steps"": [{""name"": ""step1"", ""op"": ""add"", ""args"": [""letters_of_credit_2006"", ""letters_of_credit_2007""]}, {""name"": ""step2"", ""op"": ""value"", ""args"": [""step1""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""total_balance""]}], ""unit"": ""million""}",million,3,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""letters_of_credit_2006"": 52.4,
+    ""letters_of_credit_2007"": 41,
+    ""total_balance"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""step1"",
+      ""op"": ""add"",
+      ""args"": [""letters_of_credit_2006"", ""letters_of_credit_2007""]
+    },
+    {
+      ""name"": ""step2"",
+      ""op"": ""value"",
+      ""args"": [""step1""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""total_balance""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the total balance of letters of credit outstanding for the years 2006 and 2007, combined, by adding the values of letters of credit outstanding at December 31, 2006, and December 31, 2007.",1727,216,1943,12.74604439997347,1,False,False
+E3_pot_calculator,1,what was the state street corporation value in 2013?,198.0,198.0,True,calculadora,False,correto,llm,True,"{""variables"": {""state_street_2013"": 198}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""state_street_2013""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""state_street_2013"": 198
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""state_street_2013""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note: The value of State Street Corporation in 2013 is directly read from the table, so we don't need to perform any calculations.",1214,101,1315,5.089104199985741,1,False,True
+E3_pot_calculator,2,what were the total number of shares purchased?,4823020.0,4835122.0,True,calculadora,False,correto,llm,True,"{""variables"": {""total_shares_purchased_october"": 2099169, ""total_shares_purchased_november"": 1454402, ""total_shares_purchased_december"": 1269449, ""total_shares_purchased"": 4823020, ""total_withheld_shares"": 12102}, ""steps"": [{""name"": ""total_shares_purchased_october"", ""op"": ""value"", ""args"": [""total_shares_purchased_october""]}, {""name"": ""total_shares_purchased_november"", ""op"": ""value"", ""args"": [""total_shares_purchased_november""]}, {""name"": ""total_shares_purchased_december"", ""op"": ""value"", ""args"": [""total_shares_purchased_december""]}, {""name"": ""total_shares_purchased"", ""op"": ""add"", ""args"": [""total_shares_purchased_october"", ""total_shares_purchased_november"", ""total_shares_purchased_december""]}, {""name"": ""total_withheld_shares"", ""op"": ""value"", ""args"": [""total_withheld_shares""]}, {""name"": ""answer"", ""op"": ""add"", ""args"": [""total_shares_purchased"", ""total_withheld_shares""]}], ""unit"": ""shares""}",shares,6,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""total_shares_purchased_october"": 2099169,
+    ""total_shares_purchased_november"": 1454402,
+    ""total_shares_purchased_december"": 1269449,
+    ""total_shares_purchased"": 4823020,
+    ""total_withheld_shares"": 12102
+  },
+  ""steps"": [
+    {
+      ""name"": ""total_shares_purchased_october"",
+      ""op"": ""value"",
+      ""args"": [""total_shares_purchased_october""]
+    },
+    {
+      ""name"": ""total_shares_purchased_november"",
+      ""op"": ""value"",
+      ""args"": [""total_shares_purchased_november""]
+    },
+    {
+      ""name"": ""total_shares_purchased_december"",
+      ""op"": ""value"",
+      ""args"": [""total_shares_purchased_december""]
+    },
+    {
+      ""name"": ""total_shares_purchased"",
+      ""op"": ""add"",
+      ""args"": [""total_shares_purchased_october"", ""total_shares_purchased_november"", ""total_shares_purchased_december""]
+    },
+    {
+      ""name"": ""total_withheld_shares"",
+      ""op"": ""value"",
+      ""args"": [""total_withheld_shares""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [""total_shares_purchased"", ""total_withheld_shares""]
+    }
+  ],
+  ""unit"": ""shares""
+}",1502,341,1843,10.871192899998277,1,False,True
+E3_pot_calculator,3,"for 2012, what was the percentage of the adjustments related to aoci for afs securities and defined benefit pension and opeb plans as part of the tier 1 common under basel i rules?",0.02905,0.02905046244174944,True,calculadora,False,correto,llm,True,"{""variables"": {""tier1_common_basel_i"": 140342, ""adjustments_aoci"": 4077, ""all_other_adjustments"": -453, ""tier1_common_basel_iii"": 143966, ""risk_weighted_assets_basel_iii"": 1647903, ""tier1_common_ratio_basel_iii"": 0.087}, ""steps"": [{""name"": ""percentage"", ""op"": ""percentage"", ""args"": [""adjustments_aoci"", ""tier1_common_basel_i""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""tier1_common_basel_i"": 140342,
+    ""adjustments_aoci"": 4077,
+    ""all_other_adjustments"": -453,
+    ""tier1_common_basel_iii"": 143966,
+    ""risk_weighted_assets_basel_iii"": 1647903,
+    ""tier1_common_ratio_basel_iii"": 0.087
+  },
+  ""steps"": [
+    {
+      ""name"": ""percentage"",
+      ""op"": ""percentage"",
+      ""args"": [""adjustments_aoci"", ""tier1_common_basel_i""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage of the adjustments related to AOCI for AFS securities and defined benefit pension and OPEB plans as part of the Tier 1 common under Basel I rules.",2463,192,2655,8.106859699997585,1,True,True
+E3_pot_calculator,4,"considering the amount of those 2003 earnings, what can be concluded to have been those operating earnings in 2002?",20452.85,None,False,sem_resultado,True,plano_invalido,llm,False,,,0,plano_json_invalido,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""operating_earnings_2002"": 205,
+    ""operating_earnings_2003"": 205 * 1.23
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""operating_earnings_2002"", ""operating_earnings_2003""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage growth of operating earnings from 2002 to 2003 by dividing the difference between the two years' operating earnings by the 2002 operating earnings, and then multiplying by 100.",2364,156,2520,7.24016240000492,1,False,False
+E3_pot_calculator,5,"and what is the weighted-average period over which this cost will be recognized, in years?",2.1,7.1,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""unrecognized_compensation_expense"": 7.1, ""weighted_average_period"": 2.2, ""grant_date_fair_value"": 18.13, ""total_fair_value_vested"": 1500000, ""total_fair_value_vested_2011"": 1000000, ""total_fair_value_vested_2010"": 400000}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""unrecognized_compensation_expense""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program:
+
+{
+  ""variables"": {
+    ""unrecognized_compensation_expense"": 7.1,
+    ""weighted_average_period"": 2.2,
+    ""grant_date_fair_value"": 18.13,
+    ""total_fair_value_vested"": 1500000,
+    ""total_fair_value_vested_2011"": 1000000,
+    ""total_fair_value_vested_2010"": 400000
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""unrecognized_compensation_expense""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+Note: The program calculates the weighted-average period over which the cost will be recognized, which is 2.2 years.",1887,170,2057,7.267742699972587,1,False,False
+E3_pot_calculator,6,what is the value of operating leases over the total minimum payments?,0.68368,1.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""total_minimum_lease_payments"": 3430, ""operating_leases"": 3430, ""capital_leases"": 1587}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage"", ""args"": [""operating_leases"", ""total_minimum_lease_payments""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""total_minimum_lease_payments"": 3430,
+    ""operating_leases"": 3430,
+    ""capital_leases"": 1587
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""operating_leases"", ""total_minimum_lease_payments""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the value of operating leases as a percentage of the total minimum lease payments.",1832,124,1956,6.18253459999687,1,False,False
+E3_pot_calculator,7,what was the value of pension plans for 2017?,3856.0,3856.0,True,calculadora,False,correto,llm,True,"{""variables"": {""pension_plan_2017"": 3856}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""pension_plan_2017""]}], ""unit"": ""thousand""}",thousand,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""pension_plan_2017"": 3856
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""pension_plan_2017""]
+    }
+  ],
+  ""unit"": ""thousand""
+}
+
+This program uses the value of the pension plan contributions for 2017, which is $3856, and returns it as the answer.",2074,107,2181,5.767087500018533,1,False,True
+E3_pot_calculator,8,what was the balance of total pci consumer loans in 2010?,19097.0,19097.0,True,calculadora,False,correto,llm,True,"{""variables"": {""total_pci_consumer_loans_2010"": 19097}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""total_pci_consumer_loans_2010""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""total_pci_consumer_loans_2010"": 19097
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""total_pci_consumer_loans_2010""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+Note: The answer is the balance of total PCI consumer loans in 2010, which is $19,097 million.",1496,106,1602,5.376629199978197,1,False,True
+E3_pot_calculator,9,what percentage change does this represent?,1.78431,1.7843137254901962,True,calculadora,False,correto,llm,True,"{""variables"": {""total_operating_expenses_2009"": 1420.0, ""total_operating_expenses_2008"": 510.0}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""total_operating_expenses_2008"", ""total_operating_expenses_2009""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+""variables"": {
+""total_operating_expenses_2009"": 1420.0,
+""total_operating_expenses_2008"": 510.0
+},
+""steps"": [
+{
+""name"": ""answer"",
+""op"": ""percentage_change"",
+""args"": [""total_operating_expenses_2008"", ""total_operating_expenses_2009""]
+}
+],
+""unit"": ""%""
+}",1757,96,1853,5.25093989999732,1,True,True
+E3_pot_calculator,10,"and what was that percentage representation in the previous year, in 2011?",0.52288,1.7339028057327155,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""net_revenues_2011"": 2142, ""equity_securities_2011"": 1120, ""total_net_revenues_2011"": 7541, ""net_revenues_2012"": 5891, ""equity_securities_2012"": 2392}, ""steps"": [{""name"": ""total_net_revenues_2011"", ""op"": ""value"", ""args"": [""net_revenues_2011""]}, {""name"": ""equity_securities_percentage_2011"", ""op"": ""percentage"", ""args"": [""equity_securities_2011"", ""total_net_revenues_2011""]}, {""name"": ""total_net_revenues_2012"", ""op"": ""value"", ""args"": [""net_revenues_2012""]}, {""name"": ""equity_securities_2012"", ""op"": ""value"", ""args"": [""equity_securities_2012""]}, {""name"": ""equity_securities_percentage_2012"", ""op"": ""percentage"", ""args"": [""equity_securities_2012"", ""total_net_revenues_2012""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""equity_securities_percentage_2011"", ""equity_securities_percentage_2012""]}], ""unit"": ""%""}",%,6,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""net_revenues_2011"": 2142,
+    ""equity_securities_2011"": 1120,
+    ""total_net_revenues_2011"": 7541,
+    ""net_revenues_2012"": 5891,
+    ""equity_securities_2012"": 2392
+  },
+  ""steps"": [
+    {
+      ""name"": ""total_net_revenues_2011"",
+      ""op"": ""value"",
+      ""args"": [""net_revenues_2011""]
+    },
+    {
+      ""name"": ""equity_securities_percentage_2011"",
+      ""op"": ""percentage"",
+      ""args"": [""equity_securities_2011"", ""total_net_revenues_2011""]
+    },
+    {
+      ""name"": ""total_net_revenues_2012"",
+      ""op"": ""value"",
+      ""args"": [""net_revenues_2012""]
+    },
+    {
+      ""name"": ""equity_securities_2012"",
+      ""op"": ""value"",
+      ""args"": [""equity_securities_2012""]
+    },
+    {
+      ""name"": ""equity_securities_percentage_2012"",
+      ""op"": ""percentage"",
+      ""args"": [""equity_securities_2012"", ""total_net_revenues_2012""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""equity_securities_percentage_2011"", ""equity_securities_percentage_2012""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```",1972,351,2323,11.678911800001515,1,True,False
+E3_pot_calculator,11,what is the value of the investment in 2014?,144.0,54.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""investment_2012"": 100, ""investment_2014"": 215, ""investment_2016"": 311, ""investment_2019"": 269}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""investment_2019"", ""investment_2014""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""investment_2012"": 100,
+    ""investment_2014"": 215,
+    ""investment_2016"": 311,
+    ""investment_2019"": 269
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""investment_2019"", ""investment_2014""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the net change in value of the investment in S&P500 from 2014 to 2016 by subtracting the investment value in 2014 from the investment value in 2019.",1149,148,1297,6.255238999990979,1,False,False
+E3_pot_calculator,12,what was the portion of non-cash items out of the total cash from operations in 2018?,0.12176,0.12176495545184557,True,calculadora,False,correto,llm,True,"{""variables"": {""cash_from_operations_2018"": 2357, ""non_cash_items_2018"": 287, ""cash_from_operations_2017"": 2227, ""non_cash_items_2017"": 1397}, ""steps"": [{""name"": ""step1"", ""op"": ""percentage"", ""args"": [""non_cash_items_2018"", ""cash_from_operations_2018""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+""variables"": {
+  ""cash_from_operations_2018"": 2357,
+  ""non_cash_items_2018"": 287,
+  ""cash_from_operations_2017"": 2227,
+  ""non_cash_items_2017"": 1397
+},
+""steps"": [
+  {
+    ""name"": ""step1"",
+    ""op"": ""percentage"",
+    ""args"": [""non_cash_items_2018"", ""cash_from_operations_2018""]
+  }
+],
+""unit"": ""%""
+}
+
+This program calculates the percentage of non-cash items out of the total cash from operations generated in 2018.",1817,141,1958,6.434654899989255,1,True,True
+E3_pot_calculator,13,what about the ending accrued warranty and related costs	in 2007?,230.0,0.09375,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""accrued_warranty_2005"": 105, ""accrued_warranty_2006"": 188, ""accrued_warranty_2007"": 284}, ""steps"": [{""name"": ""diff"", ""op"": ""sub"", ""args"": [""accrued_warranty_2007"", ""accrued_warranty_2006""]}, {""name"": ""percentage_change"", ""op"": ""percentage_change"", ""args"": [""diff"", ""accrued_warranty_2005""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""percentage_change""]}], ""unit"": ""%""}",%,3,ok,False,"Here is the symbolic program to answer the question:
+
+{
+""variables"": {
+  ""accrued_warranty_2005"": 105,
+  ""accrued_warranty_2006"": 188,
+  ""accrued_warranty_2007"": 284
+},
+""steps"": [
+  {
+    ""name"": ""diff"",
+    ""op"": ""sub"",
+    ""args"": [""accrued_warranty_2007"", ""accrued_warranty_2006""]
+  },
+  {
+    ""name"": ""percentage_change"",
+    ""op"": ""percentage_change"",
+    ""args"": [""diff"", ""accrued_warranty_2005""]
+  },
+  {
+    ""name"": ""answer"",
+    ""op"": ""value"",
+    ""args"": [""percentage_change""]
+  }
+],
+""unit"": ""%""
+}",1704,175,1879,7.107868699997198,1,False,False
+E3_pot_calculator,14,what is the difference between 100% and that increase?,99.77,None,False,sem_resultado,True,plano_invalido,llm,False,,,0,plano_json_invalido,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""operating_earnings_2002"": 205,
+    ""operating_earnings_2003"": 205 * 1.23,
+    ""increase"": ""percentage_change"",
+    ""old_value"": ""operating_earnings_2002"",
+    ""new_value"": ""operating_earnings_2003""
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage increase in operating earnings from 2002 to 2003, which is 23%.",2322,162,2484,7.284197900007712,1,True,False
+E3_pot_calculator,15,and the specific value for 2008 again?,36836.0,28169.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""common_stock_2009"": 65005.0, ""common_stock_2008"": 36836.0}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""common_stock_2009"", ""common_stock_2008""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""common_stock_2009"": 65005.0,
+    ""common_stock_2008"": 36836.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""common_stock_2009"", ""common_stock_2008""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the difference between the common stock issued in 2009 and 2008 by subtracting the 2008 value from the 2009 value.",2091,134,2225,6.634149799996521,1,False,False
+E3_pot_calculator,16,"what percentage, then, of the liquidity did that amount represent?",0.36931,0.3693103129904903,True,calculadora,False,correto,llm,True,"{""variables"": {""total_liquidity"": 10831.0, ""credit_facility"": 4000.0}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage"", ""args"": [""credit_facility"", ""total_liquidity""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""total_liquidity"": 10831.0,
+    ""credit_facility"": 4000.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""credit_facility"", ""total_liquidity""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage of the total liquidity that comes from the credit facility by dividing the credit facility amount by the total liquidity amount and multiplying by 100.",2314,128,2442,6.833847700007027,1,True,True
+E3_pot_calculator,17,what was the 2008 value?,1.74,319.5,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""adjusted_net_earnings_2008"": 337.6, ""net_earnings_2008"": 319.5}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""net_earnings_2008""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""adjusted_net_earnings_2008"": 337.6,
+    ""net_earnings_2008"": 319.5
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""net_earnings_2008""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program uses the value of net earnings in 2008, which is 319.5 million, as the answer.",2091,126,2217,6.492422899988014,1,False,False
+E3_pot_calculator,18,what was the value at the start of the year?,395.0,395.0,True,calculadora,False,correto,llm,True,"{""variables"": {""beginning_of_year"": 395.0}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""beginning_of_year""]}], ""unit"": ""mmboe""}",mmboe,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""beginning_of_year"": 395.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""beginning_of_year""]
+    }
+  ],
+  ""unit"": ""mmboe""
+}
+```",1939,80,2019,5.157461299997522,1,False,True
+E3_pot_calculator,19,"and what was the total of benefits obligations in 2018, also in millions?",31.0,-0.037037037037037035,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""benefits_obligations_2018"": 162, ""benefits_obligations_2019"": 156}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""benefits_obligations_2018""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""benefits_obligations_2019""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""million""}",million,3,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""benefits_obligations_2018"": 162,
+    ""benefits_obligations_2019"": 156
+  },
+  ""steps"": [
+    {
+      ""name"": ""old_value"",
+      ""op"": ""value"",
+      ""args"": [""benefits_obligations_2018""]
+    },
+    {
+      ""name"": ""new_value"",
+      ""op"": ""value"",
+      ""args"": [""benefits_obligations_2019""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program defines two variables, `benefits_obligations_2018` and `benefits_obligations_2019`, which are set to the values 162 and 156, respectively. The program then defines three steps: `old_value` is set to the value of `benefits_obligations_2018`, `new_value` is set to the value of `benefits_obligations_2019`, and `answer` is calculated as the percentage change from `old_value` to `new_value`. The unit of the answer is ""million"".",1877,281,2158,9.959914200007915,1,False,False
+E3_pot_calculator,20,"how much, then, does that change represent in relation to this 2005 rental income, in percentage?",0.40678,0.4067796610169492,True,calculadora,False,correto,llm,True,"{""variables"": {""old_value"": 59.0, ""new_value"": 83.0}, ""steps"": [{""name"": ""percentage_change"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""old_value"": 59.0,
+    ""new_value"": 83.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""percentage_change"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in rental income from 2005 to 2006, which is the answer to the question.",1758,112,1870,5.769540899986168,1,True,True
+E3_pot_calculator,21,"and what is, in millions, the average tax benefit between those three years?",26.0,78.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""tax_benefit_2012"": 14.0, ""tax_benefit_2013"": 31.0, ""tax_benefit_2014"": 33.0}, ""steps"": [{""name"": ""answer"", ""op"": ""add"", ""args"": [""tax_benefit_2012"", ""tax_benefit_2013"", ""tax_benefit_2014""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""tax_benefit_2012"": 14.0,
+    ""tax_benefit_2013"": 31.0,
+    ""tax_benefit_2014"": 33.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [""tax_benefit_2012"", ""tax_benefit_2013"", ""tax_benefit_2014""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the total tax benefit realized from option exercises under all incentive plans for the three years combined by adding the tax benefits for each year.",2095,156,2251,7.074123300000792,1,False,False
+E3_pot_calculator,22,"what was the change in r&d expenses from the year of 2016 to 2017, in millions?",12.0,0.06349206349206349,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""rd_expenses_2016"": 189, ""rd_expenses_2017"": 201}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""rd_expenses_2016""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""rd_expenses_2017""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""million""}",million,3,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""rd_expenses_2016"": 189,
+    ""rd_expenses_2017"": 201
+  },
+  ""steps"": [
+    {
+      ""name"": ""old_value"",
+      ""op"": ""value"",
+      ""args"": [""rd_expenses_2016""]
+    },
+    {
+      ""name"": ""new_value"",
+      ""op"": ""value"",
+      ""args"": [""rd_expenses_2017""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program defines two variables, `rd_expenses_2016` and `rd_expenses_2017`, which represent the R&D expenses for 2016 and 2017, respectively. The program then calculates the percentage change in R&D expenses from 2016 to 2017 using the `percentage_change` operation. The result is stored in the `answer` step. Finally, the program specifies that the unit of the answer is millions.",1776,248,2024,9.127264800015837,1,False,False
+E3_pot_calculator,23,what was the net change in revenues from 2003 to 2004?,-20.3,None,False,sem_resultado,True,plano_invalido,llm,True,"{""variables"": {""net_revenue_2003"": 998.7, ""deferred_fuel_cost_revisions"": -16.9, ""other"": -3.4, ""net_revenue_2004"": 978.4}, ""steps"": [{""name"": ""step1"", ""op"": ""sub"", ""args"": [""net_revenue_2003"", ""deferred_fuel_cost_revisions"", ""other""]}, {""name"": ""step2"", ""op"": ""value"", ""args"": [""step1""]}, {""name"": ""step3"", ""op"": ""sub"", ""args"": [""net_revenue_2004"", ""deferred_fuel_cost_revisions"", ""other""]}, {""name"": ""step4"", ""op"": ""value"", ""args"": [""step3""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""step2"", ""step4""]}], ""unit"": ""%""}",%,5,aridade_invalida,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""net_revenue_2003"": 998.7,
+    ""deferred_fuel_cost_revisions"": -16.9,
+    ""other"": -3.4,
+    ""net_revenue_2004"": 978.4
+  },
+  ""steps"": [
+    {
+      ""name"": ""step1"",
+      ""op"": ""sub"",
+      ""args"": [""net_revenue_2003"", ""deferred_fuel_cost_revisions"", ""other""]
+    },
+    {
+      ""name"": ""step2"",
+      ""op"": ""value"",
+      ""args"": [""step1""]
+    },
+    {
+      ""name"": ""step3"",
+      ""op"": ""sub"",
+      ""args"": [""net_revenue_2004"", ""deferred_fuel_cost_revisions"", ""other""]
+    },
+    {
+      ""name"": ""step4"",
+      ""op"": ""value"",
+      ""args"": [""step3""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""step2"", ""step4""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the net change in revenues from 2003 to 2004 by subtracting the net revenue in 2003 from the net revenue in 2004, and then calculates the percentage change in revenues using the `percentage_change` operation.",1395,311,1706,10.168034799979068,1,False,False
+E3_pot_calculator,24,and the percentage change of this value?,0.97734,None,False,sem_resultado,True,plano_invalido,llm,False,,,0,plano_json_invalido,False,"Here is the symbolic program that answers the question:
+
+```
+{
+  ""variables"": {
+    ""fair_value_2002"": 35.3,
+    ""fair_value_2001"": 69.8,
+    ""amounts_deposited_2002"": 35.3,
+    ""amounts_deposited_2001"": 69.8,
+    ""earnings_2002"": 0,
+    ""earnings_2001"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""value"", [""mul"", [""sub"", [""add"", [""value"", ""fair_value_2002""], [""value"", ""amounts_deposited_2002""]], [""value"", ""earnings_2002""]], [""value"", ""fair_value_2001""]], [""value"", ""amounts_deposited_2001""]]]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the difference in the fair value of the securities held in decommissioning trust funds and the amounts deposited plus the earnings on the deposits from 2001 to 2002 for Entergy Arkansas.",1617,254,1871,9.022391000005882,1,True,False
+E3_pot_calculator,25,what was the ccg operating income in 2016?,10646.0,31498.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""ccg_operating_income_2016"": 10646, ""lower_ccg_platform_unit_cost"": 1250, ""lower_ccg_operating_expense"": 905, ""higher_gross_margin_from_ccg_platform_revenue"": 625, ""higher_factory_start_up_costs"": -645, ""other"": 224, ""ccg_operating_income_2015"": 8166, ""higher_ccg_platform_unit_costs"": -2060, ""lower_gross_margin_from_ccg_platform_revenue"": -1565, ""lower_factory_start_up_costs"": 435, ""lower_production_costs"": 430, ""lower_operating_expense"": 375, ""ccg_operating_income_2014"": 10327}, ""steps"": [{""name"": ""ccg_operating_income_2016"", ""op"": ""value"", ""args"": [""ccg_operating_income_2016""]}, {""name"": ""add_lower_costs"", ""op"": ""add"", ""args"": [""ccg_operating_income_2016"", ""lower_ccg_platform_unit_cost"", ""lower_ccg_operating_expense"", ""higher_gross_margin_from_ccg_platform_revenue"", ""higher_factory_start_up_costs"", ""other""]}, {""name"": ""add_previous_years"", ""op"": ""add"", ""args"": [""add_lower_costs"", ""ccg_operating_income_2015"", ""ccg_operating_income_2014""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""add_previous_years""]}], ""unit"": ""million""}",million,4,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""ccg_operating_income_2016"": 10646,
+    ""lower_ccg_platform_unit_cost"": 1250,
+    ""lower_ccg_operating_expense"": 905,
+    ""higher_gross_margin_from_ccg_platform_revenue"": 625,
+    ""higher_factory_start_up_costs"": -645,
+    ""other"": 345,
+    ""ccg_operating_income_2015"": 8166,
+    ""higher_ccg_platform_unit_costs"": -2060,
+    ""lower_gross_margin_from_ccg_platform_revenue"": -1565,
+    ""lower_factory_start_up_costs"": 435,
+    ""lower_production_costs"": 430,
+    ""lower_operating_expense"": 375,
+    ""other"": 224,
+    ""ccg_operating_income_2014"": 10327
+  },
+  ""steps"": [
+    {
+      ""name"": ""ccg_operating_income_2016"",
+      ""op"": ""value"",
+      ""args"": [""ccg_operating_income_2016""]
+    },
+    {
+      ""name"": ""add_lower_costs"",
+      ""op"": ""add"",
+      ""args"": [""ccg_operating_income_2016"", ""lower_ccg_platform_unit_cost"", ""lower_ccg_operating_expense"", ""higher_gross_margin_from_ccg_platform_revenue"", ""higher_factory_start_up_costs"", ""other""]
+    },
+    {
+      ""name"": ""add_previous_years"",
+      ""op"": ""add"",
+      ""args"": [""add_lower_costs"", ""ccg_operating_income_2015"", ""ccg_operating_income_2014""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""add_previous_years""]
+    }
+  ],
+  ""unit"": ""million""
+}",1649,395,2044,12.602105400001165,1,False,False
+E3_pot_calculator,26,and what was the change in value of that stock considering the original amount invested in it in 2008?,227.11,2.2711,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""original_amount"": 100, ""discb_2012"": 327.11}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""original_amount"", ""discb_2012""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""original_amount"": 100,
+    ""discb_2012"": 327.11
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""original_amount"", ""discb_2012""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in value of the stock considering the original amount invested in 2008. The original amount is $100, and the value of discb in 2012 is $327.11. The percentage change is calculated using the percentage_change operation, which returns the ratio of the difference between the new and old values to the old value.",1452,161,1613,6.840654900006484,1,False,False
+E3_pot_calculator,27,what is the change in value of this investment?,67.45,76.07,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""2003_value"": 100, ""2004_value"": 137.75, ""2005_value"": 205.2, ""2006_value"": 276.37, ""2007_value"": 238.04, ""2008_value"": 281.27}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""2008_value"", ""2005_value""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""2003_value"": 100,
+    ""2004_value"": 137.75,
+    ""2005_value"": 205.2,
+    ""2006_value"": 276.37,
+    ""2007_value"": 238.04,
+    ""2008_value"": 281.27
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""2008_value"", ""2005_value""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the change in value of the investment by subtracting the value in 2005 from the value in 2008.",1399,155,1554,6.472494499990717,1,False,False
+E3_pot_calculator,28,what was the value of e*trade financial corp for year ended 12/07?,73.05,73.05,True,calculadora,False,correto,llm,True,"{""variables"": {""e_trade_2007"": 73.05}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""e_trade_2007""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""e_trade_2007"": 73.05
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""e_trade_2007""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program simply returns the value of e*trade financial corp for the year ended 12/07, which is 73.05.",1323,102,1425,5.185259300022153,1,False,True
+E3_pot_calculator,29,what was the difference in accrued trade and consumer promotion liability as of 5/28/06 and 5/29/05?,56.0,56.0,True,calculadora,False,correto,llm,True,"{""variables"": {""accrued_trade_and_consumer_promotion_liability_2005"": 283, ""accrued_trade_and_consumer_promotion_liability_2006"": 339}, ""steps"": [{""name"": ""difference"", ""op"": ""sub"", ""args"": [""accrued_trade_and_consumer_promotion_liability_2006"", ""accrued_trade_and_consumer_promotion_liability_2005""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""difference""]}], ""unit"": """"}",,2,ok,True,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""accrued_trade_and_consumer_promotion_liability_2005"": 283,
+    ""accrued_trade_and_consumer_promotion_liability_2006"": 339
+  },
+  ""steps"": [
+    {
+      ""name"": ""difference"",
+      ""op"": ""sub"",
+      ""args"": [""accrued_trade_and_consumer_promotion_liability_2006"", ""accrued_trade_and_consumer_promotion_liability_2005""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""difference""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the difference in accrued trade and consumer promotion liability as of 5/28/06 and 5/29/05 by subtracting the 2005 value from the 2006 value. The result is then returned as the answer.",2141,199,2340,8.085522100009257,1,False,True
+E3_pot_calculator,30,"what was the tax benefit realized from option exercises under all incentive plans in 2014, in millions?",33.0,0.15348837209302327,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""tax_benefit_2014"": 33, ""cash_received_2014"": 215, ""total_intrinsic_value_2014"": 90}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage"", ""args"": [""tax_benefit_2014"", ""cash_received_2014""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""tax_benefit_2014"": 33,
+    ""cash_received_2014"": 215,
+    ""total_intrinsic_value_2014"": 90
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""tax_benefit_2014"", ""cash_received_2014""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage of the tax benefit realized from option exercises under all incentive plans in 2014, in millions, by dividing the tax benefit by the cash received in 2014.",1957,150,2107,6.8501231999835,1,False,False
+E3_pot_calculator,31,what is the percent change?,0.00689,0.006885593220338983,True,calculadora,False,correto,llm,True,"{""variables"": {""lease_2020"": 1888.0, ""lease_2021"": 1901.0}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""lease_2020""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""lease_2021""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,3,ok,True,"Here is the symbolic program to answer the question ""what is the percent change?"":
+
+{
+""variables"": {
+""lease_2020"": 1888.0,
+""lease_2021"": 1901.0
+},
+""steps"": [
+{
+""name"": ""old_value"",
+""op"": ""value"",
+""args"": [""lease_2020""]
+},
+{
+""name"": ""new_value"",
+""op"": ""value"",
+""args"": [""lease_2021""]
+},
+{
+""name"": ""answer"",
+""op"": ""percentage_change"",
+""args"": [""old_value"", ""new_value""]
+}
+],
+""unit"": ""%""
+}",1769,130,1899,6.249411700002383,1,True,True
+E3_pot_calculator,32,and how much does that change represent in relation to this total?,0.13874,728.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""total_undeveloped_reserves_2014"": 728.0, ""total_undeveloped_reserves_2013"": 627.0, ""change_2014"": 101.0}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""total_undeveloped_reserves_2014""]}], ""unit"": ""mmboe""}",mmboe,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""total_undeveloped_reserves_2014"": 728.0,
+    ""total_undeveloped_reserves_2013"": 627.0,
+    ""change_2014"": 101.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""total_undeveloped_reserves_2014""]
+    }
+  ],
+  ""unit"": ""mmboe""
+}
+```
+
+This program defines three variables: `total_undeveloped_reserves_2014`, `total_undeveloped_reserves_2013`, and `change_2014`. The `answer` step simply returns the value of `total_undeveloped_reserves_2014`, which is the total of undeveloped reserves in the end of 2014.",2093,199,2292,8.26897979999194,1,True,False
+E3_pot_calculator,33,and what was it in 2009?,526.0,526.0,True,calculadora,False,correto,llm,True,"{""variables"": {""asbestos_cases_2009"": 526, ""asbestos_cases_2010"": 499}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""asbestos_cases_2009""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""asbestos_cases_2009"": 526,
+    ""asbestos_cases_2010"": 499
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""asbestos_cases_2009""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program simply returns the value of asbestos cases in 2009, which is 526.",1737,105,1842,5.592625500023132,1,False,True
+E3_pot_calculator,34,and what was that dividend yield in 2017?,3.573,0.08704170165127342,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""dividend_yield_2017"": 3.573, ""dividend_yield_2018"": 3.884}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""dividend_yield_2017""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""dividend_yield_2018""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,3,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""dividend_yield_2017"": 3.573,
+    ""dividend_yield_2018"": 3.884
+  },
+  ""steps"": [
+    {
+      ""name"": ""old_value"",
+      ""op"": ""value"",
+      ""args"": [""dividend_yield_2017""]
+    },
+    {
+      ""name"": ""new_value"",
+      ""op"": ""value"",
+      ""args"": [""dividend_yield_2018""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}",2082,154,2236,7.0369160999835,1,False,False
+E3_pot_calculator,35,what is long term debt in 2012?,29.0,29.0,True,calculadora,False,correto,llm,True,"{""variables"": {""long_term_debt_2012"": 29}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""long_term_debt_2012""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""long_term_debt_2012"": 29
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""long_term_debt_2012""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+Note: The question is asking for the long-term debt in 2012, which is explicitly stated in the table as $29 million.",2017,106,2123,5.782213100028457,1,False,True
+E3_pot_calculator,36,"in that same period, what was the change in the total of current liabilities?",-42.8,0.0666546891843335,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""current_assets_2006"": 1113.2, ""current_assets_2007"": 1187.4, ""change"": 74.2}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""current_assets_2006"", ""current_assets_2007""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""current_assets_2006"": 1113.2,
+    ""current_assets_2007"": 1187.4,
+    ""change"": 74.2
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""current_assets_2006"", ""current_assets_2007""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the change in the total of current assets from 2006 to 2007 as a percentage of the total current assets in 2006.",1958,144,2102,6.637023699993733,1,False,False
+E3_pot_calculator,37,how many years are between 2023 and 2008?,15.0,15.0,True,calculadora,False,correto,llm,True,"{""variables"": {""year_2008"": 2008, ""year_2023"": 2023}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""year_2023"", ""year_2008""]}], ""unit"": ""years""}",years,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""year_2008"": 2008,
+    ""year_2023"": 2023
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""year_2023"", ""year_2008""]
+    }
+  ],
+  ""unit"": ""years""
+}
+```
+
+This program defines two variables, `year_2008` and `year_2023`, which are the years 2008 and 2023, respectively. The program then defines a single step, which is the subtraction of `year_2008` from `year_2023`. The result of this step is the number of years between 2023 and 2008.",1854,173,2027,7.358885399997234,1,False,True
+E3_pot_calculator,38,what is the sum of cash provided by operating activities and used by investing activities in 2008?,1184.0,1184.0,True,calculadora,False,correto,llm,True,"{""variables"": {""cash_provided_by_operating_activities_2008"": 1762, ""used_by_investing_activities_2008"": -578}, ""steps"": [{""name"": ""answer"", ""op"": ""add"", ""args"": [""cash_provided_by_operating_activities_2008"", ""used_by_investing_activities_2008""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""cash_provided_by_operating_activities_2008"": 1762,
+    ""used_by_investing_activities_2008"": -578
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [""cash_provided_by_operating_activities_2008"", ""used_by_investing_activities_2008""]
+    }
+  ],
+  ""unit"": ""million""
+}",1725,111,1836,5.757301599980565,1,False,True
+E3_pot_calculator,39,what was the variation in the value of the fidelity national information services inc . from 2007 to 2012?,57.38,0.5738,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""fis_2007"": 100.0, ""fis_2008"": 70.08, ""fis_2009"": 101.93, ""fis_2010"": 120.01, ""fis_2011"": 117.34, ""fis_2012"": 157.38}, ""steps"": [{""name"": ""fis_2007_to_2012_change"", ""op"": ""percentage_change"", ""args"": [""fis_2007"", ""fis_2012""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""fis_2007_to_2012_change""]}], ""unit"": ""%""}",%,2,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""fis_2007"": 100.0,
+    ""fis_2008"": 70.08,
+    ""fis_2009"": 101.93,
+    ""fis_2010"": 120.01,
+    ""fis_2011"": 117.34,
+    ""fis_2012"": 157.38
+  },
+  ""steps"": [
+    {
+      ""name"": ""fis_2007_to_2012_change"",
+      ""op"": ""percentage_change"",
+      ""args"": [""fis_2007"", ""fis_2012""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""fis_2007_to_2012_change""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in the value of Fidelity National Information Services Inc. from 2007 to 2012 by subtracting the 2007 value from the 2012 value and dividing by the 2007 value.",1265,239,1504,8.378043499978958,1,False,False
+E3_pot_calculator,40,what is the total value of proceeds from the issuance of employee options during february 2004?,11556103.23,0.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""options_issued"": 1032717, ""exercise_price"": 11.19, ""fair_market_value"": 11.19, ""proceeds"": 0}, ""steps"": [{""name"": ""calculate_proceeds"", ""op"": ""mul"", ""args"": [""options_issued"", ""exercise_price""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""proceeds""]}], ""unit"": ""million""}",million,2,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""options_issued"": 1032717,
+    ""exercise_price"": 11.19,
+    ""fair_market_value"": 11.19,
+    ""proceeds"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""calculate_proceeds"",
+      ""op"": ""mul"",
+      ""args"": [""options_issued"", ""exercise_price""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""proceeds""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+Note that I've assumed the proceeds are calculated by multiplying the number of options issued by the exercise price. If this is not the correct calculation, please let me know and I'll be happy to help.",2080,178,2258,7.541114500025287,1,False,False
+E3_pot_calculator,41,what was the difference in the price of apple inc. between 9/30/12 and 9/30/07?,337.0,337.0,True,calculadora,False,correto,llm,True,"{""variables"": {""apple_2007"": 100, ""apple_2012"": 437}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""apple_2012"", ""apple_2007""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""apple_2007"": 100,
+    ""apple_2012"": 437
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""apple_2012"", ""apple_2007""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the difference in the price of Apple Inc. between 9/30/12 and 9/30/07 by subtracting the 2007 value from the 2012 value.",1375,131,1506,6.167571400001179,1,False,True
+E3_pot_calculator,42,"what is the balance in the warranty reserves as of december 31, 2009?",604.0,604.0,True,calculadora,False,correto,llm,True,"{""variables"": {""warranty_reserve_2009"": 604}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""warranty_reserve_2009""]}], ""unit"": ""thousand""}",thousand,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""warranty_reserve_2009"": 604
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""warranty_reserve_2009""]
+    }
+  ],
+  ""unit"": ""thousand""
+}
+
+This program uses the value of the warranty reserve as of December 31, 2009, which is given in the table. The answer is simply the value of the warranty reserve, so we use the value operation with the warranty_reserve_2009 variable as the argument. The unit is set to ""thousand"" since the warranty reserve is given in thousands.",1622,150,1772,6.625323800020851,1,False,True
+E3_pot_calculator,43,"what is the ratio of the value of freight revenue from the automotive group, 2012 to 2011?",1.19669,1.1721854304635762,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""freight_revenue_2012"": 3280, ""freight_revenue_2011"": 1510, ""old_value"": 1510, ""new_value"": 3280}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""freight_revenue_2011""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""freight_revenue_2012""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,3,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""freight_revenue_2012"": 3280,
+    ""freight_revenue_2011"": 1510,
+    ""old_value"": 1510,
+    ""new_value"": 3280
+  },
+  ""steps"": [
+    {
+      ""name"": ""old_value"",
+      ""op"": ""value"",
+      ""args"": [""freight_revenue_2011""]
+    },
+    {
+      ""name"": ""new_value"",
+      ""op"": ""value"",
+      ""args"": [""freight_revenue_2012""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```",1869,178,2047,7.375501099973917,1,True,False
+E3_pot_calculator,44,what was the change in net revenue from 2006 to 2007?,20.8,0.0446256168204247,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""net_revenue_2006"": 466.1, ""net_revenue_2007"": 486.9}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""net_revenue_2006"", ""net_revenue_2007""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""net_revenue_2006"": 466.1,
+    ""net_revenue_2007"": 486.9
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""net_revenue_2006"", ""net_revenue_2007""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in net revenue from 2006 to 2007 by subtracting the 2006 net revenue from the 2007 net revenue and dividing the result by the 2006 net revenue.",1496,145,1641,6.388797499996144,1,False,False
+E3_pot_calculator,45,what is the percent of shares not related to post-merger services?,0.15116,None,False,sem_resultado,True,plano_invalido,llm,False,,,0,plano_json_invalido,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""performance_share_units"": 354660,
+    ""post_merger_services"": 77371,
+    ""total_unrecognized_compensation_cost"": 11700000,
+    ""weighted_average_grant_date_fair_value"": 20.71,
+    ""unrecognized_compensation_cost_per_share"": 11700,
+    ""shares_not_related_to_post_merger_services"": 774788 - 77371
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""performance_share_units"", ""post_merger_services""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note that the question is asking for the difference in the value of performance shares less shares not related to post-merger services. This can be calculated by subtracting the number of shares related to post-merger services from the total number of performance shares. The symbolic program uses the values provided in the text to calculate this difference.",1750,220,1970,8.27986099998816,1,True,False
+E3_pot_calculator,46,so what was the percentage change during this time?,1.78431,-2.784313725490196,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""old_value"": -510, ""new_value"": 910}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""old_value"": -510,
+    ""new_value"": 910
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```",1734,84,1818,5.046021300018765,1,True,False
+E3_pot_calculator,47,what is that value less 1?,0.044,103697.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""balance_2008"": 846258, ""additions_2009"": 103698, ""deductions_2009"": -11869, ""balance_2009"": 938087, ""additions_2010"": 108261, ""deductions_2010"": -11144, ""balance_2010"": 1035204, ""additions_2011"": 114180, ""deductions_2011"": -21796, ""balance_2011"": 1127588}, ""steps"": [{""name"": ""value_2009"", ""op"": ""value"", ""args"": [""additions_2009""]}, {""name"": ""value_2008"", ""op"": ""value"", ""args"": [""balance_2008""]}, {""name"": ""ratio"", ""op"": ""div"", ""args"": [""value_2009"", ""value_2008""]}, {""name"": ""answer"", ""op"": ""sub"", ""args"": [""value_2009"", ""1""]}], ""unit"": """"}",,4,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""balance_2008"": 846258,
+    ""additions_2009"": 103698,
+    ""deductions_2009"": -11869,
+    ""balance_2009"": 938087,
+    ""additions_2010"": 108261,
+    ""deductions_2010"": -11144,
+    ""balance_2010"": 1035204,
+    ""additions_2011"": 114180,
+    ""deductions_2011"": -21796,
+    ""balance_2011"": 1127588
+  },
+  ""steps"": [
+    {
+      ""name"": ""value_2009"",
+      ""op"": ""value"",
+      ""args"": [""additions_2009""]
+    },
+    {
+      ""name"": ""value_2008"",
+      ""op"": ""value"",
+      ""args"": [""balance_2008""]
+    },
+    {
+      ""name"": ""ratio"",
+      ""op"": ""div"",
+      ""args"": [""value_2009"", ""value_2008""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""value_2009"", ""1""]
+    }
+  ],
+  ""unit"": """"
+}",1600,278,1878,9.709454099996947,1,False,False
+E3_pot_calculator,48,and what was that for the decrease in interest rates?,82.5,-91.3,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""increase_in_interest_rates"": 10, ""fair_market_value_2018"": -91.3}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""fair_market_value_2018""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""increase_in_interest_rates"": 10,
+    ""fair_market_value_2018"": -91.3
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""fair_market_value_2018""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program uses the value of the 10% increase in interest rates as a variable, and the fair market value of the debt as another variable. The answer step simply returns the value of the fair market value, which is -91.3 million.",1778,140,1918,6.465405800001463,1,False,False
+E3_pot_calculator,49,and what was it in 2007?,28.37,157.26,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""us_2008"": 11.09, ""australia_2008"": 4.3, ""great_britain_2008"": 1.97, ""spain_2008"": 1.71, ""italy_2008"": 1.66, ""portugal_2008"": 0.62, ""germany_2008"": 0.57, ""netherlands_2008"": 0.4, ""belgium_2008"": 0.29, ""greece_2008"": 0.27, ""other_2008"": 1.01, ""us_2007"": 12.14, ""australia_2007"": 6.1, ""great_britain_2007"": 2.93, ""spain_2007"": 1.9, ""italy_2007"": 1.86, ""portugal_2007"": 0.7, ""germany_2007"": 0.7, ""netherlands_2007"": 0.55, ""belgium_2007"": 0.31, ""greece_2007"": 0.31, ""other_2007"": 1.26, ""total_conduit_assets_2008"": 23.89, ""total_conduit_assets_2007"": 28.76, ""commitment_2008"": 23.59, ""commitment_2007"": 28.37}, ""steps"": [{""name"": ""us_2008_value"", ""op"": ""value"", ""args"": [""us_2008""]}, {""name"": ""australia_2008_value"", ""op"": ""value"", ""args"": [""australia_2008""]}, {""name"": ""great_britain_2008_value"", ""op"": ""value"", ""args"": [""great_britain_2008""]}, {""name"": ""spain_2008_value"", ""op"": ""value"", ""args"": [""spain_2008""]}, {""name"": ""italy_2008_value"", ""op"": ""value"", ""args"": [""italy_2008""]}, {""name"": ""portugal_2008_value"", ""op"": ""value"", ""args"": [""portugal_2008""]}, {""name"": ""germany_2008_value"", ""op"": ""value"", ""args"": [""germany_2008""]}, {""name"": ""netherlands_2008_value"", ""op"": ""value"", ""args"": [""netherlands_2008""]}, {""name"": ""belgium_2008_value"", ""op"": ""value"", ""args"": [""belgium_2008""]}, {""name"": ""greece_2008_value"", ""op"": ""value"", ""args"": [""greece_2008""]}, {""name"": ""other_2008_value"", ""op"": ""value"", ""args"": [""other_2008""]}, {""name"": ""us_2007_value"", ""op"": ""value"", ""args"": [""us_2007""]}, {""name"": ""australia_2007_value"", ""op"": ""value"", ""args"": [""australia_2007""]}, {""name"": ""great_britain_2007_value"", ""op"": ""value"", ""args"": [""great_britain_2007""]}, {""name"": ""spain_2007_value"", ""op"": ""value"", ""args"": [""spain_2007""]}, {""name"": ""italy_2007_value"", ""op"": ""value"", ""args"": [""italy_2007""]}, {""name"": ""portugal_2007_value"", ""op"": ""value"", ""args"": [""portugal_2007""]}, {""name"": ""germany_2007_value"", ""op"": ""value"", ""args"": [""germany_2007""]}, {""name"": ""netherlands_2007_value"", ""op"": ""value"", ""args"": [""netherlands_2007""]}, {""name"": ""belgium_2007_value"", ""op"": ""value"", ""args"": [""belgium_2007""]}, {""name"": ""greece_2007_value"", ""op"": ""value"", ""args"": [""greece_2007""]}, {""name"": ""other_2007_value"", ""op"": ""value"", ""args"": [""other_2007""]}, {""name"": ""total_conduit_assets_2008_value"", ""op"": ""value"", ""args"": [""total_conduit_assets_2008""]}, {""name"": ""total_conduit_assets_2007_value"", ""op"": ""value"", ""args"": [""total_conduit_assets_2007""]}, {""name"": ""commitment_2008_value"", ""op"": ""value"", ""args"": [""commitment_2008""]}, {""name"": ""commitment_2007_value"", ""op"": ""value"", ""args"": [""commitment_2007""]}, {""name"": ""answer"", ""op"": ""add"", ""args"": [""us_2008_value"", ""australia_2008_value"", ""great_britain_2008_value"", ""spain_2008_value"", ""italy_2008_value"", ""portugal_2008_value"", ""germany_2008_value"", ""netherlands_2008_value"", ""belgium_2008_value"", ""greece_2008_value"", ""other_2008_value"", ""us_2007_value"", ""australia_2007_value"", ""great_britain_2007_value"", ""spain_2007_value"", ""italy_2007_value"", ""portugal_2007_value"", ""germany_2007_value"", ""netherlands_2007_value"", ""belgium_2007_value"", ""greece_2007_value"", ""other_2007_value"", ""total_conduit_assets_2008_value"", ""total_conduit_assets_2007_value"", ""commitment_2008_value"", ""commitment_2007_value""]}], ""unit"": """"}",,27,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""us_2008"": 11.09,
+    ""australia_2008"": 4.30,
+    ""great_britain_2008"": 1.97,
+    ""spain_2008"": 1.71,
+    ""italy_2008"": 1.66,
+    ""portugal_2008"": 0.62,
+    ""germany_2008"": 0.57,
+    ""netherlands_2008"": 0.40,
+    ""belgium_2008"": 0.29,
+    ""greece_2008"": 0.27,
+    ""other_2008"": 1.01,
+    ""us_2007"": 12.14,
+    ""australia_2007"": 6.10,
+    ""great_britain_2007"": 2.93,
+    ""spain_2007"": 1.90,
+    ""italy_2007"": 1.86,
+    ""portugal_2007"": 0.70,
+    ""germany_2007"": 0.70,
+    ""netherlands_2007"": 0.55,
+    ""belgium_2007"": 0.31,
+    ""greece_2007"": 0.31,
+    ""other_2007"": 1.26,
+    ""total_conduit_assets_2008"": 23.89,
+    ""total_conduit_assets_2007"": 28.76,
+    ""commitment_2008"": 23.59,
+    ""commitment_2007"": 28.37
+  },
+  ""steps"": [
+    {
+      ""name"": ""us_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""us_2008""]
+    },
+    {
+      ""name"": ""australia_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""australia_2008""]
+    },
+    {
+      ""name"": ""great_britain_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""great_britain_2008""]
+    },
+    {
+      ""name"": ""spain_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""spain_2008""]
+    },
+    {
+      ""name"": ""italy_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""italy_2008""]
+    },
+    {
+      ""name"": ""portugal_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""portugal_2008""]
+    },
+    {
+      ""name"": ""germany_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""germany_2008""]
+    },
+    {
+      ""name"": ""netherlands_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""netherlands_2008""]
+    },
+    {
+      ""name"": ""belgium_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""belgium_2008""]
+    },
+    {
+      ""name"": ""greece_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""greece_2008""]
+    },
+    {
+      ""name"": ""other_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""other_2008""]
+    },
+    {
+      ""name"": ""us_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""us_2007""]
+    },
+    {
+      ""name"": ""australia_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""australia_2007""]
+    },
+    {
+      ""name"": ""great_britain_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""great_britain_2007""]
+    },
+    {
+      ""name"": ""spain_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""spain_2007""]
+    },
+    {
+      ""name"": ""italy_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""italy_2007""]
+    },
+    {
+      ""name"": ""portugal_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""portugal_2007""]
+    },
+    {
+      ""name"": ""germany_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""germany_2007""]
+    },
+    {
+      ""name"": ""netherlands_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""netherlands_2007""]
+    },
+    {
+      ""name"": ""belgium_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""belgium_2007""]
+    },
+    {
+      ""name"": ""greece_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""greece_2007""]
+    },
+    {
+      ""name"": ""other_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""other_2007""]
+    },
+    {
+      ""name"": ""total_conduit_assets_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""total_conduit_assets_2008""]
+    },
+    {
+      ""name"": ""total_conduit_assets_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""total_conduit_assets_2007""]
+    },
+    {
+      ""name"": ""commitment_2008_value"",
+      ""op"": ""value"",
+      ""args"": [""commitment_2008""]
+    },
+    {
+      ""name"": ""commitment_2007_value"",
+      ""op"": ""value"",
+      ""args"": [""commitment_2007""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [
+        ""us_2008_value"",
+        ""australia_2008_value"",
+        ""great_britain_2008_value"",
+        ""spain_2008_value"",
+        ""italy_2008_value"",
+        ""portugal_2008_value"",
+        ""germany_2008_value"",
+        ""netherlands_2008_value"",
+        ""belgium_2008_value"",
+        ""greece_2008_value"",
+        ""other_2008_value"",
+        ""us_2007_value"",
+        ""australia_2007_value"",
+        ""great_britain_2007_value"",
+        ""spain_2007_value"",
+        ""italy_2007_value"",
+        ""portugal_2007_value"",
+        ""germany_2007_value"",
+        ""netherlands_2007_value"",
+        ""belgium_2007_value"",
+        ""greece_2007_value"",
+        ""other_2007_value"",
+        ""total_conduit_assets_2008_value"",
+        ""total_conduit_assets_2007_value"",
+        ""commitment_2008_value"",
+        ""commitment_2007_value""
+      ]
+    }
+  ],
+  ""unit"": """"
+}
+```",2083,1540,3623,41.05436229999759,1,False,False
+E3_pot_calculator,50,what was the difference in operating profit between 2011 and 2012?,92.0,92.0,True,calculadora,False,correto,llm,True,"{""variables"": {""operating_profit_2011"": 645, ""operating_profit_2012"": 737, ""net_sales_2011"": 7132, ""net_sales_2012"": 7579}, ""steps"": [{""name"": ""diff"", ""op"": ""sub"", ""args"": [""operating_profit_2012"", ""operating_profit_2011""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""operating_profit_2011"": 645,
+    ""operating_profit_2012"": 737,
+    ""net_sales_2011"": 7132,
+    ""net_sales_2012"": 7579
+  },
+  ""steps"": [
+    {
+      ""name"": ""diff"",
+      ""op"": ""sub"",
+      ""args"": [""operating_profit_2012"", ""operating_profit_2011""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the difference in operating profit between 2011 and 2012 by subtracting the operating profit in 2011 from the operating profit in 2012.",1907,158,2065,7.17431200001738,1,False,True
+E3_pot_calculator,51,what was the change in value of the wti crude oil benchmark from 2009 to 2011?,33.02,0.5318086648413592,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""old_value"": 62.09, ""new_value"": 95.11}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""old_value"": 62.09,
+    ""new_value"": 95.11
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in the value of WTI crude oil benchmark from 2009 to 2011.",1969,112,2081,5.958686799975112,1,False,False
+E3_pot_calculator,52,what about the total including 2007?,102964.0,75968.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""contribution_expense_2009"": 75968.0, ""contribution_expense_2008"": 35341.0, ""contribution_expense_2007"": 26996.0}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""contribution_expense_2009""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""contribution_expense_2009"": 75968.0,
+    ""contribution_expense_2008"": 35341.0,
+    ""contribution_expense_2007"": 26996.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""contribution_expense_2009""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note that the question asks for the total contribution expense in 2009 and 2008, which is already provided as 75968.0 and 35341.0, respectively. Therefore, the symbolic program simply returns the value of the 2009 contribution expense.",1367,166,1533,7.007820400001947,1,False,False
+E3_pot_calculator,53,what is the total of letters of credit outstanding for 2006 and 2007?,93.4,93.4,True,calculadora,False,correto,llm,True,"{""variables"": {""letters_of_credit_2006"": 52.4, ""letters_of_credit_2007"": 41.0}, ""steps"": [{""name"": ""answer"", ""op"": ""add"", ""args"": [""letters_of_credit_2006"", ""letters_of_credit_2007""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""letters_of_credit_2006"": 52.4,
+    ""letters_of_credit_2007"": 41.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [""letters_of_credit_2006"", ""letters_of_credit_2007""]
+    }
+  ],
+  ""unit"": """"
+}",1761,98,1859,5.399761300010141,1,False,True
+E3_pot_calculator,54,what is the change in value of intrinsic value from 2016 to 2018?,-9.0,-0.5,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""intrinsic_value_2016"": 18, ""intrinsic_value_2017"": 10, ""intrinsic_value_2018"": 9}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""intrinsic_value_2016""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""intrinsic_value_2018""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,3,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""intrinsic_value_2016"": 18,
+    ""intrinsic_value_2017"": 10,
+    ""intrinsic_value_2018"": 9
+  },
+  ""steps"": [
+    {
+      ""name"": ""old_value"",
+      ""op"": ""value"",
+      ""args"": [""intrinsic_value_2016""]
+    },
+    {
+      ""name"": ""new_value"",
+      ""op"": ""value"",
+      ""args"": [""intrinsic_value_2018""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in the intrinsic value from 2016 to 2018 by subtracting the old value from the new value and dividing by the old value.",996,197,1193,7.223938900016947,1,False,False
+E3_pot_calculator,55,what is the average balance for these years?,8.5,-865.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""long_term_debt_2013"": 7034, ""long_term_debt_2014"": 6169}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""long_term_debt_2014"", ""long_term_debt_2013""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""long_term_debt_2013"": 7034,
+    ""long_term_debt_2014"": 6169
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""long_term_debt_2014"", ""long_term_debt_2013""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```",2014,106,2120,5.67197340002167,1,False,False
+E3_pot_calculator,56,what was the net change in value?,-963.0,-963.0,True,calculadora,False,correto,llm,True,"{""variables"": {""nonvested_rsus_start"": 4822.0, ""nonvested_rsus_end"": 3859.0}, ""steps"": [{""name"": ""start_value"", ""op"": ""value"", ""args"": [""nonvested_rsus_start""]}, {""name"": ""end_value"", ""op"": ""value"", ""args"": [""nonvested_rsus_end""]}, {""name"": ""answer"", ""op"": ""sub"", ""args"": [""end_value"", ""start_value""]}], ""unit"": """"}",,3,ok,True,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""nonvested_rsus_start"": 4822.0,
+    ""nonvested_rsus_end"": 3859.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""start_value"",
+      ""op"": ""value"",
+      ""args"": [""nonvested_rsus_start""]
+    },
+    {
+      ""name"": ""end_value"",
+      ""op"": ""value"",
+      ""args"": [""nonvested_rsus_end""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""end_value"", ""start_value""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the net change in value by subtracting the start value from the end value.",1984,177,2161,7.585970699990867,1,False,True
+E3_pot_calculator,57,what return rate does this represent?,1.8581,1.8581,True,calculadora,False,correto,llm,True,"{""variables"": {""old_value"": 100, ""new_value"": 285.81}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""old_value"": 100,
+    ""new_value"": 285.81
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage increase in value of an investment in Delphi Automotive PLC from 2011 to 2013, which is the answer to the question.",1466,115,1581,5.559818700014148,1,True,True
+E3_pot_calculator,58,"and only from 2011 to 2012, what was the change in the company 2019s cash, cash equivalents and marketable securities held by foreign subsidiaries?",28.3,1.7349287442860983,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""cash_2011"": 81570, ""cash_2012"": 121251, ""cash_flow_2012"": 50856, ""cash_flow_2010"": 18595}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""cash_flow_2010"", ""cash_flow_2012""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""cash_2011"": 81570,
+    ""cash_2012"": 121251,
+    ""cash_flow_2012"": 50856,
+    ""cash_flow_2010"": 18595
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""cash_flow_2010"", ""cash_flow_2012""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in annual operating cash flow from 2010 to 2012.",1857,140,1997,6.422419099981198,1,False,False
+E3_pot_calculator,59,how many shares were repurchased during 2017?,3.4,1.8,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""shares_repurchased_2017"": 1.8}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""shares_repurchased_2017""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""shares_repurchased_2017"": 1.8
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""shares_repurchased_2017""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+Note that the question asks how many shares were repurchased during 2017, and the answer is directly provided in the text as ""approximately 1.8 million shares"".",2840,114,2954,6.619942299992545,1,False,False
+E3_pot_calculator,60,what is the percent change times 100?,1.47092,-0.6898461538461538,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""cmg_2007"": 441.9, ""cmg_2009"": 435.4, ""change"": 0}, ""steps"": [{""name"": ""step1"", ""op"": ""sub"", ""args"": [""cmg_2009"", ""cmg_2007""]}, {""name"": ""step2"", ""op"": ""percentage_change"", ""args"": [""step1"", ""cmg_2007""]}, {""name"": ""step3"", ""op"": ""percentage"", ""args"": [""step2"", 100]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""step3""]}], ""unit"": ""%""}",%,4,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""cmg_2007"": 441.9,
+    ""cmg_2009"": 435.4,
+    ""change"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""step1"",
+      ""op"": ""sub"",
+      ""args"": [""cmg_2009"", ""cmg_2007""]
+    },
+    {
+      ""name"": ""step2"",
+      ""op"": ""percentage_change"",
+      ""args"": [""step1"", ""cmg_2007""]
+    },
+    {
+      ""name"": ""step3"",
+      ""op"": ""percentage"",
+      ""args"": [""step2"", 100]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""step3""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in the CMG balance from 2007 to 2009, and then multiplies the result by 100 to convert it to a percentage.",1926,235,2161,8.986787400004687,1,True,False
+E3_pot_calculator,61,and what is this representation as a portion of the 2009 total?,0.97656,0.5624999999999999,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""loans_2010"": 2.5, ""loans_2009"": 1.6}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""loans_2009"", ""loans_2010""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""loans_2010"": 2.5,
+    ""loans_2009"": 1.6
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""loans_2009"", ""loans_2010""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in the total of loans held-for-sale that are carried at locom from 2009 to 2010, which is the answer to the question.",1677,137,1814,6.4011187000141945,1,True,False
+E3_pot_calculator,62,"and as of the last year of this period, what percentage of the aggregate borrowing capacity was set to expire in 2019?",0.32,None,False,sem_resultado,True,plano_invalido,llm,True,"{""variables"": {""payables_2017"": 166137.0, ""payables_2016"": 51232.0, ""payables_2015"": 52742.0, ""payables_2014"": 2218.0, ""total_payables_2017_2016"": 217369.0, ""total_payables_2015_2017_2016"": 270111.0}, ""steps"": [{""name"": ""total_payables_2015_2017_2016"", ""op"": ""add"", ""args"": [""payables_2015"", ""payables_2017"", ""payables_2016""]}, {""name"": ""answer"", ""op"": ""percentage"", ""args"": [""total_payables_2019"", ""total_payables_2015_2017_2016""]}], ""unit"": ""%""}",%,2,arg_nao_resolvido,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""payables_2017"": 166137.0,
+    ""payables_2016"": 51232.0,
+    ""payables_2015"": 52742.0,
+    ""payables_2014"": 2218.0,
+    ""total_payables_2017_2016"": 217369.0,
+    ""total_payables_2015_2017_2016"": 270111.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""total_payables_2015_2017_2016"",
+      ""op"": ""add"",
+      ""args"": [""payables_2015"", ""payables_2017"", ""payables_2016""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""total_payables_2019"", ""total_payables_2015_2017_2016""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+Note that the question asks for the percentage of the aggregate borrowing capacity that was set to expire in 2019, but the provided history does not mention the aggregate borrowing capacity or the amount set to expire in 2019. Therefore, I assumed that the question is asking for the percentage of the total payables that was set to expire in 2019, which is not explicitly mentioned in the text.",1949,312,2261,10.626629400008824,1,True,False
+E3_pot_calculator,63,what was the 2006 value?,100.0,369.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""apple_2006"": 100, ""apple_2007"": 199, ""apple_2008"": 148, ""apple_2009"": 241, ""apple_2010"": 369, ""apple_2011"": 495}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""apple_2010""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""apple_2006"": 100,
+    ""apple_2007"": 199,
+    ""apple_2008"": 148,
+    ""apple_2009"": 241,
+    ""apple_2010"": 369,
+    ""apple_2011"": 495
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""apple_2010""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note that I've created variables for each year's value of Apple Inc. and used the value of 2010 as the answer.",1385,147,1532,6.51807240000926,1,False,False
+E3_pot_calculator,64,and how much was the total number of customers as a percentage of this total amount?,0.27052,0.27052033613445375,True,calculadora,False,correto,llm,True,"{""variables"": {""total_revenue"": 2674.3, ""total_customers"": 3219192, ""total_population"": 11900000.0}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage"", ""args"": [""total_customers"", ""total_population""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""total_revenue"": 2674.3,
+    ""total_customers"": 3219192,
+    ""total_population"": 11900000.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""total_customers"", ""total_population""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```",2246,102,2348,5.944437899976037,1,True,True
+E3_pot_calculator,65,so what was the percentage change during this time?,0.21795,0.21794871794871795,True,calculadora,False,correto,llm,True,"{""variables"": {""servicing_fees_2000"": 1425, ""servicing_fees_1999"": 1170}, ""steps"": [{""name"": ""old_value"", ""op"": ""value"", ""args"": [""servicing_fees_1999""]}, {""name"": ""new_value"", ""op"": ""value"", ""args"": [""servicing_fees_2000""]}, {""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,3,ok,True,"Here is the symbolic program to answer the question ""so what was the percentage change during this time?"":
+
+{
+""variables"": {
+""servicing_fees_2000"": 1425,
+""servicing_fees_1999"": 1170
+},
+""steps"": [
+{
+""name"": ""old_value"",
+""op"": ""value"",
+""args"": [""servicing_fees_1999""]
+},
+{
+""name"": ""new_value"",
+""op"": ""value"",
+""args"": [""servicing_fees_2000""]
+},
+{
+""name"": ""answer"",
+""op"": ""percentage_change"",
+""args"": [""old_value"", ""new_value""]
+}
+],
+""unit"": ""%""
+}",1803,142,1945,6.557510900020134,1,True,True
+E3_pot_calculator,66,what is the net change?,95.6,95.59999999999991,True,calculadora,False,correto,llm,True,"{""variables"": {""goodwill_2009"": 2885.6, ""goodwill_2008"": 2790.0}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""goodwill_2009"", ""goodwill_2008""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""goodwill_2009"": 2885.6,
+    ""goodwill_2008"": 2790.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""goodwill_2009"", ""goodwill_2008""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the net change in goodwill by subtracting the balance at the end of 2008 from the balance at the end of 2009.",1912,131,2043,6.401779900013935,1,False,True
+E3_pot_calculator,67,so what was the percentage change during this time?,0.28148,0.2814814814814815,True,calculadora,False,correto,llm,True,"{""variables"": {""old_value"": 270.0, ""new_value"": 346.0}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""old_value"": 270.0,
+    ""new_value"": 346.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in inventory value from 9/30/06 to 9/29/07.",1839,113,1952,5.941697200003546,1,True,True
+E3_pot_calculator,68,what was the balance in 2005?,46.0,46.0,True,calculadora,False,correto,llm,True,"{""variables"": {""balance_2005"": 46}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""balance_2005""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""balance_2005"": 46
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""balance_2005""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note: The question is asking for the balance in the allowance for doubtful accounts in 2005, which is explicitly stated in the table as $46.",1374,101,1475,5.220898900006432,1,False,True
+E3_pot_calculator,69,"in the year of 2018, what was the total net cash used?",2054.0,3176.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""net_cash_used_2018"": -755.1, ""net_cash_used_2017"": -655.4, ""net_cash_used_2016"": -231.0, ""net_cash_provided_by_operating_activities_2018"": 2420.9, ""net_cash_provided_by_operating_activities_2017"": 1900.5, ""net_cash_provided_by_operating_activities_2016"": 1688.4}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""net_cash_provided_by_operating_activities_2018"", ""net_cash_used_2018""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""net_cash_used_2018"": -755.1,
+    ""net_cash_used_2017"": -655.4,
+    ""net_cash_used_2016"": -231.0,
+    ""net_cash_provided_by_operating_activities_2018"": 2420.9,
+    ""net_cash_provided_by_operating_activities_2017"": 1900.5,
+    ""net_cash_provided_by_operating_activities_2016"": 1688.4
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""net_cash_provided_by_operating_activities_2018"", ""net_cash_used_2018""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the total net cash used in 2018 by subtracting the net cash used for financing activities in 2018 from the net cash provided by operating activities in 2018.",1952,223,2175,8.51172989999759,1,False,False
+E3_pot_calculator,70,what was the value in 2013?,5.27,0.08918406072106275,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""weighted_average_fair_value_2013"": 5.27, ""weighted_average_fair_value_2014"": 5.74, ""change"": 0.47}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""weighted_average_fair_value_2013"", ""weighted_average_fair_value_2014""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""weighted_average_fair_value_2013"": 5.27,
+    ""weighted_average_fair_value_2014"": 5.74,
+    ""change"": 0.47
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""weighted_average_fair_value_2013"", ""weighted_average_fair_value_2014""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program uses the `percentage_change` operation to calculate the percentage change in the weighted-average estimated fair values of stock options from 2013 to 2014. The `weighted_average_fair_value_2013` and `weighted_average_fair_value_2014` variables are used as inputs to this operation. The result is stored in the `change` variable, which is then used to calculate the percentage change.",1811,207,2018,8.109625100012636,1,False,False
+E3_pot_calculator,71,and the percentage of the maturities that are part of the total maturities in 2008?,0.05768,1.0038304184753841,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""total_maturities"": 3347676, ""senior_notes_payable"": 3360499}, ""steps"": [{""name"": ""total_maturities"", ""op"": ""value"", ""args"": [""total_maturities""]}, {""name"": ""senior_notes_payable"", ""op"": ""value"", ""args"": [""senior_notes_payable""]}, {""name"": ""answer"", ""op"": ""percentage"", ""args"": [""senior_notes_payable"", ""total_maturities""]}], ""unit"": ""%""}",%,3,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""total_maturities"": 3347676,
+    ""senior_notes_payable"": 3360499
+  },
+  ""steps"": [
+    {
+      ""name"": ""total_maturities"",
+      ""op"": ""value"",
+      ""args"": [""total_maturities""]
+    },
+    {
+      ""name"": ""senior_notes_payable"",
+      ""op"": ""value"",
+      ""args"": [""senior_notes_payable""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage"",
+      ""args"": [""senior_notes_payable"", ""total_maturities""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```",1866,160,2026,7.074376999982633,1,True,False
+E3_pot_calculator,72,"what was, then, the change over the year?",-1.9,None,False,sem_resultado,True,plano_invalido,llm,True,"{""variables"": {""amortization_expense_2009"": 7.4, ""amortization_expense_2008"": 9.3, ""amortization_expense_2010"": 5425, ""amortization_expense_2011"": 1430}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [{""value"": ""amortization_expense_2010""}, {""value"": ""amortization_expense_2009""}]}], ""unit"": """"}",,1,arg_nao_resolvido,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""amortization_expense_2009"": 7.4,
+    ""amortization_expense_2008"": 9.3,
+    ""amortization_expense_2010"": 5425,
+    ""amortization_expense_2011"": 1430
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [
+        {""value"": ""amortization_expense_2010""},
+        {""value"": ""amortization_expense_2009""}
+      ]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the change in amortization expense from 2009 to 2010 by subtracting the 2009 value from the 2010 value.",1603,179,1782,7.291630799998529,1,False,False
+E3_pot_calculator,73,what is the sum of the total minimum lease payments for both operating and capital leases?,7807.0,845.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""operating_2009"": 657, ""capital_2009"": 188}, ""steps"": [{""name"": ""answer"", ""op"": ""add"", ""args"": [""operating_2009"", ""capital_2009""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""operating_2009"": 657,
+    ""capital_2009"": 188
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""add"",
+      ""args"": [""operating_2009"", ""capital_2009""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program adds the operating lease payments for 2009 ($657 million) and the capital lease payments for 2009 ($188 million) to get the total minimum lease payments for both operating and capital leases in 2009, which is $845 million.",1660,142,1802,6.34697069998947,1,False,False
+E3_pot_calculator,74,what was the value of the dow jones u.s. technology supersector index in 2011?,100.0,100.0,True,calculadora,False,correto,llm,True,"{""variables"": {""dow_jones_u_s_technology_supersector_index_2011"": 100, ""dow_jones_u_s_technology_supersector_index_2016"": 217.0}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""dow_jones_u_s_technology_supersector_index_2011""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""dow_jones_u_s_technology_supersector_index_2011"": 100,
+    ""dow_jones_u_s_technology_supersector_index_2016"": 217.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""dow_jones_u_s_technology_supersector_index_2011""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note that the value of the Dow Jones U.S. Technology Supersector Index in 2011 is directly read from the table, so no calculation is needed.",1348,147,1495,6.434755100024631,1,False,True
+E3_pot_calculator,75,what is the amount lost from the bond authorization to the withdrawn for brentwood tennessee store support center?,2.7,None,False,sem_resultado,True,plano_invalido,llm,True,"{""variables"": {""bond_authorized_amount_franklin"": 54.0, ""amount_drawn_franklin"": 51.8, ""bond_authorized_amount_brentwood"": 78.0, ""amount_drawn_brentwood"": 75.3}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [{""name"": ""bond_authorized_amount_brentwood"", ""op"": ""value"", ""args"": [""bond_authorized_amount_brentwood""]}, {""name"": ""amount_drawn_brentwood"", ""op"": ""value"", ""args"": [""amount_drawn_brentwood""]}]}], ""unit"": ""million""}",million,1,arg_nao_resolvido,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""bond_authorized_amount_franklin"": 54.0,
+    ""amount_drawn_franklin"": 51.8,
+    ""bond_authorized_amount_brentwood"": 78.0,
+    ""amount_drawn_brentwood"": 75.3
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [
+        {
+          ""name"": ""bond_authorized_amount_brentwood"",
+          ""op"": ""value"",
+          ""args"": [""bond_authorized_amount_brentwood""]
+        },
+        {
+          ""name"": ""amount_drawn_brentwood"",
+          ""op"": ""value"",
+          ""args"": [""amount_drawn_brentwood""]
+        }
+      ]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program calculates the difference between the authorized amount and the drawn amount for the Brentwood, Tennessee store support center, which is the amount lost from the bond authorization to the withdrawn.",1722,226,1948,8.50556539997342,1,False,False
+E3_pot_calculator,76,what about percentage change?,28.57143,2.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""pretax_pension_expense_2014"": 7, ""pretax_pension_expense_2015"": 9}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""pretax_pension_expense_2015"", ""pretax_pension_expense_2014""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""pretax_pension_expense_2014"": 7,
+    ""pretax_pension_expense_2015"": 9
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""pretax_pension_expense_2015"", ""pretax_pension_expense_2014""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the difference in pretax pension expense from 2014 to 2015 by subtracting the 2014 value from the 2015 value. The result is stored in the ""answer"" step.",2035,156,2191,7.106032099982258,1,True,False
+E3_pot_calculator,77,what was the value of outstanding commercial papers in 2007?,2.36,0.09745762711864407,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""outstanding_cps_2007"": 2.36, ""outstanding_cps_2008"": 2.59}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""outstanding_cps_2007"", ""outstanding_cps_2008""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""outstanding_cps_2007"": 2.36,
+    ""outstanding_cps_2008"": 2.59
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""outstanding_cps_2007"", ""outstanding_cps_2008""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+Note that the question is asking for the percentage change in the value of commercial papers outstanding from 2007 to 2008, which is the same as the answer provided in the history.",1708,143,1851,6.481072199996561,1,False,False
+E3_pot_calculator,78,and what was it in 2007?,40.0,105.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""reclassification_2008"": 105.0}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""reclassification_2008""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""reclassification_2008"": 105.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""reclassification_2008""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program simply returns the value of the reclassification of non-controlling interests in 2008, which is 105.0 million.",1587,104,1691,5.492949100007536,1,False,False
+E3_pot_calculator,79,what is the net change in operating leases from 2019 to 2020?,-190.0,190.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""lease_2019"": 2078, ""lease_2020"": 1888}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""lease_2019"", ""lease_2020""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""lease_2019"": 2078,
+    ""lease_2020"": 1888
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""lease_2019"", ""lease_2020""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the net change in operating leases from 2019 to 2020 by subtracting the lease amount for 2020 from the lease amount for 2019.",1708,124,1832,6.071131800010335,1,False,False
+E3_pot_calculator,80,and what is the percentage this change represents of those losses in 2005?,0.70705,-2.182720953326713,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""old_value"": -100.7, ""new_value"": 119.1, ""change"": 71.2}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""old_value"": -100.7,
+    ""new_value"": 119.1,
+    ""change"": 71.2
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+```
+
+This program calculates the percentage change in accumulated other comprehensive earnings (loss) from 2005 to 2006, which is the value provided in the history section.",2023,131,2154,6.441404999990482,1,True,False
+E3_pot_calculator,81,"combined, what was the total net operating loss that must be utilized before expiration between 2017 and 2033?",32.2,-4519.9,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""undistributed_earnings"": 696.9, ""net_operating_loss_2015"": -3823, ""net_operating_loss_2017"": 0, ""net_operating_loss_2033"": 0}, ""steps"": [{""name"": ""step1"", ""op"": ""value"", ""args"": [""undistributed_earnings""]}, {""name"": ""step2"", ""op"": ""sub"", ""args"": [""net_operating_loss_2015"", ""step1""]}, {""name"": ""step3"", ""op"": ""add"", ""args"": [""step2"", ""net_operating_loss_2017""]}, {""name"": ""step4"", ""op"": ""add"", ""args"": [""step3"", ""net_operating_loss_2033""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""step4""]}], ""unit"": ""million""}",million,5,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""undistributed_earnings"": 696.9,
+    ""net_operating_loss_2015"": -3823,
+    ""net_operating_loss_2017"": 0,
+    ""net_operating_loss_2033"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""step1"",
+      ""op"": ""value"",
+      ""args"": [""undistributed_earnings""]
+    },
+    {
+      ""name"": ""step2"",
+      ""op"": ""sub"",
+      ""args"": [""net_operating_loss_2015"", ""step1""]
+    },
+    {
+      ""name"": ""step3"",
+      ""op"": ""add"",
+      ""args"": [""step2"", ""net_operating_loss_2017""]
+    },
+    {
+      ""name"": ""step4"",
+      ""op"": ""add"",
+      ""args"": [""step3"", ""net_operating_loss_2033""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""step4""]
+    }
+  ],
+  ""unit"": ""million""
+}",1702,251,1953,9.037232999980915,1,False,False
+E3_pot_calculator,82,what was the change in net revenue between the two years?,-31.9,-31.899999999999977,True,calculadora,False,correto,llm,True,"{""variables"": {""net_revenue_2007"": 991.1, ""net_revenue_2008"": 959.2}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""net_revenue_2008"", ""net_revenue_2007""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+""variables"": {
+  ""net_revenue_2007"": 991.1,
+  ""net_revenue_2008"": 959.2
+},
+""steps"": [
+  {
+    ""name"": ""answer"",
+    ""op"": ""sub"",
+    ""args"": [""net_revenue_2008"", ""net_revenue_2007""]
+  }
+],
+""unit"": ""million""
+}
+
+This program calculates the change in net revenue between 2008 and 2007 by subtracting the net revenue in 2007 from the net revenue in 2008.",1393,130,1523,6.053503999981331,1,False,True
+E3_pot_calculator,83,what would be the change in the profit of marketable securities if they were sold at fair value?,3.2,3.1999999999999993,True,calculadora,False,correto,llm,True,"{""variables"": {""available_for_sale_cost"": 25.7, ""available_for_sale_fair_value"": 28.9}, ""steps"": [{""name"": ""fair_value_gain"", ""op"": ""sub"", ""args"": [""available_for_sale_fair_value"", ""available_for_sale_cost""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""fair_value_gain""]}], ""unit"": ""million""}",million,2,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""available_for_sale_cost"": 25.7,
+    ""available_for_sale_fair_value"": 28.9
+  },
+  ""steps"": [
+    {
+      ""name"": ""fair_value_gain"",
+      ""op"": ""sub"",
+      ""args"": [""available_for_sale_fair_value"", ""available_for_sale_cost""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""fair_value_gain""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program calculates the change in profit by subtracting the available-for-sale cost from the available-for-sale fair value, which represents the gain from selling the marketable securities at fair value.",1450,162,1612,6.6469894999754615,1,False,True
+E3_pot_calculator,84,what was the balance of unpaid losses in the beginning of 2008?,7603.0,24241.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""gross_losses_2008"": 37176, ""reinsurance_recoverable_2008"": 12935, ""net_losses_2008"": 24241}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""net_losses_2008""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""gross_losses_2008"": 37176,
+    ""reinsurance_recoverable_2008"": 12935,
+    ""net_losses_2008"": 24241
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""net_losses_2008""]
+    }
+  ],
+  ""unit"": ""million""
+}
+
+This program uses the value of the net losses at December 31, 2008, which is the balance of unpaid losses in the beginning of 2008.",1951,135,2086,6.463077100022929,1,False,False
+E3_pot_calculator,85,so by how much did this value change over these years?,20.8,0.0446256168204247,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""net_revenue_2007"": 486.9, ""net_revenue_2006"": 466.1}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""net_revenue_2006"", ""net_revenue_2007""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""net_revenue_2007"": 486.9,
+    ""net_revenue_2006"": 466.1
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""net_revenue_2006"", ""net_revenue_2007""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in net revenue from 2006 to 2007.",1525,118,1643,5.8053362000209745,1,False,False
+E3_pot_calculator,86,"as of april 3, 2010, what was the amount of doors in the wholesale segment in the europe geography?",4421.0,4421.0,True,calculadora,False,correto,llm,True,"{""variables"": {""europe_doors"": 4421}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""europe_doors""]}], ""unit"": ""doors""}",doors,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""europe_doors"": 4421
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""europe_doors""]
+    }
+  ],
+  ""unit"": ""doors""
+}
+
+This program simply takes the value of the number of doors in the Europe geography, which is 4421, and assigns it to the variable ""answer"". The unit is ""doors"" since that is the unit provided in the table.",1470,120,1590,5.771218100009719,1,False,True
+E3_pot_calculator,87,"and throughout the precedent year, what was the decline in containerboard sales volume to external domestic and export customers, in tons?",32000.0,-0.06708595387840671,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""containerboard_sales_volume_2002"": 477000, ""containerboard_sales_volume_2003"": 445000}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""containerboard_sales_volume_2002"", ""containerboard_sales_volume_2003""]}], ""unit"": ""tons""}",tons,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""containerboard_sales_volume_2002"": 477000,
+    ""containerboard_sales_volume_2003"": 445000
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""containerboard_sales_volume_2002"", ""containerboard_sales_volume_2003""]
+    }
+  ],
+  ""unit"": ""tons""
+}",2001,104,2105,5.724546100012958,1,False,False
+E3_pot_calculator,88,what is the net change in the total consolidated revenues from 2011 to 2012?,182.0,0.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""total_revenue_2011"": 5625.6, ""total_revenue_2012"": 5807.6, ""revenue_change"": 0}, ""steps"": [{""name"": ""total_revenue_2011_value"", ""op"": ""value"", ""args"": [""total_revenue_2011""]}, {""name"": ""total_revenue_2012_value"", ""op"": ""value"", ""args"": [""total_revenue_2012""]}, {""name"": ""revenue_change"", ""op"": ""sub"", ""args"": [""total_revenue_2012_value"", ""total_revenue_2011_value""]}, {""name"": ""answer"", ""op"": ""value"", ""args"": [""revenue_change""]}], ""unit"": ""million""}",million,4,ok,False,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""total_revenue_2011"": 5625.6,
+    ""total_revenue_2012"": 5807.6,
+    ""revenue_change"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""total_revenue_2011_value"",
+      ""op"": ""value"",
+      ""args"": [""total_revenue_2011""]
+    },
+    {
+      ""name"": ""total_revenue_2012_value"",
+      ""op"": ""value"",
+      ""args"": [""total_revenue_2012""]
+    },
+    {
+      ""name"": ""revenue_change"",
+      ""op"": ""sub"",
+      ""args"": [""total_revenue_2012_value"", ""total_revenue_2011_value""]
+    },
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""revenue_change""]
+    }
+  ],
+  ""unit"": ""million""
+}",1620,214,1834,8.14549690001877,1,False,False
+E3_pot_calculator,89,what was the total interest income in 2012?,29.5,-4.800000000000001,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""interest_income_2012"": 29.5, ""interest_income_2013"": 24.7}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""interest_income_2013"", ""interest_income_2012""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+{
+""variables"": {
+""interest_income_2012"": 29.5,
+""interest_income_2013"": 24.7
+},
+""steps"": [
+{
+""name"": ""answer"",
+""op"": ""sub"",
+""args"": [""interest_income_2013"", ""interest_income_2012""]
+}
+],
+""unit"": ""million""
+}",1784,83,1867,5.116896999999881,1,False,False
+E3_pot_calculator,90,what was the net change in value?,93245.0,93245.0,True,calculadora,False,correto,llm,True,"{""variables"": {""goodwill_2016"": 572764.0, ""goodwill_2017"": 666009.0}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""goodwill_2017"", ""goodwill_2016""]}], ""unit"": """"}",,1,ok,True,"Here is the symbolic program to answer the question:
+
+{
+  ""variables"": {
+    ""goodwill_2016"": 572764.0,
+    ""goodwill_2017"": 666009.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""goodwill_2017"", ""goodwill_2016""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the net change in goodwill by subtracting the goodwill balance at the end of 2016 from the goodwill balance at the end of 2017.",1617,129,1746,6.1369960000156425,1,False,True
+E3_pot_calculator,91,"what was the total amount of resale agreements in 2008, in millions?",20800.0,200265.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""resale_agreements_2008"": 200265, ""resale_agreements_2007"": 169305}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""resale_agreements_2008""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""resale_agreements_2008"": 200265,
+    ""resale_agreements_2007"": 169305
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""resale_agreements_2008""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the total amount of resale agreements in 2008, in millions, by simply returning the value of ""resale_agreements_2008"" which is 200265 million.",2260,137,2397,6.773095000011381,1,False,False
+E3_pot_calculator,92,and what was it in 2016?,26.4,34.5,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""interest_expense_2017"": 34.5}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""interest_expense_2017""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""interest_expense_2017"": 34.5
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""interest_expense_2017""]
+    }
+  ],
+  ""unit"": """"
+}
+
+Note that the question is asking for the interest expense net in 2017, which is provided as a value in the context. Therefore, the symbolic program simply returns the value as the answer.",1559,116,1675,5.93707019998692,1,False,False
+E3_pot_calculator,93,"combined, what was the value of tax benefits realized from option exercises under all incentive plans for 2014 and 2013?",64.0,0.06451612903225806,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""tax_benefit_2014"": 33, ""tax_benefit_2013"": 31, ""tax_benefit_2012"": 14}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""tax_benefit_2013"", ""tax_benefit_2014""]}], ""unit"": ""%""}",%,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""tax_benefit_2014"": 33,
+    ""tax_benefit_2013"": 31,
+    ""tax_benefit_2012"": 14
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""tax_benefit_2013"", ""tax_benefit_2014""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change in tax benefits realized from option exercises under all incentive plans for 2014 and 2013.",1962,135,2097,6.486615600006189,1,False,False
+E3_pot_calculator,94,what was the value of the disca in 2016?,133.81,133.81,True,calculadora,False,correto,llm,True,"{""variables"": {""disca_2016"": 133.81}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""disca_2016""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""disca_2016"": 133.81
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""disca_2016""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program uses the value of the ""disca"" variable in 2016, which is $133.81 million, and returns that value as the answer.",2117,114,2231,6.180075799988117,1,False,True
+E3_pot_calculator,95,what was the amount in received cash dividends in the year of 2010?,71.0,7.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""cash_dividends_2011"": 78.0, ""cash_dividends_2010"": 71.0}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""cash_dividends_2011"", ""cash_dividends_2010""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""cash_dividends_2011"": 78.0,
+    ""cash_dividends_2010"": 71.0
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""cash_dividends_2011"", ""cash_dividends_2010""]
+    }
+  ],
+  ""unit"": """"
+}
+```
+
+This program calculates the change in value over the year by subtracting the cash dividends received in 2010 from the cash dividends received in 2011.",1912,138,2050,6.514598299982026,1,False,False
+E3_pot_calculator,96,what was the change in value of cds that were excluded between 2013 and 2014?,4.37,4370.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""cds_excluded_2013"": 2500, ""cds_excluded_2014"": 6870, ""cds_change"": 0}, ""steps"": [{""name"": ""cds_change"", ""op"": ""sub"", ""args"": [""cds_excluded_2014"", ""cds_excluded_2013""]}], ""unit"": """"}",,1,ok,False,"Here is the symbolic program capable of answering the question:
+
+{
+  ""variables"": {
+    ""cds_excluded_2013"": 2500,
+    ""cds_excluded_2014"": 6870,
+    ""cds_change"": 0
+  },
+  ""steps"": [
+    {
+      ""name"": ""cds_change"",
+      ""op"": ""sub"",
+      ""args"": [""cds_excluded_2014"", ""cds_excluded_2013""]
+    }
+  ],
+  ""unit"": """"
+}
+
+This program calculates the change in value of CDS that were excluded between 2013 and 2014 by subtracting the 2013 value from the 2014 value.",1877,148,2025,6.846139700006461,1,False,False
+E3_pot_calculator,97,what was the amount in received cash dividends in the year of 2011?,78.0,78.0,True,calculadora,False,correto,llm,True,"{""variables"": {""cash_dividends_2011"": 78}, ""steps"": [{""name"": ""answer"", ""op"": ""value"", ""args"": [""cash_dividends_2011""]}], ""unit"": ""million""}",million,1,ok,True,"Here is the symbolic program capable of answering the question:
+
+```
+{
+  ""variables"": {
+    ""cash_dividends_2011"": 78
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""value"",
+      ""args"": [""cash_dividends_2011""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```",1853,82,1935,5.286004499997944,1,False,True
+E3_pot_calculator,98,what is the percent change?,-0.17266,-0.17266187050359713,True,calculadora,False,correto,llm,True,"{""variables"": {""old_value"": 278, ""new_value"": 230}, ""steps"": [{""name"": ""answer"", ""op"": ""percentage_change"", ""args"": [""old_value"", ""new_value""]}], ""unit"": ""%""}",%,1,ok,True,"Here is the symbolic program to answer the question ""what is the percent change?"":
+
+{
+  ""variables"": {
+    ""old_value"": 278,
+    ""new_value"": 230
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""percentage_change"",
+      ""args"": [""old_value"", ""new_value""]
+    }
+  ],
+  ""unit"": ""%""
+}
+
+This program calculates the percentage change between the old value (278) and the new value (230) using the `percentage_change` operation.",1462,115,1577,5.879105800006073,1,True,True
+E3_pot_calculator,99,what was the balance of total ishares in 2013?,914372.0,161666.0,False,calculadora,False,plano_errado,llm,True,"{""variables"": {""total_ishares_2013"": 914372, ""total_ishares_2012"": 752706, ""net_inflows_2013"": 81735, ""net_inflows_2012"": 63971}, ""steps"": [{""name"": ""answer"", ""op"": ""sub"", ""args"": [""total_ishares_2013"", ""total_ishares_2012""]}], ""unit"": ""million""}",million,1,ok,False,"Here is the symbolic program to answer the question:
+
+```
+{
+  ""variables"": {
+    ""total_ishares_2013"": 914372,
+    ""total_ishares_2012"": 752706,
+    ""net_inflows_2013"": 81735,
+    ""net_inflows_2012"": 63971
+  },
+  ""steps"": [
+    {
+      ""name"": ""answer"",
+      ""op"": ""sub"",
+      ""args"": [""total_ishares_2013"", ""total_ishares_2012""]
+    }
+  ],
+  ""unit"": ""million""
+}
+```
+
+This program calculates the balance of total iShares in 2013 by subtracting the total iShares in 2012 from the total iShares in 2013.",2251,166,2417,7.362533599982271,1,False,False
