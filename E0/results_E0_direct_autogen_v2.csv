@@ -1,4 +1,10 @@
 experiment,question_id,question,ground_truth,prediction,correct,answer_extraction,parse_error,raw_response,prompt_tokens,completion_tokens,total_tokens,latency_seconds,llm_calls,is_percent_question,correct_escala_pct
-E0_direct,0,"what was the total balance of letters of credit outstanding for the years of 2006 and 2007, combined?",93.4,93.4,True,ultimo_numero_nao_ano,False,"Based on the provided financial context, the total balance of letters of credit outstanding for the years of 2006 and 2007, combined, was:
+E0_direct,0,"for 2012, what was the percentage of the adjustments related to aoci for afs securities and defined benefit pension and opeb plans as part of the tier 1 common under basel i rules?",0.02905,2.91,False,percentual,False,"To calculate the percentage of adjustments related to AOCI for AFS securities and defined benefit pension and OPEB plans as part of the Tier 1 common under Basel I rules, we need to find the value of these adjustments from the table and then divide it by the total Tier 1 common under Basel I rules.
 
-$41 million (2007) + $52.4 million (2006) = $93.4 million",1111,55,1166,21.6696558299991,1,False,True
+From the table, we can see that the adjustments related to AOCI for AFS securities and defined benefit pension and OPEB plans are $4,077. The total Tier 1 common under Basel I rules is $140,342.
+
+So, the percentage of these adjustments would be:
+
+($4,077 / $140,342) * 100% ≈ 2.91%
+
+Therefore, the answer is approximately 2.91%.",1847,155,2002,51.269940467002016,1,True,True
