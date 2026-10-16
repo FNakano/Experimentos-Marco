@@ -5,6 +5,8 @@ Este é o clone dos experimentos do Marco. Hoje pretendo executar um teste do co
 Achei algo que talvez precise ser perguntado...
 Fiz mais de uma execução do primeiro teste e a resposta uma vez foi 52.4 e em outras vezes foi 41 (não contei quantas vezes ao todo). Por outro lado, em `results_E0_direct_autogen_v2.csv` no github do Marco (https://github.com/marcodaq/Experimentos/tree/main/E0), no commit https://github.com/marcodaq/Experimentos/commit/e6884d8ea36dcd66301b92fa7876ceaf9baf330a , a resposta (coluna prediction) é igual à coluna ground_truth. Poderia pedir para ele mostrar a execução somente do primeiro teste...
 
+**As respostas podem ser diferentes porque ele executa em GPU e eu em CPU - talvez alguma quantização foi feita sem que eu fosse avisado!**
+
 Sobre a sequência de execução de  `python3  -m e0_direct_llm_finqa_autogen` (os números de linha incluem os comandos de impressão que inseri no programa):
   
 O módulo tem função `main`. Esta função:
