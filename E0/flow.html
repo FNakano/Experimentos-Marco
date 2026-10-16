@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>flow.html</title>
+        <style type="text/css">
+          .end-element { fill : #FFCCFF; }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="../release/flowchart.min.js"></script> -->
+        <script>
+
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                    cd = document.getElementById("code"),
+                    chart;
+                    
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      'x': 0,
+                      'y': 0,
+                      'line-width': 3,
+                      //'maxWidth': 15,//ensures the flowcharts fits within a certain width
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font': 'normal',
+                      'font-family': 'Helvetica',
+                      'font-weight': 'normal',
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no',
+                      'arrow-end': 'block',
+                      'scale': 1,
+                      'symbols': {
+                        'start': {
+                          'font-size': 14,
+                          'font-color': 'yellow',
+                          'element-color': 'blue',
+                          'fill': 'green',
+                          'class': 'start-element'
+                        },
+                        'inputoutput': {
+                          'font-color': 'black',
+                          'element-color': 'black',
+                          'fill': 'bisque'
+                        },
+                        'operation': {
+                          'font-color': 'black',
+                          'element-color': 'black',
+                          'fill': 'linen'
+                        },
+                        'subroutine': {
+                          'font-color': 'black',
+                          'element-color': 'blue',
+                          'fill': 'lightgreen'
+                        },
+                        'condition': {
+                          'font-color': 'red',
+                          'element-color': 'black',
+                          'fill': 'yellow'
+                        },
+                        'end':{
+                          'font-size': 20,
+                          'class': 'end-element'
+                        }
+                      },
+                      'flowstate' : {
+                        //'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                        //'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                        //'future' : { 'fill' : '#FFFF99'},
+                        'request' : { 'fill' : 'blue'},
+                        'invalid': {'fill' : '#444444'},
+                        'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                        'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                      }
+                    });
+                    //create base64 encoding of SVG to generate download link for title(without html or htm).SVG
+                    var currentCanvasDIV = document.getElementById('canvas')
+                    var currentDrawSVG = currentCanvasDIV.innerHTML.replaceAll('ë','e');
+
+                    const OUTsvgBASE64 = btoa(currentDrawSVG)
+                    doctitle = document.title.replace('.html','');
+                    doctitle = doctitle.replace('.htm','');
+
+
+                    var currentCanvasDIV = document.getElementById('canvas')
+                    var currentDrawSVG = currentCanvasDIV.innerHTML.replaceAll('ë','e');
+                    svgSource = currentDrawSVG
+                    svgXML = currentDrawSVG;
+                    // Use SVG Height and Width from the SVG XML to set canvas size
+                    svgXMLsubstringHeight = svgXML.substring(svgXML.indexOf('height='), svgXML.indexOf('version='));
+                    svgXMLsubstringWidth = svgXML.substring(svgXML.indexOf('width='), svgXML.indexOf('xmlns='));
+                    HeightValue = svgXMLsubstringHeight.substring(svgXMLsubstringHeight.indexOf('"')+1,svgXMLsubstringHeight.lastIndexOf('"'));
+                    WidthValue = svgXMLsubstringWidth.substring(svgXMLsubstringWidth.indexOf('"')+1,svgXMLsubstringWidth.lastIndexOf('"'));
+                    HeightValueInt = Math.round(HeightValue)
+                    WidthValueInt = Math.round(WidthValue)
+                    // setup input for base64SvgToBase64Png
+                    let svgSrc = "data:image/svg+xml;base64,"+OUTsvgBASE64;
+                    var pngBase
+                    imageUtil.base64SvgToBase64Png(svgSrc, WidthValueInt, HeightValueInt).then(pngSrc => {
+                    pngBase = pngSrc
+                    // output download link for base64 PNG converted on download from base64
+                    var pngOutHtml = `<a href="${pngBase}" download="${doctitle}.png">PNG - Click here to download current rendered flowchart as ${doctitle}.png</a>`
+                    document.getElementById("pngbase64").innerHTML=pngOutHtml;
+                    });    
+                    // output download link for base64 SVG converted on download from base64
+                    var svgOutHtml = `<a href="data:image/svg+xml;base64,${OUTsvgBASE64}" download=${doctitle}.svg>SVG - Click here to download current rendered flowchart as ${doctitle}.svg</a> `
+                        document.getElementById("svgbase64").innerHTML=svgOutHtml;
+                    })();
+
+                            };
+                 
+
+// derived from https://stackoverflow.com/a/64800570
+// we need to use web browser canvas to generate a image. In this case png
+let imageUtil = {};
+/**
+ * converts a base64 encoded data url SVG image to a PNG image
+ * @param originalBase64 data url of svg image
+ * @param width target width in pixel of PNG image
+ * @param secondTry used internally to prevent endless recursion
+ * @return {Promise<unknown>} resolves to png data url of the image
+ */
+imageUtil.base64SvgToBase64Png = function (originalBase64, width, height, secondTry) {
+    return new Promise(resolve => {
+        let img = document.createElement('img');
+        img.onload = function () {
+            if (!secondTry && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
+                let svgDoc = base64ToSvgDocument(originalBase64);
+                let fixedDoc = fixSvgDocumentFF(svgDoc);
+                return imageUtil.base64SvgToBase64Png(svgDocumentToBase64(fixedDoc), width, height, true).then(result => {
+                    resolve(result);
+                });
+            }
+            //document.body.appendChild(img);
+            let canvas2 = document.createElement("canvas");
+            //document.body.removeChild(img);
+            canvas2.width = width;
+            canvas2.height = height;
+            let ctx = canvas2.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas2.width, canvas2.height);
+            try {
+                let data = canvas2.toDataURL('image/png');
+                resolve(data);
+            } catch (e) {
+                resolve(null);
+            }
+        };
+        img.src = originalBase64;
+    });
+}
+
+//needed because Firefox doesn't correctly handle SVG with size = 0, see https://bugzilla.mozilla.org/show_bug.cgi?id=700533
+function fixSvgDocumentFF(svgDocument) {
+    try {
+        let widthInt = parseInt(svgDocument.documentElement.width.baseVal.value) || 500;
+        let heightInt = parseInt(svgDocument.documentElement.height.baseVal.value) || 500;
+        svgDocument.documentElement.width.baseVal.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_PX, widthInt);
+        svgDocument.documentElement.height.baseVal.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_PX, heightInt);
+        return svgDocument;
+    } catch (e) {
+        return svgDocument;
+    }
+}
+
+function svgDocumentToBase64(svgDocument) {
+    try {
+        let base64EncodedSVG = btoa(new XMLSerializer().serializeToString(svgDocument));
+        return 'data:image/svg+xml;base64,' + base64EncodedSVG;
+    } catch (e) {
+        return null;
+    }
+}
+
+function base64ToSvgDocument(base64) {
+    let svg = atob(base64.substring(base64.indexOf('base64,') + 7));
+    svg = svg.substring(svg.indexOf('<svg'));
+    let parser = new DOMParser();
+    return parser.parseFromString(svg, "image/svg+xml");
+} 
+        </script>
+
+        <script>
+            function HelpText() {
+              var x = document.getElementById("HelpTextBlock");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <div><textarea id="code" style="width: 100%;" rows="11">op2=>operation: '\ne0_direct_llm_finqa_autogen.py\n\nVERSAO 2 (apos a analise dos resultados do E2) -- mudancas que valem para\nTODOS os experimentos E0..E7 (rode de novo E0 e E1 para manter a comparacao):\n    - HISTORY: o historico da conversa (perguntas/respostas anteriores do\n      ConvFinQA) agora vai no bloco HISTORY. Antes ia misturado no TEXT e\n      HISTORY aparecia como "(none)" em 64 das 100 perguntas.\n    - Leitura de JSON: pega o ULTIMO objeto JSON completo da resposta (antes\n      juntava varios blocos num JSON invalido).\n    - Nova metrica EM_escala_percentual: no ConvFinQA os percentuais estao\n      como fracao (36.93% = 0.3693). Em perguntas de percentual/razao ela\n      aceita tambem gold x100 ou gold/100. Use-a para comparar E0..E7; o EM\n      estrito continua sendo reportado. O CSV ganhou as colunas question,\n      is_percent_question e correct_escala_pct.\n\n\nEXPERIMENTO E0 - LLM DIRETO (BASELINE) da ablacao.\n\nPergunta cientifica: quanto o LLM resolve sozinho?\n\nVersao LOCAL (via Ollama) com UMA UNICA chamada ao LLM por pergunta.\nNenhum critico, nenhum PoT, nenhuma calculadora.\n\nFluxo (por pergunta):\n\n    Contexto (Question + Text + Table + History)\n        |\n        v\n       LLM   (system: 1a frase do prompt do especialista do script de\n        |      referencia; user: prompt E0 do documento de ablacao)\n        v\n    Resposta\n\n    Apenas no final (fora do loop) o gabarito e usado para contabilizar\n    acertos. Esse e o ponto de referencia: todos os demais experimentos\n    (E1..E7) precisam demonstrar alguma vantagem em relacao a ele.\n\nMantidos constantes em relacao ao script de referencia\n(AgenteCritico_1Especialista_1Critico_METRICAS_ReasoningON_Amostra_CORRIGIDO):\n    - AutoGen (pyautogen==0.2.35), modelo (llama3:8b), temperatura (0.2),\n      CSV/amostra, MAX_ITEMS\n    - criterio de acerto (_answers_match, tol = 1e-2)\n\nPrompt:\n    - do script de referencia fica APENAS a frase de papel/persona\n      ("You are a financial analysis agent ..."). Manter a MESMA frase\n      como system prompt em E1..E7;\n    - foram retiradas as instrucoes de extrair dados, calcular, explicar\n      passo a passo e o JSON com "steps" (pertencem ao E1);\n    - como o prompt E0 pede "Return only the final answer" (sem JSON), a\n      resposta e lida por extract_direct_answer(). O modo de extracao\n      usado e registrado por linha (answer_extraction).\n\nMetricas calculadas (somente as que fazem sentido para uma resposta direta):\n    - Answer-level: EM (Exact Match / Accuracy), MAE, erro relativo medio\n    - MSE / RMSE\n    - Intervalo de Confianca de Wilson (95%) para o EM\n    - Unit accuracy heuristica\n    - Operacionais: tokens, custo hipotetico, latencia, chamadas ao LLM,\n      respostas sem numero extraivel\n\nRemovido por NAO fazer sentido no E0:\n    - Metricas do critico (Correction/Damage Rate, Judge Precision/Recall,\n      ganho especialista -> critico) e colunas sem/com critico: nao ha\n      critico.\n    - Qui-Quadrado (critico chamado x resposta correta): degenerado sem\n      critico.\n    - Kappa de Cohen (sem vs com critico): trivialmente 1.0 sem critico.\n    - Avaliacao reasoning-level por LLM (Extraction/Plan/Execution\n      Accuracy): o E0 devolve apenas a resposta final, sem raciocinio\n      visivel, entao nao ha extracao nem plano a avaliar.\n\nComparacoes entre experimentos (Kappa, McNemar) serao feitas depois, num\nscript separado, entre os CSVs de E0..E7 pareados por question_id, usando\na coluna \'correct\' de cada um.\n\nSaidas:\n    - OUT_PATH                        -> resultados por pergunta (CSV)\n    - *_metricas.csv                  -> metricas agregadas (1 linha)\n    - *_per_example.jsonl             -> {"id","gold","prediction","correct",\n                                          "latency","llm_calls"} por exemplo\n\nComo rodar localmente:\n    1. Instale e rode o Ollama: https://ollama.com\n    2. Baixe o modelo:            ollama pull llama3:8b\n    3. Confirme que o servidor esta ativo em http://localhost:11434\n    4. Instale as dependencias:   pip install "pyautogen==0.2.35" pandas\n       (IMPORTANTE: a partir da versao 0.4/pyautogen>=0.9 o pacote virou um\n       proxy para a nova arquitetura assincrona "autogen-agentchat". Este\n       script usa a API classica sincrona, por isso a versao fixada 0.2.35.)\n    5. Ajuste as variaveis de configuracao abaixo se necessario\n    6. Rode:                      python e0_direct_llm_finqa_autogen.py\n\nRequisitos:\n    pip install "pyautogen==0.2.35" pandas\n    (opcional) pip install scipy   -> z exato para o Intervalo de Confianca\n'
+op4=>operation: import json
+op6=>operation: import math
+op8=>operation: import re
+op10=>operation: import sys
+op12=>operation: import time
+op14=>operation: from dataclasses import dataclass
+op16=>operation: from typing import Dict, List, Optional, Tuple
+op18=>operation: import pandas as pd
+op21=>operation: import autogen
+from autogen import AssistantAgent
+cond20=>condition: exception raised?
+cond23=>condition: except ImportError
+sub27=>subroutine: print('Instale o SDK primeiro: pip install "pyautogen==0.2.35"', file=sys.stderr)
+sub29=>subroutine: raise
+op35=>operation: from scipy import stats as scipy_stats
+SCIPY_AVAILABLE = True
+cond34=>condition: exception raised?
+cond37=>condition: except ImportError
+op41=>operation: scipy_stats = None
+op43=>operation: SCIPY_AVAILABLE = False
+op48=>operation: EXPERIMENT_ID = 'E0_direct'
+op50=>operation: CSV_PATH = 'convfinqa_amostra_100.csv'
+op52=>operation: OLLAMA_MODEL = 'llama3:8b'
+op54=>operation: OLLAMA_BASE_URL = 'http://localhost:11434/v1'
+op56=>operation: OLLAMA_API_KEY = 'ollama'
+op58=>operation: MAX_ITEMS = 100
+op60=>operation: TIMEOUT_SECONDS = 600
+op62=>operation: OUT_PATH = 'results_E0_direct_autogen_v2.csv'
+op64=>operation: PER_EXAMPLE_JSONL_PATH = OUT_PATH.replace('.csv', '_per_example.jsonl')
+op66=>operation: VERBOSE = True
+op68=>operation: DIRECT_TEMPERATURE = 0.2
+op70=>operation: TEXT_COL = 'text'
+op72=>operation: GOLD_COL = 'output'
+op74=>operation: QUESTION_COL = 'question'
+op76=>operation: TABLE_COL = 'table'
+op78=>operation: HISTORY_COL = 'history'
+op80=>operation: REFERENCE_API_PRICING = {'Groq - Llama 3.1 8B Instant': {'input_per_1m': 0.05, 'output_per_1m': 0.08}, 'OpenAI - GPT-4o mini': {'input_per_1m': 0.15, 'output_per_1m': 0.6}}
+op82=>operation: DIRECT_SYSTEM = 'You are a financial analysis agent specializing in interpreting earnings reports and financial statements. Your task is to answer specific financial questions based on the given context from financial reports.'
+op84=>operation: E0_PROMPT_TEMPLATE = 'You are a financial question answering assistant.\n\nUse the provided financial context to answer the question.\n\nReturn only the numeric final answer.\n\nQUESTION:\n{question}\n\nTEXT:\n{text}\n\nTABLE:\n{table}\n\nHISTORY:\n{history}\n'
+op86=>operation: @dataclass
+class DirectResult:
+    question_id: object
+    ground_truth: str
+    prediction: str = ''
+    correct: bool = False
+    raw_response: str = ''
+    answer_extraction: str = ''
+    parse_error: bool = False
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
+    latency_seconds: float = 0.0
+    llm_calls: int = 0
+st89=>start: start _parse_json_response
+io91=>inputoutput: input: text
+op94=>operation: 'Extrai o ULTIMO objeto JSON completo e valido da resposta do modelo.\n\n    Os modelos pequenos costumam escrever texto com varios blocos JSON no\n    meio (ex.: resultados parciais e depois o final). A versao anterior\n    pegava tudo entre o primeiro "{" e o ultimo "}", o que juntava varios\n    blocos num JSON invalido. Agora cada objeto de nivel superior e\n    delimitado pelo balanceamento das chaves (ignorando chaves dentro de\n    strings) e o ultimo que for valido e devolvido.'
+cond97=>condition: if text is None
+io104=>inputoutput: output: {'raw': '', 'parse_error': True}
+e102=>end: end function return
+op110=>operation: candidates = []
+op112=>operation: (depth, start, in_str, esc) = (0, None, False, False)
+cond115=>condition: for (i, ch) in enumerate(text)
+cond120=>condition: if in_str
+cond125=>condition: if esc
+op129=>operation: esc = False
+sub155=>subroutine: continue
+cond134=>condition: if ch == '\\'
+op138=>operation: esc = True
+cond143=>operation: in_str = False if  ch == '"'
+cond161=>condition: if ch == '"' and depth > 0
+op165=>operation: in_str = True
+cond170=>condition: if ch == '{'
+cond175=>operation: start = i if  depth == 0
+op185=>operation: depth += 1
+cond190=>condition: if ch == '}' and depth > 0
+op194=>operation: depth -= 1
+cond197=>condition: if depth == 0 and start is not None
+sub201=>subroutine: candidates.append(text[start:i + 1])
+op203=>operation: start = None
+cond216=>condition: for cand in reversed(candidates)
+cond221=>condition: for attempt in (cand, cand.replace("'", '"'))
+op228=>operation: obj = json.loads(attempt)
+cond225=>condition: exception raised?
+cond230=>condition: except json.JSONDecodeError
+sub234=>subroutine: continue
+cond240=>condition: if isinstance(obj, dict)
+io247=>inputoutput: output: obj
+e245=>end: end function return
+io260=>inputoutput: output: {'raw': text, 'parse_error': True}
+e258=>end: end function return
+
+op2->op4
+op4->op6
+op6->op8
+op8->op10
+op10->op12
+op12->op14
+op14->op16
+op16->op18
+op18->op21
+op21->cond20
+cond20(yes)->cond23
+cond23(yes)->sub27
+sub27->sub29
+cond23(no)->op35
+op35->cond34
+cond34(yes)->cond37
+cond37(yes)->op41
+op41->op43
+op43->op48
+op48->op50
+op50->op52
+op52->op54
+op54->op56
+op56->op58
+op58->op60
+op60->op62
+op62->op64
+op64->op66
+op66->op68
+op68->op70
+op70->op72
+op72->op74
+op74->op76
+op76->op78
+op78->op80
+op80->op82
+op82->op84
+op84->op86
+op86->st89
+st89->io91
+io91->op94
+op94->cond97
+cond97(yes)->io104
+io104->e102
+cond97(no)->op110
+op110->op112
+op112->cond115
+cond115(yes)->cond120
+cond120(yes)->cond125
+cond125(yes)->op129
+op129->sub155
+cond125(no)->cond134
+cond134(yes)->op138
+op138->sub155
+cond134(no)->cond143
+cond143->sub155
+cond120(no)->cond161
+cond161(yes)->op165
+op165->cond115
+cond161(no)->cond170
+cond170(yes)->cond175
+cond175->op185
+op185->cond115
+cond170(no)->cond190
+cond190(yes)->op194
+op194->cond197
+cond197(yes)->sub201
+sub201->op203
+op203->cond115
+cond197(no)->cond115
+cond190(no)->cond115
+cond115(no)->cond216
+cond216(yes)->cond221
+cond221(yes)->op228
+op228->cond225
+cond225(yes)->cond230
+cond230(yes)->sub234
+cond230(no)->cond240
+cond240(yes)->io247
+io247->e245
+cond240(no)->cond221
+cond225(no)->cond240
+cond221(no)->cond216
+cond216(no)->io260
+io260->e258
+cond37(no)->op48
+cond34(no)->op48
+cond20(no)->op35
+</textarea></div>
+        <div><button id="run" type="button">Run</button> <button onclick="HelpText()">Format Help</button></div>
+        <div id="HelpTextBlock" style="display:none"><br/>Conditions can also be redirected like cond(yes, bottom) or cond(yes, right)
+... and the other symbols too... like sub1(right)<br/>
+You can also tweak the <b>diagram.drawSVG('diagram', {});</b> script in this file for more changes<br/>
+This is based on <a href="https://github.com/adrai/flowchart.js">flowchart.js on github</a> and <a href="http://flowchart.js.org">http://flowchart.js.org</a> more documentation can be found over there.
+</div><br/><div id="svgbase64"></div>
+        <div id="pngbase64"></div>
+
+        <div id="canvas"></div>
+    </body>
+</html>
