@@ -18,7 +18,8 @@ O módulo tem função `main`. Esta função:
      2. executa (indiretamente) o LLM (linha 689, `reply = direct.generate_reply(messages=[{"role": "user", "content": prompt}])`)
      3. `direct` é uma instância criada pela chamada `direct = AssistantAgent(...)`, a função é definida no pacote `autogen` ié, a função `generate_reply` também é definda no pacote;
      4. A informação enviada ao LLM está armazenada (inteiramente e somente) na variável `prompt`;
-        - O conteúdo da variável na execução da primeira questão é: ```
+        - O conteúdo da variável na execução da primeira questão é: 
+        ```
        FNFNFNFN
 You are a financial question answering assistant.
 
@@ -39,17 +40,19 @@ HISTORY:
 (none)
 
 FNFNFNFN
-``` 
-     5. A variável `reply` contém: ```
+     ``` 
+     5. A variável `reply` contém: 
+     ```
      FNFNFNFN
 The total balance of letters of credit outstanding for the years of 2006 and 2007, combined, was $93.4 million ($52.4 million in 2006 + $41 million in 2007).
 FNFNFNFN
-``` ... é texto puro, não é formatado em JSON
-     6. Nas linhas 695-698 ficaram algumas funções de tratamento da resposta: ```    raw = _extract_content(reply)
-    answer, mode = extract_direct_answer(raw)
-    prediction = str(answer)
-    parse_error = answer is None
-``` ... essas funções podem fazer aproximações, por exemplo, na linha 296, permite erro de 2%. É dessas funções que vem a coluna `answer extraction` com mensagem como `ultimo_numero_nao_ano`
+     ``` ... é texto puro, não é formatado em JSON
+     6. Nas linhas 695-698 ficaram algumas funções de tratamento da resposta: 
+     ```    raw = _extract_content(reply)
+     answer, mode = extract_direct_answer(raw)
+     prediction = str(answer)
+     parse_error = answer is None
+     ``` ... essas funções podem fazer aproximações, por exemplo, na linha 296, permite erro de 2%. É dessas funções que vem a coluna `answer extraction` com mensagem como `ultimo_numero_nao_ano`
 4. Calcula as métricas e salva os resultados por teste e gerais de todas as execuções (linhas 779-929)
 
 É meio fora do contexto, mas se ajustar uma frase do prompt de `Return only the final answer.` para `Return only the numerical final answer.` a resposta muda para 93 e se mudar essa frase para `Return only the final answer in floating point format.` o resultado é exact match...
