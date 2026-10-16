@@ -1,1 +1,1 @@
-{"id": "0", "gold": 93.4, "prediction": 52.4, "correct": false, "latency": 23.684, "llm_calls": 1}
+{"id": "0", "gold": 93.4, "prediction": 93.4, "correct": true, "latency": 21.67, "llm_calls": 1}

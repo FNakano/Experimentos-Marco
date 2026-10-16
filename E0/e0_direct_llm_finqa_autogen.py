@@ -180,7 +180,7 @@ E0_PROMPT_TEMPLATE = """You are a financial question answering assistant.
 
 Use the provided financial context to answer the question.
 
-Return only the final answer.
+Return only the final answer in floating point format.
 
 QUESTION:
 {question}

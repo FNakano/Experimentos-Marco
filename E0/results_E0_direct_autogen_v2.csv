@@ -1,2 +1,4 @@
 experiment,question_id,question,ground_truth,prediction,correct,answer_extraction,parse_error,raw_response,prompt_tokens,completion_tokens,total_tokens,latency_seconds,llm_calls,is_percent_question,correct_escala_pct
-E0_direct,0,"what was the total balance of letters of credit outstanding for the years of 2006 and 2007, combined?",93.4,52.4,False,ultimo_numero_nao_ano,False,"The total balance of letters of credit outstanding for the years of 2006 and 2007, combined, was $93.4 million ($41 million in 2007 + $52.4 million in 2006).",1107,47,1154,23.684047235001344,1,False,False
+E0_direct,0,"what was the total balance of letters of credit outstanding for the years of 2006 and 2007, combined?",93.4,93.4,True,ultimo_numero_nao_ano,False,"Based on the provided financial context, the total balance of letters of credit outstanding for the years of 2006 and 2007, combined, was:
+
+$41 million (2007) + $52.4 million (2006) = $93.4 million",1111,55,1166,21.6696558299991,1,False,True
